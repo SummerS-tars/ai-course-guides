@@ -17,7 +17,9 @@ notebooklm-raw/
 ├── README.md
 ├── manifests/              # 采集计划（JSON）
 │   └── week1-2.json
-└── week1-2/                # 按模块名
+└── week3-4/                # 按模块名
+    ├── knowledge-graph.md      # Phase 1.5：通读 raw 后的认知图谱（整合前置）
+    ├── topics-map.md
     └── runs/
         └── 20260609-120000/    # 每次运行一个时间戳目录
             ├── run.meta.json       # 运行元数据、批次状态
@@ -94,13 +96,16 @@ python scripts/nlm-collect.py notebooklm-raw/manifests/week3-4.json --delay 5
 # 3. 学习后补充（手动追加 manifest 或 --only supplement-xxx）
 ```
 
-## Agent 整合流程（更新）
+## Agent 整合流程（v4）
 
 ```
-Phase 1  运行 nlm-collect.py → notebooklm-raw/<module>/runs/<ts>/
-Phase 2  Agent 只读 *.answer.md / *.json 写 guides/ 初稿（不必再 inline 调 NotebookLM）
-Phase 3–5  叙事串联、用户迭代、定稿（见 .cursor/rules/ai-notebooklm-learning.mdc）
+Phase 1    运行 nlm-collect.py → notebooklm-raw/<module>/runs/<ts>/
+Phase 1.5  通读全部 *.answer.md → 产出 <module>/knowledge-graph.md（认知阶梯 + raw 映射）
+Phase 2    按知识图谱从 raw 选取、补写全景/衔接 → guides/AI-Week*-学习指南.md
+Phase 3–5  叙事、mermaid、用户迭代、定稿
 ```
+
+详见 `guides/学习指南整合规范.md`、范例 `week3-4/knowledge-graph.md`。
 
 ## Week 1–2 说明
 
