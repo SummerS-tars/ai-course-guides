@@ -2,11 +2,10 @@
 """
 NotebookLM 分层采集脚本 — 将对话原始内容落盘，运行轨迹可追踪。
 
-用法:
-  python scripts/nlm-collect.py notebooklm-raw/manifests/week3-4.json
-  python scripts/nlm-collect.py notebooklm-raw/manifests/week3-4.json --resume notebooklm-raw/week3-4/runs/<ts>
-  python scripts/nlm-collect.py ... --only w34-mistakes --resume notebooklm-raw/week3-4/runs/<ts>
-  python scripts/nlm-collect.py merge-runs <src_run> <dst_run> [--only id1,id2]
+用法（仓库根目录）:
+  python .cursor/skills/ai-course-notebooklm/scripts/nlm-collect.py notebooklm-raw/manifests/week3-4.json
+  python .cursor/skills/ai-course-notebooklm/scripts/nlm-collect.py ... --resume notebooklm-raw/<module>/runs/latest
+  python .cursor/skills/ai-course-notebooklm/scripts/nlm-collect.py merge-runs <src_run> <dst_run>
 
 输出目录:
   notebooklm-raw/<module>/runs/<timestamp>/
@@ -30,7 +29,17 @@ from pathlib import Path
 from typing import Any
 
 # --- Paths ---
-REPO_ROOT = Path(__file__).resolve().parent.parent
+SKILL_ROOT = Path(__file__).resolve().parent.parent
+
+
+def find_repo_root() -> Path:
+    for ancestor in Path(__file__).resolve().parents:
+        if (ancestor / "notebooklm-raw").is_dir() and (ancestor / "guides").is_dir():
+            return ancestor
+    raise RuntimeError("无法定位仓库根目录（需同时存在 notebooklm-raw/ 与 guides/）")
+
+
+REPO_ROOT = find_repo_root()
 RAW_ROOT = REPO_ROOT / "notebooklm-raw"
 SKILL_DIR = Path.home() / "service/openclaw/workspace/skills/notebooklm-integration"
 SKILL_SITE = SKILL_DIR / ".venv/lib/python3.12/site-packages"
