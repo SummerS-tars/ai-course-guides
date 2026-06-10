@@ -1,0 +1,176 @@
+{
+  "module": "week3-4",
+  "notebook_id": "505bdb1c",
+  "description": "Week 3-4：反向传播 + CNN + PJ1（单问单答，每 batch 新对话）",
+  "workflow": "v3-one-question-per-chat",
+  "sources_hint": [
+    "笔记-week03-周五-AI",
+    "笔记-week04-周五-AI",
+    "课件08-Connectionist",
+    "课件09-Deep-Learning",
+    "Project1-指导文档",
+    "Project1-任务书"
+  ],
+  "batches": [
+    {
+      "id": "L0-positioning",
+      "layer": "L0",
+      "priority": "critical",
+      "title": "Week3-4 在课程中的位置",
+      "clear_conversation": true,
+      "prompt": "【单问】请仅回答：Week 3 和 Week 4 在 AI(H) 课程中分别解决什么核心问题？它们与 Week 1-2（感知机/MLP）以及后续 Week 5+ 如何衔接？\n\n依据：Week 3/4 课程记录、课件 08/09。\n要求：中文；3-5 段即可；每点标注来源；不要展开具体公式。"
+    },
+    {
+      "id": "w3-gd-taylor",
+      "layer": "L1+L2",
+      "priority": "important",
+      "title": "梯度下降的泰勒展开基础",
+      "clear_conversation": true,
+      "prompt": "【单问·重要】请仅讲解：神经网络训练中，梯度下降法为什么基于泰勒一阶展开？学习率为什么要足够小？什么是「病态条件」？\n\n依据：Week 3 课程记录、课件 08。\n要求：先直觉类比再公式；给出 Δθ = -η∇L 的含义；中文；标注来源。"
+    },
+    {
+      "id": "w3-z-vs-h",
+      "layer": "L1+L2",
+      "priority": "critical",
+      "title": "净输入 z 与激活值 h",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请仅讲解：三层神经网络中「净输入 $z$」和「激活值 $h$」分别是什么？写代码和推导 BP 时为什么要区分？回归任务输出层为什么常用恒等激活？\n\n依据：Week 3 课程记录、课件 08。\n要求：中文；给符号表；标注来源；不要讲 BP 完整推导（留给后续单问）。"
+    },
+    {
+      "id": "w3-bp-regression",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "回归任务的反向传播",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请仅推导：回归任务使用 MSE 损失 + 输出层恒等激活时，输出层误差项 δ_k = y_k - t_k 以及权重梯度 ∂L/∂w_{kj} = δ_k h_j 是怎么来的。\n\n依据：Week 3 课程记录、课件 08。\n要求：逐步链式法则；每个符号注明含义；中文；标注来源。"
+    },
+    {
+      "id": "w3-bp-softmax-ce",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "Softmax+交叉熵的 BP",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请仅推导：分类任务使用 Softmax + 交叉熵损失时，为什么 ∂L/∂a_k = y_k - t_k 形式与回归的 δ_k 统一？（可说明 Softmax 求导的分情况讨论）。\n\n依据：Week 3 课程记录、课件 08。\n要求：这是本模块最难推导之一，请写清每一步；中文；标注来源；不要同时讲隐层。"
+    },
+    {
+      "id": "w3-bp-hidden",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "隐层误差反向传递",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请仅讲解：隐层误差项 δ_j = f'(z_j) Σ_k δ_k w_{kj} 的含义、推导思路和物理直觉（δ 代表什么敏感度）。\n\n依据：Week 3 课程记录、课件 08。\n要求：中文；符号表；标注来源；不要重复输出层推导。"
+    },
+    {
+      "id": "w3-training-loop",
+      "layer": "L2",
+      "priority": "important",
+      "title": "标准训练循环",
+      "clear_conversation": true,
+      "prompt": "【单问·重要】请仅描述：前馈神经网络一个训练 iteration 的标准步骤（梯度清零、采样、前向、反向、更新），以及为什么用验证集早停。\n\n依据：Week 3 课程记录、课件 08。\n要求：条目式步骤；中文；标注来源；普通深度即可。"
+    },
+    {
+      "id": "w3-bp-numeric",
+      "layer": "L3",
+      "priority": "critical",
+      "title": "BP 手算数值例子",
+      "clear_conversation": true,
+      "prompt": "【单问·核心·要数值】请仅给出一个尽可能小的网络（如 2 输入-1 隐层-1 输出），用具体数字走一遍前向传播和反向传播，算出至少一个权重的梯度。\n\n依据：Week 3 课程记录、课件 08、Project1 指导文档。\n要求：每一步列出数值；中文；标注来源。"
+    },
+    {
+      "id": "w4-pj1-overview",
+      "layer": "L0",
+      "priority": "important",
+      "title": "PJ1 任务要求",
+      "clear_conversation": true,
+      "prompt": "【单问·重要】请仅根据 Project1 任务书和指导文档，说明 PJ1 Part1（手写 BP）和 Part2（CNN）各有什么要求、禁止什么、评分侧重什么。\n\n要求：中文；表格或条目；标注来源；不要讲 CNN 原理细节。"
+    },
+    {
+      "id": "w4-dl-history",
+      "layer": "L1",
+      "priority": "normal",
+      "title": "深度学习历史脉络",
+      "clear_conversation": true,
+      "prompt": "【单问·了解即可】请仅概述：Hopfield 网络、RBM、逐层预训练在深度学习史中的位置，以及为什么逐层预训练现在不再常用。\n\n依据：Week 4 课程记录、课件 09。\n要求：中文；普通深度；标注来源；3-5 段即可。"
+    },
+    {
+      "id": "w4-relu-resnet",
+      "layer": "L1+L2",
+      "priority": "important",
+      "title": "梯度消失、ReLU、ResNet",
+      "clear_conversation": true,
+      "prompt": "【单问·重要】请仅讲解：Sigmoid 为何导致梯度消失？ReLU 如何缓解？ResNet 残差连接如何帮助梯度传播？\n\n依据：Week 4 课程记录、课件 08/09。\n要求：直觉优先；中文；标注来源。"
+    },
+    {
+      "id": "w4-cnn-motivation",
+      "layer": "L1",
+      "priority": "important",
+      "title": "CNN 设计动机",
+      "clear_conversation": true,
+      "prompt": "【单问·重要】请仅解释：处理图像时，全连接网络有什么问题？CNN 的「局部连接」和「权重共享」分别解决什么？为什么带来平移不变性？\n\n依据：Week 4 课程记录、课件 09。\n要求：大白话+类比；中文；标注来源；不要展开卷积公式。"
+    },
+    {
+      "id": "w4-conv-params",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "卷积核/步长/填充/通道",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请仅讲解：卷积操作中卷积核大小、步长、填充、输入/输出通道分别是什么？它们如何决定输出特征图尺寸？\n\n依据：Week 4 课程记录、课件 09。\n要求：每个参数给定义+直觉；若有尺寸公式请写出；中文；标注来源。"
+    },
+    {
+      "id": "w4-pooling",
+      "layer": "L2",
+      "priority": "important",
+      "title": "池化层",
+      "clear_conversation": true,
+      "prompt": "【单问·重要】请仅讲解：最大池化的作用是什么？反向传播时「赢者通吃」如何传递梯度？\n\n依据：Week 4 课程记录、课件 09。\n要求：中文；标注来源；可与平均池化简要对比。"
+    },
+    {
+      "id": "w4-feature-hierarchy",
+      "layer": "L1",
+      "priority": "normal",
+      "title": "CNN 特征层级",
+      "clear_conversation": true,
+      "prompt": "【单问·了解即可】请仅描述：CNN 从浅层到深层，特征如何从边缘→纹理→语义逐级抽象？可结合 LeNet-5。\n\n依据：Week 4 课程记录、课件 09。\n要求：中文；普通深度；标注来源。"
+    },
+    {
+      "id": "w4-conv-numeric",
+      "layer": "L3",
+      "priority": "important",
+      "title": "卷积手算数值例子",
+      "clear_conversation": true,
+      "prompt": "【单问·要数值】请仅给出一个 3×3 输入、2×2 卷积核、stride=1、无填充的 tiny 例子，手算输出特征图的每个值。\n\n依据：Week 4 课程记录、课件 09。\n要求：列出完整计算过程；中文；标注来源。"
+    },
+    {
+      "id": "w34-bridge",
+      "layer": "L4",
+      "priority": "important",
+      "title": "与 Week1-2 的知识衔接",
+      "clear_conversation": true,
+      "prompt": "【单问】请仅说明：Week 1-2 学的哪些概念（感知机、MLP、激活函数、梯度下降、Mini-batch）如何自然衔接到 Week 3 的 BP 和 Week 4 的 CNN？\n\n要求：中文；条目式；标注来源。"
+    },
+    {
+      "id": "w34-pj1-map",
+      "layer": "L4",
+      "priority": "important",
+      "title": "知识点与 PJ1 任务映射",
+      "clear_conversation": true,
+      "prompt": "【单问】请仅列出：Week 3-4 每个核心知识点对应 PJ1 的哪个具体任务要求（Part1 回归/分类/BP 实现，Part2 CNN 等）。\n\n依据：Week 3/4 记录、Project1 文档。\n要求：表格；中文；标注来源。"
+    },
+    {
+      "id": "w34-mistakes",
+      "layer": "L3",
+      "priority": "important",
+      "title": "Week3-4 易错点",
+      "clear_conversation": true,
+      "prompt": "【单问】请仅列出 Week 3-4 最易混淆的 5 组概念（如 z vs h、δ 含义、池化梯度、通道 vs 特征图等），每组：为什么易错、正确理解、记忆技巧。\n\n要求：对比表；中文；标注来源。"
+    },
+    {
+      "id": "w34-study-order",
+      "layer": "L4",
+      "priority": "important",
+      "title": "学习优先级",
+      "clear_conversation": true,
+      "prompt": "【单问】请仅给出：学习 Week 3-4 内容的推荐顺序和复习优先级（极高/高/中），面向准备 PJ1 的学生。\n\n要求：中文；条目式；标注来源。"
+    }
+  ]
+}

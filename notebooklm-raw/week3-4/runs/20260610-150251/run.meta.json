@@ -1,0 +1,12 @@
+{
+  "module": "week3-4",
+  "notebook_id": "505bdb1c",
+  "manifest": "notebooklm-raw/manifests/week3-4.json",
+  "run_dir": "notebooklm-raw/week3-4/runs/20260610-150251",
+  "started_at": "2026-06-10T07:19:26.565778+00:00",
+  "finished_at": "2026-06-10T15:30:00.000000+00:00",
+  "batches_total": 20,
+  "batches_completed": 20,
+  "status": "completed",
+  "note": "w34-pj1-map / w34-mistakes / w34-study-order 曾超时，已手工补采并合并；指南整合于 guides/AI-Week3-4-学习指南.md"
+}

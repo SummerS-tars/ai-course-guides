@@ -1,0 +1,186 @@
+[15:02:51] 模块: week3-4 | 批次数: 20 | 输出: /home/thesumst/development/ai/notebooklm-raw/week3-4/runs/20260610-150251
+[15:02:51] 同步认证…
+[15:02:51] 认证 OK
+[15:02:51] 选定 Notebook: 505bdb1c
+[15:02:55] --- batch 1/20: [L0] L0-positioning ---
+[15:02:55] 清空会话上下文 (notebooklm clear)
+[15:02:56] 提问 (145 字)…
+[15:03:38] 完成 L0-positioning (42.0s)
+[15:03:38] 等待 5.0s…
+[15:03:43] --- batch 2/20: [L1+L2] w3-gd-taylor ---
+[15:03:43] 清空会话上下文 (notebooklm clear)
+[15:03:43] 提问 (119 字)…
+[15:04:34] 完成 w3-gd-taylor (51.2s)
+[15:04:34] 等待 5.0s…
+[15:04:39] --- batch 3/20: [L1+L2] w3-z-vs-h ---
+[15:04:39] 清空会话上下文 (notebooklm clear)
+[15:04:39] 提问 (139 字)…
+[15:05:27] 完成 w3-z-vs-h (47.6s)
+[15:05:27] 等待 5.0s…
+[15:05:32] --- batch 4/20: [L2] w3-bp-regression ---
+[15:05:32] 清空会话上下文 (notebooklm clear)
+[15:05:32] 提问 (145 字)…
+[15:06:18] 完成 w3-bp-regression (46.1s)
+[15:06:18] 等待 5.0s…
+[15:06:20] --- batch 5/20: [L2] w3-bp-softmax-ce ---
+[15:06:20] 清空会话上下文 (notebooklm clear)
+[15:06:21] 提问 (159 字)…
+[15:07:11] 完成 w3-bp-softmax-ce (50.5s)
+[15:07:11] 等待 5.0s…
+[15:07:16] --- batch 6/20: [L2] w3-bp-hidden ---
+[15:07:16] 清空会话上下文 (notebooklm clear)
+[15:07:16] 提问 (121 字)…
+[15:08:02] 完成 w3-bp-hidden (45.4s)
+[15:08:02] 等待 5.0s…
+[15:08:07] --- batch 7/20: [L2] w3-training-loop ---
+[15:08:07] 清空会话上下文 (notebooklm clear)
+[15:08:07] 提问 (117 字)…
+[15:08:49] 完成 w3-training-loop (42.2s)
+[15:08:49] 等待 5.0s…
+[15:08:54] --- batch 8/20: [L3] w3-bp-numeric ---
+[15:08:54] 清空会话上下文 (notebooklm clear)
+[15:08:54] 提问 (130 字)…
+[15:09:42] 完成 w3-bp-numeric (47.4s)
+[15:09:42] 等待 5.0s…
+[15:09:47] --- batch 9/20: [L0] w4-pj1-overview ---
+[15:09:47] 清空会话上下文 (notebooklm clear)
+[15:09:47] 提问 (112 字)…
+[15:10:27] 完成 w4-pj1-overview (40.5s)
+[15:10:27] 等待 5.0s…
+[15:10:32] --- batch 10/20: [L1] w4-dl-history ---
+[15:10:32] 清空会话上下文 (notebooklm clear)
+[15:10:32] 提问 (111 字)…
+[15:11:17] 完成 w4-dl-history (44.6s)
+[15:11:17] 等待 5.0s…
+[15:11:19] --- batch 11/20: [L1+L2] w4-relu-resnet ---
+[15:11:19] 清空会话上下文 (notebooklm clear)
+[15:11:19] 提问 (102 字)…
+[15:12:07] 完成 w4-relu-resnet (47.5s)
+[15:12:07] 等待 5.0s…
+[15:12:12] --- batch 12/20: [L1] w4-cnn-motivation ---
+[15:12:12] 清空会话上下文 (notebooklm clear)
+[15:12:12] 提问 (116 字)…
+[15:12:58] 完成 w4-cnn-motivation (46.2s)
+[15:12:58] 等待 5.0s…
+[15:13:03] --- batch 13/20: [L2] w4-conv-params ---
+[15:13:03] 清空会话上下文 (notebooklm clear)
+[15:13:03] 提问 (112 字)…
+[15:13:48] 完成 w4-conv-params (45.0s)
+[15:13:48] 等待 5.0s…
+[15:13:53] --- batch 14/20: [L2] w4-pooling ---
+[15:13:53] 清空会话上下文 (notebooklm clear)
+[15:13:54] 提问 (87 字)…
+[15:14:38] 完成 w4-pooling (44.1s)
+[15:14:38] 等待 5.0s…
+[15:14:43] --- batch 15/20: [L1] w4-feature-hierarchy ---
+[15:14:43] 清空会话上下文 (notebooklm clear)
+[15:14:43] 提问 (95 字)…
+[15:15:16] 失败 w4-feature-hierarchy (32.6s): notebooklm ask 失败 (exit 1):
+stdout:
+Matched: 505bdb1c-003... (AI Notebook)
+{
+  "error": true,
+  "code": "ERROR",
+  "message": "Chat request timed out: "
+}
+
+stderr:
+
+[15:15:16] 运行中止: notebooklm ask 失败 (exit 1):
+stdout:
+Matched: 505bdb1c-003... (AI Notebook)
+{
+  "error": true,
+  "code": "ERROR",
+  "message": "Chat request timed out: "
+}
+
+stderr:
+
+[15:15:44] 模块: week3-4 | 批次数: 20 | 输出: /home/thesumst/development/ai/notebooklm-raw/week3-4/runs/20260610-150251
+[15:15:44] 同步认证…
+[15:15:44] 认证 OK
+[15:15:44] 选定 Notebook: 505bdb1c
+[15:15:45] 跳过已完成 batch 1/20: L0-positioning
+[15:15:45] 跳过已完成 batch 2/20: w3-gd-taylor
+[15:15:45] 跳过已完成 batch 3/20: w3-z-vs-h
+[15:15:45] 跳过已完成 batch 4/20: w3-bp-regression
+[15:15:45] 跳过已完成 batch 5/20: w3-bp-softmax-ce
+[15:15:45] 跳过已完成 batch 6/20: w3-bp-hidden
+[15:15:45] 跳过已完成 batch 7/20: w3-training-loop
+[15:15:45] 跳过已完成 batch 8/20: w3-bp-numeric
+[15:15:45] 跳过已完成 batch 9/20: w4-pj1-overview
+[15:15:45] 跳过已完成 batch 10/20: w4-dl-history
+[15:15:45] 跳过已完成 batch 11/20: w4-relu-resnet
+[15:15:45] 跳过已完成 batch 12/20: w4-cnn-motivation
+[15:15:45] 跳过已完成 batch 13/20: w4-conv-params
+[15:15:45] 跳过已完成 batch 14/20: w4-pooling
+[15:15:45] --- batch 15/20: [L1] w4-feature-hierarchy ---
+[15:15:45] 清空会话上下文 (notebooklm clear)
+[15:15:46] 提问 (95 字)…
+[15:16:34] 完成 w4-feature-hierarchy (48.7s)
+[15:16:34] 等待 5.0s…
+[15:16:39] --- batch 16/20: [L3] w4-conv-numeric ---
+[15:16:39] 清空会话上下文 (notebooklm clear)
+[15:16:39] 提问 (108 字)…
+[15:17:18] 完成 w4-conv-numeric (39.0s)
+[15:17:18] 等待 5.0s…
+[15:17:23] --- batch 17/20: [L4] w34-bridge ---
+[15:17:23] 清空会话上下文 (notebooklm clear)
+[15:17:24] 提问 (106 字)…
+[15:18:15] 完成 w34-bridge (52.0s)
+[15:18:15] 等待 5.0s…
+[15:18:20] --- batch 18/20: [L4] w34-pj1-map ---
+[15:18:20] 清空会话上下文 (notebooklm clear)
+[15:18:21] 提问 (117 字)…
+[15:18:53] 失败 w34-pj1-map (32.1s): notebooklm ask 失败 (exit 1):
+stdout:
+Matched: 505bdb1c-003... (AI Notebook)
+{
+  "error": true,
+  "code": "ERROR",
+  "message": "Chat request timed out: "
+}
+
+stderr:
+
+[15:18:53] 运行中止: notebooklm ask 失败 (exit 1):
+stdout:
+Matched: 505bdb1c-003... (AI Notebook)
+{
+  "error": true,
+  "code": "ERROR",
+  "message": "Chat request timed out: "
+}
+
+stderr:
+
+[15:19:26] 模块: week3-4 | 批次数: 3 | 输出: /home/thesumst/development/ai/notebooklm-raw/week3-4/runs/20260610-150251
+[15:19:26] 同步认证…
+[15:19:26] 认证 OK
+[15:19:26] 选定 Notebook: 505bdb1c
+[15:19:30] --- batch 1/3: [L4] w34-pj1-map ---
+[15:19:30] 清空会话上下文 (notebooklm clear)
+[15:19:30] 提问 (117 字)…
+[15:20:03] 失败 w34-pj1-map (32.3s): notebooklm ask 失败 (exit 1):
+stdout:
+Matched: 505bdb1c-003... (AI Notebook)
+{
+  "error": true,
+  "code": "ERROR",
+  "message": "Chat request timed out: "
+}
+
+stderr:
+
+[15:20:03] 运行中止: notebooklm ask 失败 (exit 1):
+stdout:
+Matched: 505bdb1c-003... (AI Notebook)
+{
+  "error": true,
+  "code": "ERROR",
+  "message": "Chat request timed out: "
+}
+
+stderr:
+

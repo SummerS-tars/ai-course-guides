@@ -1,4 +1,8 @@
-# Week 3–4 子主题地图（Agent 预拆分，待 NotebookLM L0 校验）
+# Week 3–4 子主题地图（20 批采集完成）
+
+> **Skill**：`.cursor/skills/ai-course-notebooklm/SKILL.md`  
+> **整合前置**：`knowledge-graph.md`  
+> **学习指南**：`guides/AI-Week3-4-学习指南.md`
 
 > **模块**：反向传播 + CNN + PJ1  
 > **原则**：一次 chat 只专注一个问题；`clear_conversation: true` 于每个 batch  
