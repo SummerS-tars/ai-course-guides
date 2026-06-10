@@ -4,7 +4,7 @@
 > **覆盖周次**：Week 3（2026-03-04）+ Week 4（2026-03-05）  
 > **原始采集**：`notebooklm-raw/week3-4/runs/20260610-150251/`（20 批单问单答）  
 > **知识图谱**：`notebooklm-raw/week3-4/knowledge-graph.md`（整合前置，含 raw 映射）  
-> **整合规范**：`guides/学习指南整合规范.md`  
+> **Skill**：`.cursor/skills/ai-course-notebooklm/SKILL.md`  
 > **生成日期**：2026-06-10（v2：叙事重构；v2.1：补 mermaid）
 
 ---
@@ -638,7 +638,7 @@ CNN 越深，提取的特征越抽象：
 - 「请用更直观的方式解释 Softmax+CE 化简为 $y_k - t_k$ 的每一步」
 - 「请给 $3 \times 3$ 卷积、padding=1、stride=1 的完整手算例子」
 
-追加后运行：`python scripts/nlm-collect.py notebooklm-raw/manifests/week3-4.json --only supplement-xxx`
+追加后运行：`python .cursor/skills/ai-course-notebooklm/scripts/nlm-collect.py notebooklm-raw/manifests/week3-4.json --only supplement-xxx`
 
 ---
 

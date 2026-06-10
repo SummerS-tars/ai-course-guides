@@ -48,7 +48,7 @@ Week3 能训练 MLP 了 → 图像怎么办？PJ1 Part2？
 认证恢复后先跑：
 
 ```bash
-python scripts/nlm-collect.py notebooklm-raw/manifests/week3-4-discovery.json
+python .cursor/skills/ai-course-notebooklm/scripts/nlm-collect.py notebooklm-raw/manifests/week3-4-discovery.json
 ```
 
 对比 `L0-subtopic-map.answer.md` 与本表，增删 batch 后再跑完整 manifest。
