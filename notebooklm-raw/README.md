@@ -15,21 +15,36 @@
 ```
 notebooklm-raw/
 ├── README.md
-├── manifests/              # 采集计划（JSON）
-│   └── week1-2.json
+├── manifests/              # 采集计划（JSON）→ ✅ git
+│   └── week3-4.json
 └── week3-4/                # 按模块名
-    ├── knowledge-graph.md      # Phase 1.5：通读 raw 后的认知图谱（整合前置）
-    ├── topics-map.md
+    ├── knowledge-graph.md      # Phase 1.5 认知图谱 → ✅ git
+    ├── topics-map.md           # → ✅ git
     └── runs/
-        └── 20260609-120000/    # 每次运行一个时间戳目录
-            ├── run.meta.json       # 运行元数据、批次状态
-            ├── run.log             # 文本日志
-            ├── manifest.snapshot.json
-            ├── L0-positioning.prompt.txt
-            ├── L0-positioning.answer.md
-            ├── L0-positioning.answer.json
-            └── ...
+        └── 20260610-150251/    # canonical run（已完成的正式采集）
+            ├── run.meta.json       # ✅ git
+            ├── run.log             # ✅ git
+            ├── manifest.snapshot.json  # ✅ git
+            ├── L0-positioning.prompt.txt   # ✅ git
+            ├── L0-positioning.answer.md    # ✅ git（整合主素材）
+            └── L0-positioning.answer.json  # ❌ gitignore（体积大、与 .md 重复）
 ```
+
+## Git 版本管理策略
+
+| 纳入 git | 不纳入 git |
+|----------|-----------|
+| `manifests/*.json` | `**/*.answer.json`（含完整 citations，约为 .md 的 60 倍） |
+| `knowledge-graph.md`、`topics-map.md` | 已合并的冗余/失败 run 目录 |
+| `runs/<canonical>/*.prompt.txt` | 进行中的 scratch run（`runs/_*/`） |
+| `runs/<canonical>/*.answer.md` | |
+| `run.meta.json`、`manifest.snapshot.json`、`run.log` | |
+
+**原则**：`.answer.md` 是 Agent 整合的唯一必要原始素材；`.answer.json` 仅在本地调试引用链路时需要，可随时 `--resume` 重采。
+
+**Week 3-4 正式 run**：`week3-4/runs/20260610-150251/`（20/20 完成）。失败或已合并的临时 run 应直接删除，不写入 gitignore。
+
+详见仓库根目录 `.gitignore`。
 
 ## 采集脚本
 
@@ -37,21 +52,31 @@ notebooklm-raw/
 cd ~/development/ai
 
 # 预览计划（不调用 API）
-python scripts/nlm-collect.py notebooklm-raw/manifests/week1-2.json --dry-run
+python scripts/nlm-collect.py notebooklm-raw/manifests/week3-4.json --dry-run
 
-# 完整采集
-python scripts/nlm-collect.py notebooklm-raw/manifests/week1-2.json
+# 完整采集（默认失败继续、每 batch 最多重试 3 次、HTTP 超时 120s）
+python scripts/nlm-collect.py notebooklm-raw/manifests/week3-4.json --delay 8
 
-# 只跑某一批
-python scripts/nlm-collect.py notebooklm-raw/manifests/week1-2.json --only L0-positioning
+# 续跑 canonical run（以 .answer.md 判定已完成）
+python scripts/nlm-collect.py notebooklm-raw/manifests/week3-4.json \
+  --resume notebooklm-raw/week3-4/runs/20260610-150251
 
-# 失败后续跑（跳过已有 .answer.json）
-python scripts/nlm-collect.py notebooklm-raw/manifests/week1-2.json \
-  --resume notebooklm-raw/week1-2/runs/20260609-120000
+# 补采指定 batch（未写 --resume 时自动找最新未完成 run）
+python scripts/nlm-collect.py notebooklm-raw/manifests/week3-4.json \
+  --only w34-mistakes --resume notebooklm-raw/week3-4/runs/20260610-150251
 
-# 批次间多等几秒（默认 3s）
-python scripts/nlm-collect.py notebooklm-raw/manifests/week1-2.json --delay 5
+# 合并补采目录到 canonical run
+python scripts/nlm-collect.py merge-runs \
+  notebooklm-raw/week3-4/runs/<补采run> \
+  notebooklm-raw/week3-4/runs/20260610-150251
+
+# 遇错即停（调试用）
+python scripts/nlm-collect.py ... --fail-fast
 ```
+
+**关键参数**：`--nlm-timeout 120`（notebooklm-py HTTP 读超时）、`--retries 3`、`--retry-base-delay 15`（指数退避）
+
+**完成标志**：`runs/latest` → 最近 `completed` run 的符号链接
 
 ### 前置条件
 
