@@ -1,6 +1,6 @@
 {
   "module": "weekX-Y",
-  "notebook_id": "505bdb1c",
+  "notebook_id": "505bdb1c-0034-4e14-89df-0b14bf3fc723",
   "description": "Week X-Y：<主题>（单问单答，每 batch 新对话）",
   "workflow": "v3-one-question-per-chat",
   "sources_hint": [

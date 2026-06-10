@@ -9,7 +9,7 @@ description: >-
 # AI 课程 × NotebookLM 学习 Skill
 
 > **课程**：CS30057h.01 人工智能（H）  
-> **Notebook**：`505bdb1c`  
+> **Notebook**：`505bdb1c-0034-4e14-89df-0b14bf3fc723`（须用完整 UUID；短前缀在 Python API 下会 RPC 失败）  
 > **仓库根**：含 `notebooklm-raw/` 与 `guides/` 的项目目录
 
 ## 何时启用

@@ -1,6 +1,6 @@
 {
   "module": "week5-6",
-  "notebook_id": "505bdb1c",
+  "notebook_id": "505bdb1c-0034-4e14-89df-0b14bf3fc723",
   "description": "Week 5-6：序列建模 HMM/CRF → 词嵌入/早期 DL（单问单答，每 batch 新对话）",
   "workflow": "v3-one-question-per-chat",
   "sources_hint": [

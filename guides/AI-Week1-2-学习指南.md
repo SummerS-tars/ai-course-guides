@@ -534,4 +534,4 @@ Week 1-2                    Week 3                     Week 4
 
 ---
 
-*本指南由 NotebookLM（AI Notebook `505bdb1c`）分层问答生成，Agent 审核整合。规则见 `.cursor/rules/ai-notebooklm-learning.mdc`。*
+*本指南由 NotebookLM（AI Notebook `505bdb1c-0034-4e14-89df-0b14bf3fc723`）分层问答生成，Agent 审核整合。规则见 `.cursor/rules/ai-notebooklm-learning.mdc`。*

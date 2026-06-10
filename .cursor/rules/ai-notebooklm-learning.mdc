@@ -17,7 +17,7 @@ globs: guides/**,notebooklm-raw/**,.cursor/skills/ai-course-notebooklm/**
 | 项 | 值 |
 |----|-----|
 | 课程 | CS30057h.01 人工智能（H） |
-| Notebook | `505bdb1c` |
+| Notebook | `505bdb1c-0034-4e14-89df-0b14bf3fc723` |
 | 周次索引 | `guides/AI课程-14周内容梳理.md` |
 | 采集脚本 | `.cursor/skills/ai-course-notebooklm/scripts/nlm-collect.py` |
 | 原始数据 | `notebooklm-raw/` |
