@@ -1,0 +1,195 @@
+{
+  "module": "week5-6",
+  "notebook_id": "505bdb1c",
+  "manifest": "notebooklm-raw/manifests/week5-6.json",
+  "run_dir": "notebooklm-raw/week5-6/runs/20260610-170247",
+  "started_at": "2026-06-10T09:02:47.346612+00:00",
+  "finished_at": "2026-06-10T10:00:16.578832+00:00",
+  "batches_total": 22,
+  "batches_completed": 0,
+  "batches_ok": 0,
+  "batches_skipped": 0,
+  "batches_failed": 22,
+  "batches_pending": 0,
+  "batches": [
+    {
+      "id": "w5-viterbi",
+      "layer": "L2",
+      "status": "error",
+      "error_kind": "auth",
+      "error": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flogin%3Fcontinue%3Dhttps%3A%2F%2Fnotebooklm.google.com%2F&dsh=S-1743338501%3A1781082192848228&followup=https%3A%2F%2Fnotebooklm.google.com%2Flogin%3Fcontinue%3Dhttps%3A%2F%2Fnotebooklm.google.com%2F&osid=1&passive=1209600&flowName=WebLiteSignIn&flowEntry=ServiceLogin&ifkv=AcDsRvxO8PEoSWd0YtKtfD8Qjtu20CJxJ6SrZgOd462eZXidXISdmx_mVTw1u33bUY4OSnx6rCYa\nRun 'notebooklm login' to re-authenticate.",
+      "elapsed_seconds": 3.44
+    },
+    {
+      "id": "w6-hmm-generative",
+      "layer": "L1+L2",
+      "status": "error",
+      "error_kind": "auth",
+      "error": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flogin%3Fcontinue%3Dhttps%3A%2F%2Fnotebooklm.google.com%2F&dsh=S-13392802%3A1781082244316716&followup=https%3A%2F%2Fnotebooklm.google.com%2Flogin%3Fcontinue%3Dhttps%3A%2F%2Fnotebooklm.google.com%2F&osid=1&passive=1209600&flowName=WebLiteSignIn&flowEntry=ServiceLogin&ifkv=AcDsRvxLicPS2-loi32M9McP7gJd0t1vwIKEq84h8TnXb8Eed3xKVf2MjzN2ctA4kWXqQ7l7N7xtxQ\nRun 'notebooklm login' to re-authenticate.",
+      "elapsed_seconds": 3.31
+    },
+    {
+      "id": "w6-hmm-vs-crf",
+      "layer": "L2+L3",
+      "status": "error",
+      "error_kind": "auth",
+      "error": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flogin%3Fcontinue%3Dhttps%3A%2F%2Fnotebooklm.google.com%2F&dsh=S-13392802%3A1781082300688854&followup=https%3A%2F%2Fnotebooklm.google.com%2Flogin%3Fcontinue%3Dhttps%3A%2F%2Fnotebooklm.google.com%2F&osid=1&passive=1209600&flowName=WebLiteSignIn&flowEntry=ServiceLogin&ifkv=AcDsRvx95GsRW0Qh2KKrPvOcQ7FreYr1cewMEiIRWsLfawkmqONKk9EP4Y45uopsPeIAZ8THDK-LSA\nRun 'notebooklm login' to re-authenticate.",
+      "elapsed_seconds": 44.18
+    },
+    {
+      "id": "w6-window-network",
+      "layer": "L2",
+      "status": "error",
+      "error_kind": "auth",
+      "error": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flogin%3Fcontinue%3Dhttps%3A%2F%2Fnotebooklm.google.com%2F&dsh=S-1912358389%3A1781082307059824&followup=https%3A%2F%2Fnotebooklm.google.com%2Flogin%3Fcontinue%3Dhttps%3A%2F%2Fnotebooklm.google.com%2F&osid=1&passive=1209600&flowName=WebLiteSignIn&flowEntry=ServiceLogin&ifkv=AcDsRvyw6Y5IC-H3UvoQ81Au2fKUfenEHa5it80EDgWRxmRuZ36kn9EbY_wi9MjXKKF1MMo8WbagDA\nRun 'notebooklm login' to re-authenticate.",
+      "elapsed_seconds": 3.44
+    },
+    {
+      "id": "w6-to-rnn",
+      "layer": "L1",
+      "status": "error",
+      "error_kind": "auth",
+      "error": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flogin%3Fcontinue%3Dhttps%3A%2F%2Fnotebooklm.google.com%2F&dsh=S-1743338501%3A1781082313254602&followup=https%3A%2F%2Fnotebooklm.google.com%2Flogin%3Fcontinue%3Dhttps%3A%2F%2Fnotebooklm.google.com%2F&osid=1&passive=1209600&flowName=WebLiteSignIn&flowEntry=ServiceLogin&ifkv=AcDsRvxlCnh7Od2GTFa_u2NHk6g0hwBf0N0u-Gp5z4laTqpAMwFUvli5lmWOLPQZgOYzBnLRJcLpyw\nRun 'notebooklm login' to re-authenticate.",
+      "elapsed_seconds": 3.3
+    },
+    {
+      "id": "w56-mistakes",
+      "layer": "L3",
+      "status": "error",
+      "error_kind": "auth",
+      "error": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flogin%3Fcontinue%3Dhttps%3A%2F%2Fnotebooklm.google.com%2F&dsh=S405926960%3A1781082322618065&followup=https%3A%2F%2Fnotebooklm.google.com%2Flogin%3Fcontinue%3Dhttps%3A%2F%2Fnotebooklm.google.com%2F&osid=1&passive=1209600&flowName=WebLiteSignIn&flowEntry=ServiceLogin&ifkv=AcDsRvxcreVKelX41e6jHU_S3exC608Za-aKbBot1hkFUEwNlXDYNBL-itqtAPs0dgdHIT6cL567-Q\nRun 'notebooklm login' to re-authenticate.",
+      "elapsed_seconds": 0.77
+    },
+    {
+      "id": "L0-positioning",
+      "layer": "L0",
+      "status": "error",
+      "error_kind": "unknown",
+      "error": "RPC rLM1Ne returned null result data (possible server error or parameter mismatch)",
+      "elapsed_seconds": 106.47
+    },
+    {
+      "id": "w5-seq-challenges",
+      "layer": "L1",
+      "status": "error",
+      "error_kind": "unknown",
+      "error": "RPC rLM1Ne returned null result data (possible server error or parameter mismatch)",
+      "elapsed_seconds": 108.42
+    },
+    {
+      "id": "w5-markov-hmm-intro",
+      "layer": "L1+L2",
+      "status": "error",
+      "error_kind": "unknown",
+      "error": "RPC rLM1Ne returned null result data (possible server error or parameter mismatch)",
+      "elapsed_seconds": 106.65
+    },
+    {
+      "id": "w5-hmm-five-tuple",
+      "layer": "L2",
+      "status": "error",
+      "error_kind": "unknown",
+      "error": "RPC rLM1Ne returned null result data (possible server error or parameter mismatch)",
+      "elapsed_seconds": 108.11
+    },
+    {
+      "id": "w5-hmm-three-problems",
+      "layer": "L2",
+      "status": "error",
+      "error_kind": "unknown",
+      "error": "RPC rLM1Ne returned null result data (possible server error or parameter mismatch)",
+      "elapsed_seconds": 103.41
+    },
+    {
+      "id": "w5-forward-algo",
+      "layer": "L2",
+      "status": "error",
+      "error_kind": "unknown",
+      "error": "RPC rLM1Ne returned null result data (possible server error or parameter mismatch)",
+      "elapsed_seconds": 105.95
+    },
+    {
+      "id": "w5-backward-algo",
+      "layer": "L2",
+      "status": "error",
+      "error_kind": "unknown",
+      "error": "RPC rLM1Ne returned null result data (possible server error or parameter mismatch)",
+      "elapsed_seconds": 103.44
+    },
+    {
+      "id": "w5-baum-welch",
+      "layer": "L2",
+      "status": "error",
+      "error_kind": "unknown",
+      "error": "RPC rLM1Ne returned null result data (possible server error or parameter mismatch)",
+      "elapsed_seconds": 104.59
+    },
+    {
+      "id": "w5-forward-numeric",
+      "layer": "L3",
+      "status": "error",
+      "error_kind": "unknown",
+      "error": "RPC rLM1Ne returned null result data (possible server error or parameter mismatch)",
+      "elapsed_seconds": 104.12
+    },
+    {
+      "id": "w6-crf-intro",
+      "layer": "L2",
+      "status": "error",
+      "error_kind": "unknown",
+      "error": "RPC rLM1Ne returned null result data (possible server error or parameter mismatch)",
+      "elapsed_seconds": 111.28
+    },
+    {
+      "id": "w6-crf-features",
+      "layer": "L2",
+      "status": "error",
+      "error_kind": "unknown",
+      "error": "RPC rLM1Ne returned null result data (possible server error or parameter mismatch)",
+      "elapsed_seconds": 103.6
+    },
+    {
+      "id": "w6-word-embedding",
+      "layer": "L1+L2",
+      "status": "error",
+      "error_kind": "unknown",
+      "error": "RPC rLM1Ne returned null result data (possible server error or parameter mismatch)",
+      "elapsed_seconds": 106.03
+    },
+    {
+      "id": "w6-early-dl-limits",
+      "layer": "L1+L2",
+      "status": "error",
+      "error_kind": "unknown",
+      "error": "RPC rLM1Ne returned null result data (possible server error or parameter mismatch)",
+      "elapsed_seconds": 103.2
+    },
+    {
+      "id": "w56-bridge-w34",
+      "layer": "L4",
+      "status": "error",
+      "error_kind": "unknown",
+      "error": "RPC rLM1Ne returned null result data (possible server error or parameter mismatch)",
+      "elapsed_seconds": 103.95
+    },
+    {
+      "id": "w56-project",
+      "layer": "L4",
+      "status": "error",
+      "error_kind": "unknown",
+      "error": "RPC rLM1Ne returned null result data (possible server error or parameter mismatch)",
+      "elapsed_seconds": 106.21
+    },
+    {
+      "id": "w56-study-order",
+      "layer": "L4",
+      "status": "error",
+      "error_kind": "unknown",
+      "error": "RPC rLM1Ne returned null result data (possible server error or parameter mismatch)",
+      "elapsed_seconds": 103.24
+    }
+  ],
+  "status": "failed",
+  "total_elapsed_seconds": 1692.51,
+  "total_retry_count": 0
+}

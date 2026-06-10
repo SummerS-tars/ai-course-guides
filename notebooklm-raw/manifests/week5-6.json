@@ -1,0 +1,191 @@
+{
+  "module": "week5-6",
+  "notebook_id": "505bdb1c-0034-4e14-89df-0b14bf3fc723",
+  "description": "Week 5-6：序列建模 HMM/CRF → 词嵌入/早期 DL（单问单答，每 batch 新对话）",
+  "workflow": "v3-one-question-per-chat",
+  "sources_hint": [
+    "笔记-week05-周五-AI",
+    "笔记-week06-周五-AI",
+    "课件09-Deep-Learning",
+    "课件05-Uncertainty",
+    "PJ2-作业说明"
+  ],
+  "batches": [
+    {
+      "id": "L0-positioning",
+      "layer": "L0",
+      "priority": "critical",
+      "title": "Week5-6 在课程中的位置",
+      "clear_conversation": true,
+      "prompt": "【单问】请仅回答：Week 5 和 Week 6 在 AI(H) 课程中分别解决什么核心问题？它们与 Week 3-4（BP/CNN）以及后续 Week 7+（RNN/生成模型/Transformer）如何衔接？\n\n依据：Week 5/6 课程记录、课件 09。\n要求：中文；3-5 段即可；每点标注来源；不要展开具体公式。"
+    },
+    {
+      "id": "w5-seq-challenges",
+      "layer": "L1",
+      "priority": "important",
+      "title": "序列建模三大难点",
+      "clear_conversation": true,
+      "prompt": "【单问·重要】请仅讲解：序列建模相比静态分类，面临哪三大难点（可变长度、长程依赖、多周期信号等）？各举一个直觉例子（如中文分词、语音识别）。\n\n依据：Week 5 课程记录、课件 09。\n要求：大白话+类比；中文；标注来源；不要讲 HMM 公式。"
+    },
+    {
+      "id": "w5-markov-hmm-intro",
+      "layer": "L1+L2",
+      "priority": "critical",
+      "title": "马尔可夫性与 HMM 直觉",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请仅讲解：什么是马尔可夫性（无后效性）？隐马尔可夫模型中「隐状态」和「观测」分别代表什么？用天气-雨伞或 POS 标注举一个通俗例子。\n\n依据：Week 5 课程记录、课件 09、课件 05。\n要求：中文；标注来源；不要展开三问题算法。"
+    },
+    {
+      "id": "w5-hmm-five-tuple",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "HMM 五元组",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请仅讲解：HMM 五元组 λ = (S, O, π, A, B) 中每一项的含义、矩阵维度、以及它们如何共同定义一个生成过程。\n\n依据：Week 5 课程记录、课件 09。\n要求：符号表；中文；标注来源；不要同时讲前向算法。"
+    },
+    {
+      "id": "w5-hmm-three-problems",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "HMM 三问题概览",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请仅说明：HMM 的三个基本问题——评估（Likelihood）、解码（Decoding）、学习（Learning）——各自输入输出是什么、对应什么算法名称、解决什么实际任务（如算句子概率、找最优标签序列、从数据估参）。\n\n依据：Week 5 课程记录、课件 09。\n要求：表格或条目；中文；标注来源；不要展开 DP 递推细节（留给后续单问）。"
+    },
+    {
+      "id": "w5-forward-algo",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "前向算法",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请仅推导/讲解：前向算法如何动态规划求解评估问题 P(O|λ)？给出 α_t(i) 的定义、递推公式、初始化与终止，并说明复杂度为何是 O(N²T)。\n\n依据：Week 5 课程记录、课件 09。\n要求：逐步写清；中文；标注来源；不要同时讲后向或 Baum-Welch。"
+    },
+    {
+      "id": "w5-backward-algo",
+      "layer": "L2",
+      "priority": "important",
+      "title": "后向算法",
+      "clear_conversation": true,
+      "prompt": "【单问·重要】请仅讲解：后向算法中 β_t(i) 的定义、递推公式，以及它与前向算法的关系（为何学习问题需要两者）。\n\n依据：Week 5/6 课程记录、课件 09。\n要求：中文；标注来源；不要展开 Baum-Welch 完整推导。"
+    },
+    {
+      "id": "w5-viterbi",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "Viterbi 解码",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请仅讲解：Viterbi 算法如何求解解码问题（找最可能隐状态序列）？给出 δ_t(i) 和 ψ_t(i) 的含义、递推与回溯步骤，并与前向算法的「求和 vs 取 max」对比。\n\n依据：Week 5/6 课程记录、课件 09。\n要求：中文；标注来源；不要讲 Baum-Welch。"
+    },
+    {
+      "id": "w5-baum-welch",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "Baum-Welch / EM 学习",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请仅讲解：Baum-Welch 算法（EM）如何在仅有观测序列时更新 π、A、B？说明 E 步（期望占用）和 M 步（重估）的直觉，以及为何需要前向-后向概率。\n\n依据：Week 5/6 课程记录、课件 09。\n要求：直觉优先，关键公式可列；中文；标注来源；这是本模块最难之一，不要同时讲 CRF。"
+    },
+    {
+      "id": "w5-forward-numeric",
+      "layer": "L3",
+      "priority": "important",
+      "title": "前向算法数值例子",
+      "clear_conversation": true,
+      "prompt": "【单问·要数值】请仅给出一个尽可能小的 HMM（如 2 状态、2 观测符号、T=3），手算前向概率 α_t(i) 并得到 P(O|λ)。\n\n依据：Week 5 课程记录、课件 09。\n要求：列出完整数值步骤；中文；标注来源。"
+    },
+    {
+      "id": "w6-hmm-generative",
+      "layer": "L1+L2",
+      "priority": "important",
+      "title": "HMM 作为生成模型",
+      "clear_conversation": true,
+      "prompt": "【单问·重要】请仅讲解：HMM 为何是生成模型 P(X,Y)？什么是「局部归一化」带来的标注偏差（label bias）直觉？\n\n依据：Week 6 课程记录、课件 09。\n要求：中文；标注来源；不要展开 CRF 公式细节（留给下一问）。"
+    },
+    {
+      "id": "w6-crf-intro",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "CRF 判别模型",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请仅讲解：线性链 CRF 如何建模 P(Y|X)？为何它是判别模型、如何直接优化标注任务？与 HMM 的生成式思路有何根本区别？\n\n依据：Week 6 课程记录、课件 09。\n要求：中文；标注来源；不要同时讲特征工程细节。"
+    },
+    {
+      "id": "w6-crf-features",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "CRF 特征与全局归一化",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请仅讲解：CRF 中特征函数 φ_k(y_{t-1}, y_t, X, t) 是什么？全局归一化 Z(X) 的作用？为何能缓解 HMM 的局部归一化问题？\n\n依据：Week 6 课程记录、课件 09。\n要求：中文；符号表；标注来源；不要讲深度学习部分。"
+    },
+    {
+      "id": "w6-hmm-vs-crf",
+      "layer": "L2+L3",
+      "priority": "critical",
+      "title": "HMM vs CRF 对比",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请仅用对比表说明：HMM 与 CRF 在模型类型、归一化方式、特征来源、典型优缺点、适用场景上的差异。\n\n依据：Week 6 课程记录、课件 09。\n要求：表格；中文；标注来源。"
+    },
+    {
+      "id": "w6-word-embedding",
+      "layer": "L1+L2",
+      "priority": "important",
+      "title": "词嵌入与分布式表征",
+      "clear_conversation": true,
+      "prompt": "【单问·重要】请仅讲解：为何 one-hot 不够好？词嵌入（Word2Vec 等直觉）如何实现「分布式表征」？与 CRF 手工特征工程的关系是什么？\n\n依据：Week 6 课程记录、课件 09、花书相关章节。\n要求：直觉优先；中文；标注来源；不要展开 Transformer。"
+    },
+    {
+      "id": "w6-window-network",
+      "layer": "L2",
+      "priority": "important",
+      "title": "窗口序列标注网络",
+      "clear_conversation": true,
+      "prompt": "【单问·重要】请仅讲解：早期深度学习如何做序列标注？「固定窗口拼接词向量 → 全连接 → Softmax」的结构是什么？训练如何用反向传播？\n\n依据：Week 6 课程记录、课件 09。\n要求：中文；标注来源；可与中文分词/NER 举例。"
+    },
+    {
+      "id": "w6-early-dl-limits",
+      "layer": "L1+L2",
+      "priority": "important",
+      "title": "早期序列 DL 的局限",
+      "clear_conversation": true,
+      "prompt": "【单问·重要】请仅说明：窗口模型和早期前馈序列网络有哪些局限（未建模标签依赖、固定窗口、长程依赖等）？这些局限如何自然引出 RNN/LSTM？\n\n依据：Week 6 课程记录、课件 09。\n要求：中文；标注来源；3-5 段即可。"
+    },
+    {
+      "id": "w6-to-rnn",
+      "layer": "L1",
+      "priority": "normal",
+      "title": "通向 RNN/LSTM/Transformer",
+      "clear_conversation": true,
+      "prompt": "【单问·了解即可】请仅概述：从 Week 6 的窗口模型到 RNN/LSTM，再到 Transformer，课程叙事上各解决什么问题？\n\n依据：Week 6 课程记录、课件 09。\n要求：中文；普通深度；标注来源；不要展开具体公式。"
+    },
+    {
+      "id": "w56-bridge-w34",
+      "layer": "L4",
+      "priority": "important",
+      "title": "与 Week3-4 的知识衔接",
+      "clear_conversation": true,
+      "prompt": "【单问】请仅说明：Week 3-4 学的 BP、Softmax、CNN 等概念，如何自然衔接到 Week 5-6 的 HMM/CRF 和早期序列 DL？\n\n要求：中文；条目式；标注来源。"
+    },
+    {
+      "id": "w56-project",
+      "layer": "L4",
+      "priority": "important",
+      "title": "Project 与手写实现要求",
+      "clear_conversation": true,
+      "prompt": "【单问·重要】请仅根据课程记录和 Project 相关文档，说明：本阶段 Project（手写 HMM、CRF 及 DL 模型对比）有哪些具体要求、禁止什么、评分侧重什么？\n\n依据：Week 5/6 课程记录、PJ2 或序列标注 Project 文档。\n要求：中文；表格或条目；标注来源；若文档不明确请如实说明。"
+    },
+    {
+      "id": "w56-mistakes",
+      "layer": "L3",
+      "priority": "important",
+      "title": "Week5-6 易错点",
+      "clear_conversation": true,
+      "prompt": "【单问】请仅列出 Week 5-6 最易混淆的 5 组概念（如评估 vs 解码、前向求和 vs Viterbi 取 max、生成 vs 判别、局部 vs 全局归一化、HMM 发射 vs CRF 特征等），每组：为什么易错、正确理解、记忆技巧。\n\n要求：对比表；中文；标注来源。"
+    },
+    {
+      "id": "w56-study-order",
+      "layer": "L4",
+      "priority": "important",
+      "title": "学习优先级",
+      "clear_conversation": true,
+      "prompt": "【单问】请仅给出：学习 Week 5-6 内容的推荐顺序和复习优先级（极高/高/中），面向准备手写 HMM/CRF 和序列标注的学生。\n\n要求：中文；条目式；标注来源。"
+    }
+  ]
+}
