@@ -6,8 +6,8 @@ globs: guides/**,**/1_人工智能H/**
 
 # AI 课程 × NotebookLM 学习规则
 
-> **版本**：v2（2026-06-09，经 Week 1–2 指南迭代验证）  
-> **标杆范例**：`guides/AI-Week1-2-学习指南.md`
+> **版本**：v3（2026-06-10，单问单答 + 脚本落盘）  
+> **标杆范例**：`guides/AI-Week1-2-学习指南.md`（整合层）；`notebooklm-raw/manifests/week3-4.json`（采集层）
 
 ## 适用范围
 
@@ -51,9 +51,36 @@ Phase 5  定稿         Checklist 全过，用户确认
 2. `notebooklm source list` 与本地对齐，确认 Notebook 已收录
 3. 标注缺失周次（如 7/9/11），后续整合时显式说明
 
-### Phase 1：NotebookLM 采集
+### Phase 1：NotebookLM 采集（脚本化，原始内容落盘）
 
-**技术前置（每次会话）**：
+**原始存档目录**：`notebooklm-raw/`（与学习指南 `guides/` 分离）
+
+```
+notebooklm-raw/manifests/<module>.json   # 采集计划（prompt 分层）
+notebooklm-raw/<module>/runs/<timestamp>/  # 每次运行的原始回答
+  ├── run.meta.json / run.log
+  ├── <batch-id>.prompt.txt
+  ├── <batch-id>.answer.md
+  └── <batch-id>.answer.json
+```
+
+**采集脚本**（推荐替代 Agent 内联 `notebooklm ask`）：
+
+```bash
+cd ~/development/ai
+python scripts/nlm-collect.py notebooklm-raw/manifests/week3-4.json --dry-run
+python scripts/nlm-collect.py notebooklm-raw/manifests/week3-4.json
+python scripts/nlm-collect.py ... --only L0-positioning
+python scripts/nlm-collect.py ... --resume notebooklm-raw/week3-4/runs/<ts>
+```
+
+脚本自动：`sync-auth`、代理、`notebooklm use/clear/ask --json`、落盘、写 `run.meta.json`。
+
+**Agent Phase 2** 从 `notebooklm-raw/.../runs/<ts>/*.answer.md` 读素材整合，**无需把原始回答塞进对话上下文**。
+
+详见 `notebooklm-raw/README.md`。
+
+**手工采集时的技术前置**（仅调试或补跑单条时使用）：
 
 ```bash
 cd ~/service/openclaw/workspace/skills/notebooklm-integration
@@ -65,15 +92,29 @@ notebooklm use 505bdb1c
 
 认证失效：Windows `fix_login_edge.py` → WSL `sync-auth.py --force`。
 
-**提问批次建议**（以一周或两周为单位）：
+**NotebookLM 提问习惯（v3，用户验证有效）**：
 
-| 批次 | 层次 | 内容 |
-|------|------|------|
-| 1 | L0 | 知识定位、子主题清单、与前后周衔接 |
-| 2 | L1+L2 | 按子主题分批（每批 1–2 个模块，如「三大流派」「感知机」） |
-| 3 | L3+L4 | 数值例子、易错点、与 Project/后续周串联 |
+```
+Step 1  L0 单问：大方向下有哪些子主题？（可 Agent 预拆分 + NotebookLM 校验）
+Step 2  每个子主题单独一次提问（manifest 中一个 batch = 一个 chat = clear_conversation: true）
+        → prompt 内标注重要程度：核心 / 重要 / 了解即可，控制回答深度
+Step 3  复杂子主题再拆（如 BP 回归、BP 分类、隐层 δ 各一问；不要 L1+L2 合并）
+Step 4  学习后不懂的 → 追加 supplement batch（直观解释 / 数值样例 / 对比表）
+```
 
-每完成一个逻辑模块（约 3–5 轮）→ `notebooklm clear` 开新对话，避免上下文污染。
+**禁止**：一个 prompt 里塞多个模块（如「讲清 Week3 全部 BP + Week4 全部 CNN」）。
+
+**manifest 字段**：`priority`（critical/important/normal）、`layer`、`clear_conversation: true`（默认全开新对话）。
+
+**提问批次模板**（以一周或两周为单位，约 15–25 个 batch）：
+
+| 类型 | 示例 batch id |
+|------|----------------|
+| L0 定位/子主题地图 | `L0-positioning`, `L0-subtopic-map` |
+| 单知识点 L1/L2 | `w3-bp-regression`, `w4-conv-params` |
+| L3 数值/易错 | `w3-bp-numeric`, `w34-mistakes` |
+| L4 串联/PJ映射 | `w34-pj1-map`, `w34-bridge` |
+| 用户追问补充 | `supplement-<topic>`（Step 4 追加） |
 
 **资料引用优先级**（Prompt 与整合时均遵守）：
 
@@ -210,6 +251,7 @@ notebooklm use 505bdb1c
 
 - [ ] NotebookLM `auth check --test` 通过（需代理）
 - [ ] 本地资料与 Notebook source 对齐
+- [ ] Phase 1 原始回答已落盘至 `notebooklm-raw/<module>/runs/<ts>/`（`run.meta.json` 状态 completed 或目标 batch 已 ok）
 
 ## 输出位置
 
