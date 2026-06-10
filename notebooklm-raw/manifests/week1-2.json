@@ -1,0 +1,41 @@
+{
+  "module": "week1-2",
+  "notebook_id": "505bdb1c",
+  "description": "Week 1-2：AI 概述 + 感知机/MLP 基础",
+  "sources_hint": [
+    "笔记-week01-周五-AI",
+    "笔记-week02-周五-AI",
+    "课件01-Introduction",
+    "课件08-Connectionist"
+  ],
+  "batches": [
+    {
+      "id": "L0-positioning",
+      "layer": "L0",
+      "title": "知识定位与子主题清单",
+      "clear_conversation": true,
+      "prompt": "请根据 Week 1 和 Week 2 课程记录、课件 01 Introduction 和课件 08 Connectionist，完成 L0 层次的知识定位：\n\n1. Week 1-2 在整门 AI(H) 课程中的位置和核心问题是什么？\n2. 这两周要解决的「从哪出发、要到哪去」的学习路径是什么？\n3. Week 1 与 Week 2 之间的逻辑衔接是什么？\n4. 列出 Week 1-2 涉及的所有核心子主题清单（条目式）\n5. 请说明各子主题之间的逻辑递进关系，哪些问题是上一节自然引出的？\n\n要求：用中文；每个要点后标注来源（格式：来源：Week N 记录 / 课件 0X / 教材名）。"
+    },
+    {
+      "id": "L1L2-week1-overview",
+      "layer": "L1+L2",
+      "title": "Week 1：三大流派、图灵测试、连接主义历史",
+      "clear_conversation": false,
+      "prompt": "请根据 Week 1 课程记录和课件 01 Introduction，讲解 Week 1 核心内容（L1 直觉 + L2 形式化）：\n\n模块 A：人工智能三大流派（符号主义、连接主义、进化主义）\n- 每个流派用 2-3 句大白话 + 一个生活类比解释\n- 给出各流派的核心思想、代表系统/人物、主要局限\n\n模块 B：图灵测试与智能评估\n- 图灵测试是什么、如何运作、三大局限性\n\n模块 C：连接主义历史脉络（MP模型→感知机→深度学习）\n- 关键里程碑和人物\n\n要求：由浅入深；中文；每个要点标注来源。"
+    },
+    {
+      "id": "L1L2-week2-perceptron-mlp",
+      "layer": "L1+L2",
+      "title": "Week 2：感知机、正规方程、MLP、优化基础",
+      "clear_conversation": true,
+      "prompt": "请根据 Week 2 课程记录和课件 08 Connectionist，讲解 Week 2 核心内容（L1 直觉 + L2 形式化）：\n\n模块 A：单层感知机与异或问题\n- 感知机模型、学习规则、几何意义（超平面）\n- 为什么无法解决 XOR？阶跃函数不可微的影响\n\n模块 B：线性模型与正规方程\n- 基函数、设计矩阵、MSE 损失\n- 正规方程解析解及几何意义（投影）\n- 矩阵不可逆时如何处理（伪逆/SVD）\n\n模块 C：多层感知机（MLP）\n- 深度、宽度、全连接\n- 激活函数演变（阶跃→Sigmoid→Tanh）\n- 参数空间对称性（N! 等价配置）\n\n模块 D：优化基础\n- 凸函数 vs 非凸函数；神经网络损失为何非凸\n- 梯度下降（泰勒一阶展开、学习率）\n- 误差曲面、鞍点\n- Mini-batch SGD 与 Batch Size 选择\n\n要求：给出关键公式并解释每个符号；中文；每个要点标注来源。"
+    },
+    {
+      "id": "L3L4-deep-dive",
+      "layer": "L3+L4",
+      "title": "数值例子、易错点、知识串联",
+      "clear_conversation": false,
+      "prompt": "请根据 Week 1-2 课程记录和课件 08 Connectionist，完成 L3 和 L4 层次：\n\n【L3 重难点与数值例子】\n1. 用具体数值例子演示感知机学习规则的一次权重更新\n2. 用 2D 坐标解释 XOR 为何线性不可分\n3. 用一个简单的 2 特征 1 样本例子演示正规方程的思路（可简化）\n4. 列举 Week 1-2 最容易出错/混淆的 5 个知识点，每个说明：为什么易错、正确理解、记忆技巧\n5. 请列出本模块最易混淆的 3-5 组概念，用对比表说明\n\n【L4 知识串联】\n1. Week 1-2 的知识如何衔接到 Week 3（反向传播）和 Week 4（CNN）？\n2. 哪些 Week 1-2 概念直接对应 PJ1 的要求？\n3. 给出 Week 1-2 推荐的学习顺序和复习优先级\n\n要求：中文；标注来源；注重直观性。"
+    }
+  ]
+}
