@@ -1,0 +1,123 @@
+{
+  "module": "week7",
+  "notebook_id": "505bdb1c-0034-4e14-89df-0b14bf3fc723",
+  "manifest": "notebooklm-raw/manifests/week7.json",
+  "run_dir": "notebooklm-raw/week7/runs/20260612-015756",
+  "started_at": "2026-06-11T17:57:56.003975+00:00",
+  "finished_at": "2026-06-11T18:11:05.828461+00:00",
+  "batches_total": 13,
+  "batches_completed": 13,
+  "batches_ok": 13,
+  "batches_skipped": 0,
+  "batches_failed": 0,
+  "batches_pending": 0,
+  "batches": [
+    {
+      "id": "L0-positioning",
+      "layer": "L0",
+      "status": "ok",
+      "elapsed_seconds": 47.54,
+      "retry_count": 0,
+      "conversation_id": "57e429ac-7a1a-4587-adac-5f49373b9ec8"
+    },
+    {
+      "id": "w7-lti-discrete-conv",
+      "layer": "L1+L2",
+      "status": "ok",
+      "elapsed_seconds": 139.54,
+      "retry_count": 0,
+      "conversation_id": "9556cad4-c287-4d9c-9dcc-3635a26a012d"
+    },
+    {
+      "id": "w7-cross-correlation",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 50.04,
+      "retry_count": 0,
+      "conversation_id": "3b2252bd-4982-482b-9143-8c535c6dc675"
+    },
+    {
+      "id": "w7-classic-kernels",
+      "layer": "L1+L2",
+      "status": "ok",
+      "elapsed_seconds": 55.33,
+      "retry_count": 1,
+      "conversation_id": "fd27c755-9109-41b6-9d87-c7d230724fb5"
+    },
+    {
+      "id": "w7-padding",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 53.64,
+      "retry_count": 0,
+      "conversation_id": "257c8bf0-cb69-4c85-a6f4-6686b3452dac"
+    },
+    {
+      "id": "w7-multichannel",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 46.86,
+      "retry_count": 0,
+      "conversation_id": "009139a4-dfd8-41ff-8118-e5ec2004b8eb"
+    },
+    {
+      "id": "w7-relu-bn",
+      "layer": "L1+L2",
+      "status": "ok",
+      "elapsed_seconds": 42.89,
+      "retry_count": 0,
+      "conversation_id": "af1c8d96-7d2f-4cb5-8471-24ad506d5d94"
+    },
+    {
+      "id": "w7-pooling-detail",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 42.7,
+      "retry_count": 0,
+      "conversation_id": "bd5d6d18-f716-416e-9bb7-2a5eb44b316f"
+    },
+    {
+      "id": "w7-lenet-numeric",
+      "layer": "L3",
+      "status": "ok",
+      "elapsed_seconds": 41.42,
+      "retry_count": 0,
+      "conversation_id": "22882632-944e-4925-9f3d-1584d78b326a"
+    },
+    {
+      "id": "w7-conv-numeric",
+      "layer": "L3",
+      "status": "ok",
+      "elapsed_seconds": 37.62,
+      "retry_count": 0,
+      "conversation_id": "597338a4-db49-4391-b934-1190f3660d63"
+    },
+    {
+      "id": "w7-w47-bridge",
+      "layer": "L4",
+      "status": "ok",
+      "elapsed_seconds": 41.32,
+      "retry_count": 0,
+      "conversation_id": "29cdf5ea-5996-4989-9c09-b25b0065c5ae"
+    },
+    {
+      "id": "w7-mistakes",
+      "layer": "L3",
+      "status": "ok",
+      "elapsed_seconds": 47.8,
+      "retry_count": 0,
+      "conversation_id": "38240257-f4b4-4470-880d-96d57dd9331e"
+    },
+    {
+      "id": "w7-study-order",
+      "layer": "L4",
+      "status": "ok",
+      "elapsed_seconds": 44.92,
+      "retry_count": 0,
+      "conversation_id": "482b8147-0c84-4122-bac3-1b24bf521fe8"
+    }
+  ],
+  "status": "completed",
+  "total_elapsed_seconds": 789.82,
+  "total_retry_count": 1
+}

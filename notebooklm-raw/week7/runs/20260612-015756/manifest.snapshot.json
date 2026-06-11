@@ -1,0 +1,118 @@
+{
+  "module": "week7",
+  "notebook_id": "505bdb1c-0034-4e14-89df-0b14bf3fc723",
+  "description": "Week 7：卷积数学原理与 CNN 实现细节（Week 4 递进，单问单答）",
+  "workflow": "v3-one-question-per-chat",
+  "sources_hint": [
+    "笔记-week07-周五-AI",
+    "课件08-Connectionist",
+    "课件09-Deep-Learning",
+    "笔记-week04-周五-AI"
+  ],
+  "batches": [
+    {
+      "id": "L0-positioning",
+      "layer": "L0",
+      "priority": "critical",
+      "title": "Week7 在课程中的位置",
+      "clear_conversation": true,
+      "prompt": "【单问】请仅回答：Week 7 在 AI(H) 课程中解决什么核心问题？它与 Week 4（CNN 概览）以及 Week 8+ 如何衔接？\n\n依据：Week 7 课程记录、课件 08/09。\n要求：中文；3-5 段；每点标注来源；不要展开具体公式。"
+    },
+    {
+      "id": "w7-lti-discrete-conv",
+      "layer": "L1+L2",
+      "priority": "critical",
+      "title": "LTI 与离散卷积",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请仅讲解：什么是 LTI 系统？一维离散卷积 y[n]=Σx[m]h[n-m] 中各项含义是什么？为何核要翻转？二维图像卷积如何推广？\n\n依据：Week 7 课程记录、课件 08、花书第 9 章。\n要求：先直觉再公式；符号表；中文；标注来源。"
+    },
+    {
+      "id": "w7-cross-correlation",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "互相关 vs 数学卷积",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请仅说明：CNN/PyTorch 的 conv2d 实际算的是卷积还是互相关？两者公式差在哪？深度学习为何不翻转核？\n\n依据：Week 7 课程记录、课件 09。\n要求：对比表；中文；标注来源；不要讲多通道。"
+    },
+    {
+      "id": "w7-classic-kernels",
+      "layer": "L1+L2",
+      "priority": "important",
+      "title": "经典卷积核示例",
+      "clear_conversation": true,
+      "prompt": "【单问·重要】请仅给出：边缘检测、模糊、锐化三类 3×3 卷积核的示例矩阵，并直觉解释各自效果。\n\n依据：Week 7 课程记录、课件 09。\n要求：中文；标注来源；不要讲可学习核的训练。"
+    },
+    {
+      "id": "w7-padding",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "填充 Padding",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请仅讲解：CNN 中填充（padding）的两个作用——保尺寸与边缘公平；为何 K 为奇数时 P=(K-1)/2 可 same padding？\n\n依据：Week 7 课程记录、课件 09。\n要求：中文；可举 32×32、K=5 例子；标注来源。"
+    },
+    {
+      "id": "w7-multichannel",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "多通道卷积与参数量",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请仅讲解：多通道卷积如何计算（C_in 与核通道对齐、跨通道求和）？一层卷积参数量公式 C_out·(C_in·K²+1) 怎么来？\n\n依据：Week 7 课程记录、课件 09。\n要求：符号表；给一个数值例子；中文；标注来源。"
+    },
+    {
+      "id": "w7-relu-bn",
+      "layer": "L1+L2",
+      "priority": "important",
+      "title": "Sigmoid、ReLU 与 Batch Norm",
+      "clear_conversation": true,
+      "prompt": "【单问·重要】请仅讲解：Sigmoid 的非零中心问题是什么？ReLU 如何缓解？Batch Normalization 在 CNN 中起什么作用？\n\n依据：Week 7 课程记录、课件 08/09。\n要求：直觉优先；中文；标注来源；不要展开 Week 10 优化细节。"
+    },
+    {
+      "id": "w7-pooling-detail",
+      "layer": "L2",
+      "priority": "important",
+      "title": "池化层实现细节",
+      "clear_conversation": true,
+      "prompt": "【单问·重要】请仅说明：池化层为何一般无填充、步长常等于核大小？最大池化为主流的原因？卷积的平移等变性与池化的局部不变性如何区分？\n\n依据：Week 7 课程记录、课件 09。\n要求：对比表；中文；标注来源。"
+    },
+    {
+      "id": "w7-lenet-numeric",
+      "layer": "L3",
+      "priority": "critical",
+      "title": "LeNet-5 尺寸手算",
+      "clear_conversation": true,
+      "prompt": "【单问·要数值】请仅手算：LeNet 风格网络输入 32×32×1，经 5×5 卷积 S=1 无填充 → 输出尺寸？再经 2×2 池化 S=2 → 尺寸？列出每步公式。\n\n依据：Week 7 课程记录、课件 09。\n要求：完整数值步骤；中文；标注来源。"
+    },
+    {
+      "id": "w7-conv-numeric",
+      "layer": "L3",
+      "priority": "important",
+      "title": "互相关 tiny 数值例",
+      "clear_conversation": true,
+      "prompt": "【单问·要数值】请仅给出一个 3×3 输入、2×2 核、stride=1、无填充的 tiny 互相关手算例子，算出输出特征图每个值。\n\n依据：Week 7 课程记录、课件 09。\n要求：列出完整计算；中文；标注来源；说明这是互相关不翻转核。"
+    },
+    {
+      "id": "w7-w47-bridge",
+      "layer": "L4",
+      "priority": "important",
+      "title": "Week4 与 Week7 衔接",
+      "clear_conversation": true,
+      "prompt": "【单问】请仅说明：Week 4 学的 CNN 直觉（局部连接、权重共享、池化）在 Week 7 分别被哪些数学/实现细节深化？\n\n要求：条目式；中文；标注来源。"
+    },
+    {
+      "id": "w7-mistakes",
+      "layer": "L3",
+      "priority": "important",
+      "title": "Week7 易错点",
+      "clear_conversation": true,
+      "prompt": "【单问】请仅列出 Week 7 最易混淆的 4-5 组概念（卷积 vs 互相关、通道 vs 特征图、等变 vs 不变、参数量计数等），用对比表说明。\n\n要求：中文；标注来源。"
+    },
+    {
+      "id": "w7-study-order",
+      "layer": "L4",
+      "priority": "important",
+      "title": "Week7 学习优先级",
+      "clear_conversation": true,
+      "prompt": "【单问】请仅给出：在已学 Week 4 CNN 前提下，学习 Week 7 内容的推荐顺序和复习优先级（极高/高/中）。\n\n要求：中文；条目式；标注来源。"
+    }
+  ]
+}
