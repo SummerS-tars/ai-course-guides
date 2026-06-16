@@ -1,0 +1,167 @@
+{
+  "module": "week13-14",
+  "notebook_id": "505bdb1c-0034-4e14-89df-0b14bf3fc723",
+  "description": "Week 13-14：不确定性推理 + 逻辑/消解（单问单答）",
+  "workflow": "v3-one-question-per-chat",
+  "sources_hint": [
+    "笔记-week13-周五-AI",
+    "笔记-week14-周五-AI",
+    "课件05-Uncertainty",
+    "课件02-Knowledge-representation",
+    "课件07-Logics-and-Prolog"
+  ],
+  "batches": [
+    {
+      "id": "L0-positioning",
+      "layer": "L0",
+      "priority": "critical",
+      "title": "Week13-14 在课程中的位置",
+      "clear_conversation": true,
+      "prompt": "【单问】请仅回答：Week 13-14 为何在课程末尾回归符号主义？与 Week 12 及 Week 15 CLIPS 如何衔接？\n\n依据：Week 13/14 课程记录、课件 05/02/07。\n要求：中文；3-5 段；每点标注来源。"
+    },
+    {
+      "id": "w13-exam-info",
+      "layer": "L4",
+      "priority": "important",
+      "title": "期末说明",
+      "clear_conversation": true,
+      "prompt": "【单问·重要】请仅汇总：期末考试形式（开卷/英文等）、确定性因子必考、Project 期末安排。\n\n依据：Week 13/14 课程记录。\n要求：中文；标注来源。"
+    },
+    {
+      "id": "w13-bayes-framework",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "贝叶斯框架",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请仅讲解：贝叶斯推理框架——先验+似然→后验→决策；L2 正则即高斯先验的联系（若有）。\n\n依据：Week 13 课程记录、课件 05、AIMA。\n要求：中文；标注来源。"
+    },
+    {
+      "id": "w13-gmm-conjugate",
+      "layer": "L2",
+      "priority": "important",
+      "title": "GMM 与共轭先验",
+      "clear_conversation": true,
+      "prompt": "【单问·重要】请仅讲解：高斯混合模型直觉；共轭分布在本课中的作用。\n\n依据：Week 13 课程记录、课件 05。\n要求：中文；标注来源。"
+    },
+    {
+      "id": "w13-certainty-factor",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "确定性因子",
+      "clear_conversation": true,
+      "prompt": "【单问·核心·必考】请仅讲解：确定性因子（Certainty Factor）中证据不确定性与规则不确定性的含义及合成计算规则。\n\n依据：Week 13 课程记录、课件 05。\n要求：公式+符号表；中文；标注来源。"
+    },
+    {
+      "id": "w13-cf-numeric",
+      "layer": "L3",
+      "priority": "critical",
+      "title": "确定性因子数值例",
+      "clear_conversation": true,
+      "prompt": "【单问·要数值·必考】请仅给出一个确定性因子合成的完整数值手算例子，逐步展示计算过程。\n\n依据：Week 13 课程记录、课件 05。\n要求：完整数值步骤；中文；标注来源。"
+    },
+    {
+      "id": "w13-markov-pagerank",
+      "layer": "L2",
+      "priority": "important",
+      "title": "马尔可夫链与 PageRank",
+      "clear_conversation": true,
+      "prompt": "【单问·重要】请仅讲解：马尔可夫链直觉及 PageRank 算法原理。\n\n依据：Week 13 课程记录、课件 05。\n要求：中文；标注来源。"
+    },
+    {
+      "id": "w13-fuzzy-logic",
+      "layer": "L1+L2",
+      "priority": "optional",
+      "title": "模糊逻辑",
+      "clear_conversation": true,
+      "prompt": "【单问】请仅说明：Zadeh 模糊逻辑如何处理语义不确定性？与概率方法的区别？\n\n依据：Week 13 课程记录、课件 05。\n要求：中文；标注来源。"
+    },
+    {
+      "id": "w13-symbolic-vs-dl",
+      "layer": "L4",
+      "priority": "important",
+      "title": "符号主义 vs 深度学习",
+      "clear_conversation": true,
+      "prompt": "【单问·重要】请用对比表说明：符号主义在可解释性、样本效率等方面相对 DL 的优势。\n\n依据：Week 13 课程记录、课件 02。\n要求：中文；标注来源。"
+    },
+    {
+      "id": "w14-propositional",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "命题逻辑",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请仅讲解：命题逻辑连接词、真值表、善意推定原则及表达能力局限。\n\n依据：Week 14 课程记录、课件 07、AIMA。\n要求：中文；标注来源。"
+    },
+    {
+      "id": "w14-fol",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "一阶谓词逻辑",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请仅讲解：一阶谓词逻辑——量词 ∀/∃、项/谓词、变量替换推理。\n\n依据：Week 14 课程记录、课件 07。\n要求：中文；标注来源。"
+    },
+    {
+      "id": "w14-entailment",
+      "layer": "L2",
+      "priority": "important",
+      "title": "逻辑蕴含",
+      "clear_conversation": true,
+      "prompt": "【单问·重要】请仅讲解：逻辑蕴含的解释（可能世界）、模型论直觉。\n\n依据：Week 14 课程记录、课件 07。\n要求：中文；标注来源。"
+    },
+    {
+      "id": "w14-resolution",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "消解原理",
+      "clear_conversation": true,
+      "prompt": "【单问·核心·期末大题】请仅推导/讲解：消解原理（Resolution）作为自动推理核心算法的步骤与关键规则。\n\n依据：Week 14 课程记录、课件 07。\n要求：逐步写清；中文；标注来源。"
+    },
+    {
+      "id": "w14-exam-pipeline",
+      "layer": "L3",
+      "priority": "critical",
+      "title": "期末大题流程",
+      "clear_conversation": true,
+      "prompt": "【单问·核心·期末大题】请仅说明：期末大题典型流程——自然语言→逻辑表达式→析取范式→消解证明，各步要点。\n\n依据：Week 14 课程记录、课件 07。\n要求：中文；标注来源。"
+    },
+    {
+      "id": "w14-prolog",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "Prolog 反向推理",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请仅讲解：Prolog 如何基于逻辑做反向推理编程？与 Week 15 CLIPS 前向推理的对比要点。\n\n依据：Week 14 课程记录、课件 07。\n要求：中文；标注来源。"
+    },
+    {
+      "id": "w1314-bridge-w12",
+      "layer": "L4",
+      "priority": "important",
+      "title": "与 Week12 衔接",
+      "clear_conversation": true,
+      "prompt": "【单问】请仅说明：Week 12 DL 巅峰后，Week 13-14 符号主义回归的逻辑。\n\n要求：中文；标注来源。"
+    },
+    {
+      "id": "w1314-bridge-w15",
+      "layer": "L4",
+      "priority": "important",
+      "title": "通向 Week15",
+      "clear_conversation": true,
+      "prompt": "【单问·重要】请仅说明：Week 14 Prolog 反向推理与 Week 15 CLIPS 前向推理如何构成符号主义两条路径？\n\n要求：中文；标注来源。"
+    },
+    {
+      "id": "w1314-mistakes",
+      "layer": "L3",
+      "priority": "important",
+      "title": "Week13-14 易错点",
+      "clear_conversation": true,
+      "prompt": "【单问】请列出 Week 13-14 最易混淆的 4-5 组概念（确定性因子/贝叶斯、消解/归结、量词范围等），用对比表说明。\n\n要求：中文；标注来源。"
+    },
+    {
+      "id": "w1314-study-order",
+      "layer": "L4",
+      "priority": "important",
+      "title": "Week13-14 复习优先级",
+      "clear_conversation": true,
+      "prompt": "【单问】请仅给出期末复习 Week 13-14 的推荐顺序和优先级（标注必考项）。\n\n要求：中文；条目式；标注来源。"
+    }
+  ]
+}

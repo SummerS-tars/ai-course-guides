@@ -1,0 +1,4 @@
+【单问·重要】请仅对比：Layer Norm 与 Batch Norm 的区别；为何 Transformer 用 LN？
+
+依据：Week 10 课程记录、课件 09。
+要求：对比表；中文；标注来源。

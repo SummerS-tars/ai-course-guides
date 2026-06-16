@@ -1,0 +1,83 @@
+{
+  "module": "week15",
+  "notebook_id": "505bdb1c-0034-4e14-89df-0b14bf3fc723",
+  "manifest": "notebooklm-raw/manifests/week15.json",
+  "run_dir": "notebooklm-raw/week15/runs/20260616-134937",
+  "started_at": "2026-06-16T05:49:37.343301+00:00",
+  "finished_at": "2026-06-16T05:57:01.668854+00:00",
+  "batches_total": 8,
+  "batches_completed": 8,
+  "batches_ok": 8,
+  "batches_skipped": 0,
+  "batches_failed": 0,
+  "batches_pending": 0,
+  "batches": [
+    {
+      "id": "L0-positioning",
+      "layer": "L0",
+      "status": "ok",
+      "elapsed_seconds": 37.76,
+      "retry_count": 0,
+      "conversation_id": "a3c8e614-e33c-4fa3-b405-5700a043dede"
+    },
+    {
+      "id": "w15-forward-vs-backward",
+      "layer": "L1+L2",
+      "status": "ok",
+      "elapsed_seconds": 51.34,
+      "retry_count": 0,
+      "conversation_id": "62bc1cdb-a4dc-4703-bd79-ccd33e3ace76"
+    },
+    {
+      "id": "w15-production-system",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 43.48,
+      "retry_count": 0,
+      "conversation_id": "4410d884-21ab-4ab8-93b7-89638668de3a"
+    },
+    {
+      "id": "w15-clips-syntax",
+      "layer": "L2+L3",
+      "status": "ok",
+      "elapsed_seconds": 45.55,
+      "retry_count": 0,
+      "conversation_id": "4702881d-ad55-4a4d-b7c8-515cb4ad18a3"
+    },
+    {
+      "id": "w15-complex-pattern",
+      "layer": "L3",
+      "status": "ok",
+      "elapsed_seconds": 43.45,
+      "retry_count": 0,
+      "conversation_id": "8a96267f-878a-4611-b40d-03d254f3114f"
+    },
+    {
+      "id": "w15-animal-game",
+      "layer": "L1+L2",
+      "status": "ok",
+      "elapsed_seconds": 54.92,
+      "retry_count": 0,
+      "conversation_id": "c50a04f0-1e8c-45c2-84d6-25dd3b607b59"
+    },
+    {
+      "id": "w15-bridge",
+      "layer": "L4",
+      "status": "ok",
+      "elapsed_seconds": 40.59,
+      "retry_count": 0,
+      "conversation_id": "092fa472-e7c0-4100-a8c9-847e624e730e"
+    },
+    {
+      "id": "w15-mistakes",
+      "layer": "L3",
+      "status": "ok",
+      "elapsed_seconds": 66.84,
+      "retry_count": 1,
+      "conversation_id": "9fe89abd-444a-4e67-86d9-eefbee5f96fd"
+    }
+  ],
+  "status": "completed",
+  "total_elapsed_seconds": 444.33,
+  "total_retry_count": 1
+}

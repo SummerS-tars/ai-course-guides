@@ -1,0 +1,171 @@
+{
+  "module": "week13-14",
+  "notebook_id": "505bdb1c-0034-4e14-89df-0b14bf3fc723",
+  "manifest": "notebooklm-raw/manifests/week13-14.json",
+  "run_dir": "notebooklm-raw/week13-14/runs/20260616-132939",
+  "started_at": "2026-06-16T05:29:39.547482+00:00",
+  "finished_at": "2026-06-16T05:49:37.238019+00:00",
+  "batches_total": 19,
+  "batches_completed": 19,
+  "batches_ok": 19,
+  "batches_skipped": 0,
+  "batches_failed": 0,
+  "batches_pending": 0,
+  "batches": [
+    {
+      "id": "L0-positioning",
+      "layer": "L0",
+      "status": "ok",
+      "elapsed_seconds": 34.96,
+      "retry_count": 0,
+      "conversation_id": "8afd78c2-7efc-4f9f-923f-a4e065a7cb06"
+    },
+    {
+      "id": "w13-exam-info",
+      "layer": "L4",
+      "status": "ok",
+      "elapsed_seconds": 34.13,
+      "retry_count": 0,
+      "conversation_id": "b3e0360d-04f6-4b55-ad4e-0a59cfc9c2e8"
+    },
+    {
+      "id": "w13-bayes-framework",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 52.47,
+      "retry_count": 0,
+      "conversation_id": "a989550d-ffd5-4a5d-8831-6fca60366f28"
+    },
+    {
+      "id": "w13-gmm-conjugate",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 44.05,
+      "retry_count": 0,
+      "conversation_id": "5ec5c71d-097a-4cc8-bb4f-7672d2117a23"
+    },
+    {
+      "id": "w13-certainty-factor",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 38.09,
+      "retry_count": 0,
+      "conversation_id": "9724f546-a744-4968-9d5a-361e9d4414cb"
+    },
+    {
+      "id": "w13-cf-numeric",
+      "layer": "L3",
+      "status": "ok",
+      "elapsed_seconds": 63.53,
+      "retry_count": 0,
+      "conversation_id": "f6096cc3-137e-436c-90fe-539a85838930"
+    },
+    {
+      "id": "w13-markov-pagerank",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 39.36,
+      "retry_count": 0,
+      "conversation_id": "2e5aca81-1707-4c5b-9852-772503999caf"
+    },
+    {
+      "id": "w13-fuzzy-logic",
+      "layer": "L1+L2",
+      "status": "ok",
+      "elapsed_seconds": 85.71,
+      "retry_count": 0,
+      "conversation_id": "1f559793-dba5-47bd-8ef0-12dd1e796616"
+    },
+    {
+      "id": "w13-symbolic-vs-dl",
+      "layer": "L4",
+      "status": "ok",
+      "elapsed_seconds": 44.17,
+      "retry_count": 0,
+      "conversation_id": "04cea736-e497-4dd6-a561-c8116d4bfdbf"
+    },
+    {
+      "id": "w14-propositional",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 45.54,
+      "retry_count": 0,
+      "conversation_id": "7db90cc1-f211-431c-ba5c-ffdbaf1af27e"
+    },
+    {
+      "id": "w14-fol",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 50.93,
+      "retry_count": 0,
+      "conversation_id": "3cb7f43b-b913-455c-870b-e86b577e352c"
+    },
+    {
+      "id": "w14-entailment",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 45.53,
+      "retry_count": 0,
+      "conversation_id": "d169a1b6-1b95-4515-a6f0-3f4b6ccb4b44"
+    },
+    {
+      "id": "w14-resolution",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 65.7,
+      "retry_count": 0,
+      "conversation_id": "b344d3a4-2c22-4eaa-b3fb-d4f362fd11dc"
+    },
+    {
+      "id": "w14-exam-pipeline",
+      "layer": "L3",
+      "status": "ok",
+      "elapsed_seconds": 43.92,
+      "retry_count": 0,
+      "conversation_id": "bddfbfc5-6e17-4d5b-b9c7-4bde4e5ac608"
+    },
+    {
+      "id": "w14-prolog",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 114.34,
+      "retry_count": 0,
+      "conversation_id": "9c0defa5-c3ee-445e-a8dc-423ae7e593bd"
+    },
+    {
+      "id": "w1314-bridge-w12",
+      "layer": "L4",
+      "status": "ok",
+      "elapsed_seconds": 45.72,
+      "retry_count": 0,
+      "conversation_id": "b1d909e2-b4b3-4495-ae8c-c04d31ab5057"
+    },
+    {
+      "id": "w1314-bridge-w15",
+      "layer": "L4",
+      "status": "ok",
+      "elapsed_seconds": 109.84,
+      "retry_count": 0,
+      "conversation_id": "3bf43e5c-169b-4a24-9052-b0aaea11ade5"
+    },
+    {
+      "id": "w1314-mistakes",
+      "layer": "L3",
+      "status": "ok",
+      "elapsed_seconds": 50.18,
+      "retry_count": 0,
+      "conversation_id": "18f9ae1c-66b5-45ef-a4bf-91041808abf0"
+    },
+    {
+      "id": "w1314-study-order",
+      "layer": "L4",
+      "status": "ok",
+      "elapsed_seconds": 39.53,
+      "retry_count": 0,
+      "conversation_id": "e35337ae-1050-4765-9cda-7702b974a4b0"
+    }
+  ],
+  "status": "completed",
+  "total_elapsed_seconds": 1197.69,
+  "total_retry_count": 0
+}

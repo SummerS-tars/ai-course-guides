@@ -1,0 +1,22 @@
+{
+  "module": "week13-14",
+  "notebook_id": "505bdb1c-0034-4e14-89df-0b14bf3fc723",
+  "description": "Week 13-14 子主题发现（L0，单问单答）",
+  "sources_hint": [
+    "笔记-week13-周五-AI",
+    "笔记-week14-周五-AI",
+    "课件05-Uncertainty",
+    "课件02-Knowledge-representation",
+    "课件07-Logics-and-Prolog"
+  ],
+  "batches": [
+    {
+      "id": "L0-subtopic-map",
+      "layer": "L0",
+      "title": "Week13-14 子主题地图",
+      "priority": "critical",
+      "clear_conversation": true,
+      "prompt": "请仅根据 Week 13、Week 14 课程记录，以及课件 05 Uncertainty、课件 02 Knowledge Representation、课件 07 Logics and Prolog，完成一件事：\n\n**列出 Week 13-14 全部子主题**，按学习顺序排列。每个子主题包含：\n1. 子主题名称（简短）\n2. 一句话说明「解决什么问题」\n3. 重要程度：核心 / 重要 / 了解即可（标注期末必考项）\n4. 建议的提问顺序编号\n5. 与 Week 12 Transformer 及 Week 15 CLIPS 的衔接点（若有）\n6. 是否需要进一步拆成多个单独问题才能讲透（是/否，及建议拆法）\n\n不要展开讲解具体内容，只做子主题地图。\n要求：中文；标注来源（Week 13/14 记录 / 课件 0X）。"
+    }
+  ]
+}

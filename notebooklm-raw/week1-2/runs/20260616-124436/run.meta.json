@@ -1,0 +1,51 @@
+{
+  "module": "week1-2",
+  "notebook_id": "505bdb1c-0034-4e14-89df-0b14bf3fc723",
+  "manifest": "notebooklm-raw/manifests/week1-2.json",
+  "run_dir": "notebooklm-raw/week1-2/runs/20260616-124436",
+  "started_at": "2026-06-16T04:44:36.751334+00:00",
+  "finished_at": "2026-06-16T04:48:52.506179+00:00",
+  "batches_total": 4,
+  "batches_completed": 4,
+  "batches_ok": 4,
+  "batches_skipped": 0,
+  "batches_failed": 0,
+  "batches_pending": 0,
+  "batches": [
+    {
+      "id": "L0-positioning",
+      "layer": "L0",
+      "status": "ok",
+      "elapsed_seconds": 48.99,
+      "retry_count": 0,
+      "conversation_id": "c8674b06-dd8a-4e9f-bb98-716b9cd3a1a4"
+    },
+    {
+      "id": "L1L2-week1-overview",
+      "layer": "L1+L2",
+      "status": "ok",
+      "elapsed_seconds": 54.95,
+      "retry_count": 0,
+      "conversation_id": "2c8cd8c8-4c97-4e86-a510-1199ba530c2b"
+    },
+    {
+      "id": "L1L2-week2-perceptron-mlp",
+      "layer": "L1+L2",
+      "status": "ok",
+      "elapsed_seconds": 60.96,
+      "retry_count": 0,
+      "conversation_id": "74d3d969-7ed4-4ecc-bae7-9a62d088917c"
+    },
+    {
+      "id": "L3L4-deep-dive",
+      "layer": "L3+L4",
+      "status": "ok",
+      "elapsed_seconds": 62.12,
+      "retry_count": 0,
+      "conversation_id": "d13d0d41-ec2c-4ef2-a171-241823849baa"
+    }
+  ],
+  "status": "completed",
+  "total_elapsed_seconds": 255.75,
+  "total_retry_count": 0
+}

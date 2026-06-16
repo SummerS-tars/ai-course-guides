@@ -1,0 +1,3 @@
+【单问】请列出 Week 12 最易混淆的 4-5 组概念（Encoder/Decoder、BERT/GPT、Self/Cross-Attn 等），用对比表说明。
+
+要求：中文；标注来源。

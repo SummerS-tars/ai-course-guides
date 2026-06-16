@@ -1,0 +1,131 @@
+{
+  "module": "week12",
+  "notebook_id": "505bdb1c-0034-4e14-89df-0b14bf3fc723",
+  "manifest": "notebooklm-raw/manifests/week12.json",
+  "run_dir": "notebooklm-raw/week12/runs/20260616-131709",
+  "started_at": "2026-06-16T05:17:09.977245+00:00",
+  "finished_at": "2026-06-16T05:29:39.441702+00:00",
+  "batches_total": 14,
+  "batches_completed": 14,
+  "batches_ok": 14,
+  "batches_skipped": 0,
+  "batches_failed": 0,
+  "batches_pending": 0,
+  "batches": [
+    {
+      "id": "L0-positioning",
+      "layer": "L0",
+      "status": "ok",
+      "elapsed_seconds": 42.05,
+      "retry_count": 0,
+      "conversation_id": "7d52b071-061f-4d57-86fc-2b018e4bb12b"
+    },
+    {
+      "id": "w12-attention-intuition",
+      "layer": "L1",
+      "status": "ok",
+      "elapsed_seconds": 44.51,
+      "retry_count": 0,
+      "conversation_id": "bfd36095-4225-4157-b983-f10c6ebd3843"
+    },
+    {
+      "id": "w12-self-attention",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 56.01,
+      "retry_count": 0,
+      "conversation_id": "25ea20bc-ab6d-48b9-9b86-ba22fef83e95"
+    },
+    {
+      "id": "w12-transformer-encoder",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 54.95,
+      "retry_count": 0,
+      "conversation_id": "e63393ca-171a-4e50-876b-0f56ba2a9c37"
+    },
+    {
+      "id": "w12-transformer-decoder",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 42.75,
+      "retry_count": 0,
+      "conversation_id": "ea601b67-33ed-429d-85a5-42441a1c852e"
+    },
+    {
+      "id": "w12-pretrain-paradigms",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 43.4,
+      "retry_count": 0,
+      "conversation_id": "6757fbd9-371e-4c35-8069-69d41c34db13"
+    },
+    {
+      "id": "w12-gpt-wins",
+      "layer": "L1+L2",
+      "status": "ok",
+      "elapsed_seconds": 37.42,
+      "retry_count": 0,
+      "conversation_id": "ba406747-b4e8-488d-8484-359f8ea89a2a"
+    },
+    {
+      "id": "w12-gen-unified",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 45.39,
+      "retry_count": 0,
+      "conversation_id": "dda7ec2a-72de-41a2-abfc-ab3cf80d4f05"
+    },
+    {
+      "id": "w12-bridge-symbolic",
+      "layer": "L4",
+      "status": "ok",
+      "elapsed_seconds": 40.78,
+      "retry_count": 0,
+      "conversation_id": "dbb5dd8b-25f5-44e0-8ad9-cba552a63231"
+    },
+    {
+      "id": "w12-bridge-w56",
+      "layer": "L4",
+      "status": "ok",
+      "elapsed_seconds": 45.64,
+      "retry_count": 0,
+      "conversation_id": "4734afbf-fbf6-446e-8f33-1aeaa76b0966"
+    },
+    {
+      "id": "w12-bridge-w13",
+      "layer": "L4",
+      "status": "ok",
+      "elapsed_seconds": 43.62,
+      "retry_count": 0,
+      "conversation_id": "4ef00f0e-70a3-41dd-b9fe-27ee75abd9e2"
+    },
+    {
+      "id": "w12-pj2",
+      "layer": "L4",
+      "status": "ok",
+      "elapsed_seconds": 43.75,
+      "retry_count": 0,
+      "conversation_id": "4ec97539-e5d4-469e-8ea5-4d19d1c67070"
+    },
+    {
+      "id": "w12-mistakes",
+      "layer": "L3",
+      "status": "ok",
+      "elapsed_seconds": 46.42,
+      "retry_count": 0,
+      "conversation_id": "0d741332-169b-412a-b50a-0a1664be6962"
+    },
+    {
+      "id": "w12-study-order",
+      "layer": "L4",
+      "status": "ok",
+      "elapsed_seconds": 54.04,
+      "retry_count": 0,
+      "conversation_id": "7861af45-0970-4ea4-9499-317a2c0ed281"
+    }
+  ],
+  "status": "completed",
+  "total_elapsed_seconds": 749.46,
+  "total_retry_count": 0
+}

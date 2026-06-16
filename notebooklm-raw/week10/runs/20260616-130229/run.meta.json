@@ -1,0 +1,147 @@
+{
+  "module": "week10",
+  "notebook_id": "505bdb1c-0034-4e14-89df-0b14bf3fc723",
+  "manifest": "notebooklm-raw/manifests/week10.json",
+  "run_dir": "notebooklm-raw/week10/runs/20260616-130229",
+  "started_at": "2026-06-16T05:02:29.538040+00:00",
+  "finished_at": "2026-06-16T05:17:09.865717+00:00",
+  "batches_total": 16,
+  "batches_completed": 16,
+  "batches_ok": 16,
+  "batches_skipped": 0,
+  "batches_failed": 0,
+  "batches_pending": 0,
+  "batches": [
+    {
+      "id": "L0-positioning",
+      "layer": "L0",
+      "status": "ok",
+      "elapsed_seconds": 38.27,
+      "retry_count": 0,
+      "conversation_id": "00979fe4-b86f-45e9-a333-752df8770e33"
+    },
+    {
+      "id": "w10-optimizer-evolution",
+      "layer": "L1+L2",
+      "status": "ok",
+      "elapsed_seconds": 48.76,
+      "retry_count": 0,
+      "conversation_id": "89b20d8e-c9a9-43bb-b207-faf8848a93d2"
+    },
+    {
+      "id": "w10-sgd-momentum",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 52.52,
+      "retry_count": 0,
+      "conversation_id": "89a4f0de-8d9c-4762-a28e-90ecb8d45ccd"
+    },
+    {
+      "id": "w10-adaptive",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 45.73,
+      "retry_count": 0,
+      "conversation_id": "fa631760-1014-4e82-930d-bddcf801e656"
+    },
+    {
+      "id": "w10-adamw",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 35.36,
+      "retry_count": 0,
+      "conversation_id": "104b58fc-5320-4592-8bbf-9160de07e3f4"
+    },
+    {
+      "id": "w10-preprocessing",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 49.23,
+      "retry_count": 0,
+      "conversation_id": "2e518711-ea0e-4c6d-8b9b-21c352cfbd6a"
+    },
+    {
+      "id": "w10-hessian-geometry",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 48.88,
+      "retry_count": 0,
+      "conversation_id": "f1d4648d-e67d-4778-ac6c-320e72ccc24c"
+    },
+    {
+      "id": "w10-init-xavier-he",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 47.74,
+      "retry_count": 0,
+      "conversation_id": "4230e47f-244b-4c52-b3e2-16a5dfd1cd6a"
+    },
+    {
+      "id": "w10-batch-norm",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 43.61,
+      "retry_count": 0,
+      "conversation_id": "7b36a56a-079a-4ceb-bb2d-9f5be4397041"
+    },
+    {
+      "id": "w10-layer-norm",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 50.13,
+      "retry_count": 0,
+      "conversation_id": "c4909967-30a9-48c0-b3ad-c8aa99f9dcb1"
+    },
+    {
+      "id": "w10-regularization",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 47.59,
+      "retry_count": 0,
+      "conversation_id": "cfad6012-cf20-4200-9472-917024b90676"
+    },
+    {
+      "id": "w10-hyperparams",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 38.11,
+      "retry_count": 0,
+      "conversation_id": "aa76127f-3bbf-4da3-a1fe-edc2c6c0de24"
+    },
+    {
+      "id": "w10-bridge-w8",
+      "layer": "L4",
+      "status": "ok",
+      "elapsed_seconds": 49.75,
+      "retry_count": 0,
+      "conversation_id": "5d92c744-f7ff-4ddc-bd63-dadfe9176f3b"
+    },
+    {
+      "id": "w10-bridge-w12",
+      "layer": "L4",
+      "status": "ok",
+      "elapsed_seconds": 42.48,
+      "retry_count": 0,
+      "conversation_id": "52803045-2425-47ca-a6ec-083dcb285ece"
+    },
+    {
+      "id": "w10-mistakes",
+      "layer": "L3",
+      "status": "ok",
+      "elapsed_seconds": 60.11,
+      "retry_count": 0,
+      "conversation_id": "bb40726c-71d6-45ed-9b3d-a0c4ac2ecfaa"
+    },
+    {
+      "id": "w10-study-order",
+      "layer": "L4",
+      "status": "ok",
+      "elapsed_seconds": 56.95,
+      "retry_count": 0,
+      "conversation_id": "b955f358-c098-4b85-b9d4-2e25ab18374e"
+    }
+  ],
+  "status": "completed",
+  "total_elapsed_seconds": 880.33,
+  "total_retry_count": 0
+}

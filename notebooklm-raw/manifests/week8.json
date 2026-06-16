@@ -1,0 +1,116 @@
+{
+  "module": "week8",
+  "notebook_id": "505bdb1c-0034-4e14-89df-0b14bf3fc723",
+  "description": "Week 8：深度生成模型 VAE/扩散/GAN（单问单答）",
+  "workflow": "v3-one-question-per-chat",
+  "sources_hint": [
+    "笔记-week08-周五-AI",
+    "课件09-Deep-Learning"
+  ],
+  "batches": [
+    {
+      "id": "L0-positioning",
+      "layer": "L0",
+      "priority": "critical",
+      "title": "Week8 在课程中的位置",
+      "clear_conversation": true,
+      "prompt": "【单问】请仅回答：Week 8 在 AI(H) 课程中解决什么核心问题？与 Week 6-7 及 Week 10 如何衔接？\n\n依据：Week 8 课程记录、课件 09。\n要求：中文；3-5 段；每点标注来源；不要展开具体公式。"
+    },
+    {
+      "id": "w8-generative-goal",
+      "layer": "L1+L2",
+      "priority": "critical",
+      "title": "生成模型目标",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请仅讲解：生成模型的目标为何是学习 P(X)？潜在空间 Z 的「紧致性」和「可生成性」分别指什么？\n\n依据：Week 8 课程记录、课件 09。\n要求：中文；标注来源；不要讲 VAE 公式。"
+    },
+    {
+      "id": "w8-vae-elbo",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "VAE 与 ELBO",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请仅推导/讲解：VAE 中 ELBO 如何分解为重构项与 KL 正则项？各自起什么作用？\n\n依据：Week 8 课程记录、课件 09、花书第 20 章。\n要求：关键公式+符号表；中文；标注来源；不要讲扩散或 GAN。"
+    },
+    {
+      "id": "w8-reparameterization",
+      "layer": "L2",
+      "priority": "important",
+      "title": "重参数化技巧",
+      "clear_conversation": true,
+      "prompt": "【单问·重要】请仅讲解：VAE 的重参数化技巧是什么？为何使随机采样可反向传播？\n\n依据：Week 8 课程记录、课件 09。\n要求：中文；标注来源。"
+    },
+    {
+      "id": "w8-vae-compactness",
+      "layer": "L1+L2",
+      "priority": "important",
+      "title": "紧致性约束",
+      "clear_conversation": true,
+      "prompt": "【单问·重要】请仅说明：VAE 为何需要 KL 紧致性约束？若缺少会怎样（shortcut 问题）？\n\n依据：Week 8 课程记录、课件 09。\n要求：直觉优先；中文；标注来源。"
+    },
+    {
+      "id": "w8-diffusion",
+      "layer": "L1+L2",
+      "priority": "critical",
+      "title": "扩散模型",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请仅讲解：扩散模型的前向加噪与反向去噪过程；「分而治之」直觉是什么？\n\n依据：Week 8 课程记录、课件 09。\n要求：中文；标注来源；不要讲 GAN。"
+    },
+    {
+      "id": "w8-flow-matching",
+      "layer": "L2",
+      "priority": "optional",
+      "title": "流匹配",
+      "clear_conversation": true,
+      "prompt": "【单问】请仅说明：流匹配（Flow Matching）与扩散/GAN 相比的特点——确定性向量场、多样性 vs 保真度权衡。\n\n依据：Week 8 课程记录、课件 09。\n要求：中文；标注来源。"
+    },
+    {
+      "id": "w8-gan",
+      "layer": "L1+L2",
+      "priority": "critical",
+      "title": "GAN 对抗训练",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请仅讲解：GAN 中生成器与判别器的对抗博弈如何训练？各自损失目标是什么？\n\n依据：Week 8 课程记录、课件 09。\n要求：中文；标注来源；不要讲 VAE。"
+    },
+    {
+      "id": "w8-model-compare",
+      "layer": "L3",
+      "priority": "important",
+      "title": "生成模型对比",
+      "clear_conversation": true,
+      "prompt": "【单问·重要】请用对比表说明：VAE、扩散模型、流匹配、GAN 各自优势、局限与典型应用。\n\n依据：Week 8 课程记录、课件 09。\n要求：中文；标注来源。"
+    },
+    {
+      "id": "w8-bridge-w67",
+      "layer": "L4",
+      "priority": "important",
+      "title": "与 Week6-7 衔接",
+      "clear_conversation": true,
+      "prompt": "【单问】请仅说明：从 Week 6-7 的判别/特征学习到 Week 8 生成模型，知识上如何自然过渡？\n\n要求：条目式；中文；标注来源。"
+    },
+    {
+      "id": "w8-bridge-w10",
+      "layer": "L4",
+      "priority": "optional",
+      "title": "通向 Week10",
+      "clear_conversation": true,
+      "prompt": "【单问】请仅说明：Week 8 生成模型训练依赖 Week 10 哪些优化技术？\n\n要求：中文；标注来源。"
+    },
+    {
+      "id": "w8-mistakes",
+      "layer": "L3",
+      "priority": "important",
+      "title": "Week8 易错点",
+      "clear_conversation": true,
+      "prompt": "【单问】请列出 Week 8 最易混淆的 4-5 组概念（ELBO/KL/对抗训练/扩散 vs GAN 等），用对比表说明。\n\n要求：中文；标注来源。"
+    },
+    {
+      "id": "w8-study-order",
+      "layer": "L4",
+      "priority": "important",
+      "title": "Week8 复习优先级",
+      "clear_conversation": true,
+      "prompt": "【单问】请仅给出 Week 8 推荐学习顺序和复习优先级（极高/高/中）。\n\n要求：中文；条目式；标注来源。"
+    }
+  ]
+}

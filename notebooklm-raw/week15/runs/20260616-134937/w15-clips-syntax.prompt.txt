@@ -1,0 +1,4 @@
+【单问·核心】请仅讲解：CLIPS 的核心语法——数据类型（整数/浮点/符号/字符串）、前缀表达式、deftemplate 模板定义及五种约束（type/allowed-values/range/cardinality/default）、defrule 规则结构、模式匹配变量与约束符（&|~）。
+
+依据：Week 15 课程记录、课件 03。
+要求：语法符号表 + 每项给一个极简代码示例；中文；标注来源。

@@ -1,0 +1,4 @@
+【单问·核心】请仅梳理：SGD → Momentum → Adagrad → RMSprop → Adam → AdamW 的演进脉络，各解决什么问题？
+
+依据：Week 10 课程记录、课件 09、花书第 8 章。
+要求：对比表；中文；标注来源。

@@ -1,0 +1,140 @@
+{
+  "module": "week10",
+  "notebook_id": "505bdb1c-0034-4e14-89df-0b14bf3fc723",
+  "description": "Week 10：神经网络优化技术（单问单答）",
+  "workflow": "v3-one-question-per-chat",
+  "sources_hint": [
+    "笔记-week10-周五-AI",
+    "课件09-Deep-Learning"
+  ],
+  "batches": [
+    {
+      "id": "L0-positioning",
+      "layer": "L0",
+      "priority": "critical",
+      "title": "Week10 在课程中的位置",
+      "clear_conversation": true,
+      "prompt": "【单问】请仅回答：Week 10 在 AI(H) 课程中解决什么核心问题？与 Week 8 生成模型及 Week 12 Transformer 如何衔接？\n\n依据：Week 10 课程记录、课件 09。\n要求：中文；3-5 段；每点标注来源。"
+    },
+    {
+      "id": "w10-optimizer-evolution",
+      "layer": "L1+L2",
+      "priority": "critical",
+      "title": "优化器演进",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请仅梳理：SGD → Momentum → Adagrad → RMSprop → Adam → AdamW 的演进脉络，各解决什么问题？\n\n依据：Week 10 课程记录、课件 09、花书第 8 章。\n要求：对比表；中文；标注来源。"
+    },
+    {
+      "id": "w10-sgd-momentum",
+      "layer": "L2",
+      "priority": "important",
+      "title": "SGD 与 Momentum",
+      "clear_conversation": true,
+      "prompt": "【单问·重要】请仅讲解：标准 SGD 的局限；Momentum 如何加速收敛、缓解震荡？\n\n依据：Week 10 课程记录、课件 09。\n要求：中文；标注来源。"
+    },
+    {
+      "id": "w10-adaptive",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "自适应学习率",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请仅讲解：Adagrad、RMSprop、Adam 的自适应学习率机制有何异同？\n\n依据：Week 10 课程记录、课件 09。\n要求：中文；标注来源；不要讲 AdamW。"
+    },
+    {
+      "id": "w10-adamw",
+      "layer": "L2",
+      "priority": "optional",
+      "title": "AdamW 与正交化",
+      "clear_conversation": true,
+      "prompt": "【单问】请仅说明：AdamW 如何解耦权重衰减？矩阵正交化初始化在本课中提及的作用是什么？\n\n依据：Week 10 课程记录、课件 09。\n要求：中文；标注来源。"
+    },
+    {
+      "id": "w10-preprocessing",
+      "layer": "L2",
+      "priority": "important",
+      "title": "数据预处理",
+      "clear_conversation": true,
+      "prompt": "【单问·重要】请仅讲解：条件数、白化（whitening）与标准化（standardization）对优化的影响。\n\n依据：Week 10 课程记录、课件 09。\n要求：中文；标注来源。"
+    },
+    {
+      "id": "w10-hessian-geometry",
+      "layer": "L2",
+      "priority": "important",
+      "title": "损失曲面几何",
+      "clear_conversation": true,
+      "prompt": "【单问·重要】请仅说明：海森矩阵如何刻画损失曲面几何？与优化困难（鞍点、病态条件）的关系？\n\n依据：Week 10 课程记录、课件 09。\n要求：直觉优先；中文；标注来源。"
+    },
+    {
+      "id": "w10-init-xavier-he",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "Xavier/He 初始化",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请仅讲解：Xavier 与 He 初始化的原理、适用激活函数及公式。\n\n依据：Week 10 课程记录、课件 09。\n要求：中文；标注来源。"
+    },
+    {
+      "id": "w10-batch-norm",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "Batch Normalization",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请仅讲解：Batch Norm 如何缓解内部协变量偏移、稳定训练？训练与推理时行为差异？\n\n依据：Week 10 课程记录、课件 09。\n要求：中文；标注来源。"
+    },
+    {
+      "id": "w10-layer-norm",
+      "layer": "L2",
+      "priority": "important",
+      "title": "Layer Normalization",
+      "clear_conversation": true,
+      "prompt": "【单问·重要】请仅对比：Layer Norm 与 Batch Norm 的区别；为何 Transformer 用 LN？\n\n依据：Week 10 课程记录、课件 09。\n要求：对比表；中文；标注来源。"
+    },
+    {
+      "id": "w10-regularization",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "L2/Dropout/早停",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请仅讲解：L2 正则、Dropout、早停各自如何防止过拟合？\n\n依据：Week 10 课程记录、课件 09。\n要求：中文；标注来源。"
+    },
+    {
+      "id": "w10-hyperparams",
+      "layer": "L2",
+      "priority": "important",
+      "title": "超参数选择",
+      "clear_conversation": true,
+      "prompt": "【单问·重要】请仅说明：学习率衰减策略；Batch Size 与学习率的正相关关系。\n\n依据：Week 10 课程记录、课件 09。\n要求：中文；标注来源。"
+    },
+    {
+      "id": "w10-bridge-w8",
+      "layer": "L4",
+      "priority": "optional",
+      "title": "与 Week8 衔接",
+      "clear_conversation": true,
+      "prompt": "【单问】请仅说明：Week 8 生成模型训练如何用到 Week 10 的优化技巧？\n\n要求：中文；标注来源。"
+    },
+    {
+      "id": "w10-bridge-w12",
+      "layer": "L4",
+      "priority": "important",
+      "title": "通向 Week12",
+      "clear_conversation": true,
+      "prompt": "【单问·重要】请仅说明：Week 12 Transformer 大规模训练依赖 Week 10 哪些优化/正则/归一化技术？\n\n要求：中文；标注来源。"
+    },
+    {
+      "id": "w10-mistakes",
+      "layer": "L3",
+      "priority": "important",
+      "title": "Week10 易错点",
+      "clear_conversation": true,
+      "prompt": "【单问】请列出 Week 10 最易混淆的 4-5 组概念（BN/LN、Adam vs SGD、白化 vs 标准化等），用对比表说明。\n\n要求：中文；标注来源。"
+    },
+    {
+      "id": "w10-study-order",
+      "layer": "L4",
+      "priority": "important",
+      "title": "Week10 复习优先级",
+      "clear_conversation": true,
+      "prompt": "【单问】请仅给出 Week 10 推荐学习顺序和复习优先级。\n\n要求：中文；条目式；标注来源。"
+    }
+  ]
+}

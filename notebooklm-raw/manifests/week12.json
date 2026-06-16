@@ -1,0 +1,125 @@
+{
+  "module": "week12",
+  "notebook_id": "505bdb1c-0034-4e14-89df-0b14bf3fc723",
+  "description": "Week 12：Transformer 与大语言模型（单问单答）",
+  "workflow": "v3-one-question-per-chat",
+  "sources_hint": [
+    "笔记-week12-周五-AI",
+    "课件09-Deep-Learning",
+    "PJ2-作业说明"
+  ],
+  "batches": [
+    {
+      "id": "L0-positioning",
+      "layer": "L0",
+      "priority": "critical",
+      "title": "Week12 在课程中的位置",
+      "clear_conversation": true,
+      "prompt": "【单问】请仅回答：Week 12 在 AI(H) 课程中解决什么核心问题？与 Week 5-6 序列建模及 Week 13 符号主义如何衔接？\n\n依据：Week 12 课程记录、课件 09。\n要求：中文；3-5 段；每点标注来源。"
+    },
+    {
+      "id": "w12-attention-intuition",
+      "layer": "L1",
+      "priority": "critical",
+      "title": "注意力直觉",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请仅用 Q/K/V 检索模型类比讲解：注意力机制在做什么？\n\n依据：Week 12 课程记录、课件 09、Attention Is All You Need。\n要求：大白话；中文；标注来源；不要写完整公式。"
+    },
+    {
+      "id": "w12-self-attention",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "Self-Attention 公式",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请仅讲解：Scaled Dot-Product Self-Attention 的计算流程与公式；多头注意力如何并行？\n\n依据：Week 12 课程记录、课件 09。\n要求：符号表；中文；标注来源。"
+    },
+    {
+      "id": "w12-transformer-encoder",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "Transformer Encoder",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请仅讲解：Transformer Encoder 层结构（双向 MHAttn + FFN + 残差 + LayerNorm）。\n\n依据：Week 12 课程记录、课件 09。\n要求：中文；标注来源；不要讲 Decoder。"
+    },
+    {
+      "id": "w12-transformer-decoder",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "Transformer Decoder",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请仅讲解：Transformer Decoder 层结构（因果注意力 + 交叉注意力 + FFN + 残差 + LN）。\n\n依据：Week 12 课程记录、课件 09。\n要求：中文；标注来源。"
+    },
+    {
+      "id": "w12-pretrain-paradigms",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "三种预训练范式",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请用对比表说明：T5/BART（编解码）、BERT（仅编码器）、GPT（仅解码器）的架构与任务差异。\n\n依据：Week 12 课程记录、课件 09。\n要求：中文；标注来源。"
+    },
+    {
+      "id": "w12-gpt-wins",
+      "layer": "L1+L2",
+      "priority": "critical",
+      "title": "GPT 为何胜出",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请仅说明：GPT 架构最终胜出的原因——计算效率（KV 缓存）、任务性能、范式一致性、零样本能力。\n\n依据：Week 12 课程记录、课件 09。\n要求：中文；标注来源。"
+    },
+    {
+      "id": "w12-gen-unified",
+      "layer": "L2",
+      "priority": "optional",
+      "title": "生成模型统一视角",
+      "clear_conversation": true,
+      "prompt": "【单问】请仅说明：Week 12 如何将 VAE/扩散/流匹配/GAN 置于统一理论视角？\n\n依据：Week 12 课程记录、课件 09。\n要求：中文；标注来源。"
+    },
+    {
+      "id": "w12-bridge-symbolic",
+      "layer": "L4",
+      "priority": "important",
+      "title": "铺垫符号主义",
+      "clear_conversation": true,
+      "prompt": "【单问·重要】请仅说明：Week 12 如何铺垫符号主义（语义网络、框架）？与 Week 13 的关系？\n\n要求：中文；标注来源。"
+    },
+    {
+      "id": "w12-bridge-w56",
+      "layer": "L4",
+      "priority": "important",
+      "title": "与 Week5-6 衔接",
+      "clear_conversation": true,
+      "prompt": "【单问】请仅说明：从 Week 5-6 HMM/CRF 到 Week 12 Transformer，序列建模路径如何演进？\n\n要求：中文；标注来源。"
+    },
+    {
+      "id": "w12-bridge-w13",
+      "layer": "L4",
+      "priority": "important",
+      "title": "通向 Week13",
+      "clear_conversation": true,
+      "prompt": "【单问】请仅说明：Week 12 DL 黑箱与 Week 13 符号主义可解释性如何形成对比与转折？\n\n要求：中文；标注来源。"
+    },
+    {
+      "id": "w12-pj2",
+      "layer": "L4",
+      "priority": "important",
+      "title": "PJ2 要求",
+      "clear_conversation": true,
+      "prompt": "【单问·重要】请仅汇总：PJ2（Transformer）的作业要求、实现要点与 GPU 申请提醒（若有）。\n\n依据：Week 12 课程记录、PJ2 作业说明。\n要求：中文；标注来源。"
+    },
+    {
+      "id": "w12-mistakes",
+      "layer": "L3",
+      "priority": "important",
+      "title": "Week12 易错点",
+      "clear_conversation": true,
+      "prompt": "【单问】请列出 Week 12 最易混淆的 4-5 组概念（Encoder/Decoder、BERT/GPT、Self/Cross-Attn 等），用对比表说明。\n\n要求：中文；标注来源。"
+    },
+    {
+      "id": "w12-study-order",
+      "layer": "L4",
+      "priority": "important",
+      "title": "Week12 复习优先级",
+      "clear_conversation": true,
+      "prompt": "【单问】请仅给出 Week 12 推荐学习顺序和复习优先级。\n\n要求：中文；条目式；标注来源。"
+    }
+  ]
+}

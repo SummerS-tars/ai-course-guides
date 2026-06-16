@@ -1,0 +1,123 @@
+{
+  "module": "week8",
+  "notebook_id": "505bdb1c-0034-4e14-89df-0b14bf3fc723",
+  "manifest": "notebooklm-raw/manifests/week8.json",
+  "run_dir": "notebooklm-raw/week8/runs/20260616-124852",
+  "started_at": "2026-06-16T04:48:52.630288+00:00",
+  "finished_at": "2026-06-16T05:02:29.440616+00:00",
+  "batches_total": 13,
+  "batches_completed": 13,
+  "batches_ok": 13,
+  "batches_skipped": 0,
+  "batches_failed": 0,
+  "batches_pending": 0,
+  "batches": [
+    {
+      "id": "L0-positioning",
+      "layer": "L0",
+      "status": "ok",
+      "elapsed_seconds": 45.68,
+      "retry_count": 0,
+      "conversation_id": "7035d2f2-8e7e-4e9b-ac62-50cebd043e23"
+    },
+    {
+      "id": "w8-generative-goal",
+      "layer": "L1+L2",
+      "status": "ok",
+      "elapsed_seconds": 42.35,
+      "retry_count": 0,
+      "conversation_id": "06353534-0c37-4eaf-8037-417596a3ea94"
+    },
+    {
+      "id": "w8-vae-elbo",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 48.83,
+      "retry_count": 0,
+      "conversation_id": "7dc88ffb-8d31-4a06-b712-9bfe31b970f1"
+    },
+    {
+      "id": "w8-reparameterization",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 57.18,
+      "retry_count": 0,
+      "conversation_id": "5bfab367-f2b1-4c3f-a449-ad7ccf28b837"
+    },
+    {
+      "id": "w8-vae-compactness",
+      "layer": "L1+L2",
+      "status": "ok",
+      "elapsed_seconds": 45.8,
+      "retry_count": 0,
+      "conversation_id": "ba646de7-c607-4b20-b45b-95674f12ae14"
+    },
+    {
+      "id": "w8-diffusion",
+      "layer": "L1+L2",
+      "status": "ok",
+      "elapsed_seconds": 40.21,
+      "retry_count": 0,
+      "conversation_id": "b54fad98-ea54-4c3a-bee7-e4ada0cddd45"
+    },
+    {
+      "id": "w8-flow-matching",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 58.96,
+      "retry_count": 0,
+      "conversation_id": "523202b2-1323-4233-91d2-89cdac3571a9"
+    },
+    {
+      "id": "w8-gan",
+      "layer": "L1+L2",
+      "status": "ok",
+      "elapsed_seconds": 45.09,
+      "retry_count": 0,
+      "conversation_id": "e947636d-79f1-45e3-bd6d-99561745ba6e"
+    },
+    {
+      "id": "w8-model-compare",
+      "layer": "L3",
+      "status": "ok",
+      "elapsed_seconds": 46.88,
+      "retry_count": 0,
+      "conversation_id": "68f13478-a5cf-46ca-acca-1bfb29a35aa4"
+    },
+    {
+      "id": "w8-bridge-w67",
+      "layer": "L4",
+      "status": "ok",
+      "elapsed_seconds": 89.48,
+      "retry_count": 0,
+      "conversation_id": "c7260d86-ae04-4b69-9897-4d610e67a357"
+    },
+    {
+      "id": "w8-bridge-w10",
+      "layer": "L4",
+      "status": "ok",
+      "elapsed_seconds": 43.22,
+      "retry_count": 0,
+      "conversation_id": "c0568b8f-0bef-4532-9209-8e145c89b1bc"
+    },
+    {
+      "id": "w8-mistakes",
+      "layer": "L3",
+      "status": "ok",
+      "elapsed_seconds": 53.9,
+      "retry_count": 0,
+      "conversation_id": "f8287136-defd-4d1b-913f-28e95be008de"
+    },
+    {
+      "id": "w8-study-order",
+      "layer": "L4",
+      "status": "ok",
+      "elapsed_seconds": 98.14,
+      "retry_count": 0,
+      "conversation_id": "2fdde9c6-3bff-476e-87b3-10c43acce9cf"
+    }
+  ],
+  "status": "completed",
+  "total_elapsed_seconds": 816.81,
+  "total_retry_count": 0
+}

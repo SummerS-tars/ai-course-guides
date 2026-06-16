@@ -1,0 +1,4 @@
+【单问·核心】请仅讲解：Transformer Encoder 层结构（双向 MHAttn + FFN + 残差 + LayerNorm）。
+
+依据：Week 12 课程记录、课件 09。
+要求：中文；标注来源；不要讲 Decoder。
