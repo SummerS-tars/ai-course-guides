@@ -1,0 +1,76 @@
+{
+  "module": "week15",
+  "notebook_id": "505bdb1c-0034-4e14-89df-0b14bf3fc723",
+  "description": "Week 15：前向推理与 CLIPS 产生式系统（最后一课，含期末考试说明）",
+  "workflow": "v3-one-question-per-chat",
+  "sources_hint": [
+    "笔记-week15-周五-AI",
+    "课件03-CLIPS"
+  ],
+  "batches": [
+    {
+      "id": "L0-positioning",
+      "layer": "L0",
+      "priority": "critical",
+      "title": "Week15 在课程中的位置",
+      "clear_conversation": true,
+      "prompt": "【单问】请仅回答：Week 15（前向推理与 CLIPS）在 AI(H) 课程中处于什么位置？它与 Week 13-14 的逆向推理/Prolog 及 Week 1 的符号主义概述如何衔接？作为最后一课传达了哪些期末信息？\n\n依据：Week 15 课程记录、课件 03 CLIPS。\n要求：中文；3-5 段；每点标注来源。"
+    },
+    {
+      "id": "w15-forward-vs-backward",
+      "layer": "L1+L2",
+      "priority": "critical",
+      "title": "前向推理 vs 反向推理",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请仅比较：符号主义的两条实现路径——数据驱动的前向推理（CLIPS）和基于逻辑的反向推理（Prolog）。各自在什么场景下适用？分别是如何工作的？\n\n依据：Week 14-15 课程记录、课件 03/07。\n要求：对比表；中文；标注来源；用故障监控（前向）和数学定理证明（反向）作为例子。"
+    },
+    {
+      "id": "w15-production-system",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "产生式系统架构",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请仅讲解：产生式系统的三部分架构（事实库、知识库、推理引擎）及其工作原理。Agenda 的作用是什么？推理的循环周期是怎样的？\n\n依据：Week 15 课程记录、课件 03。\n要求：中文；流程图描述；标注来源；说明每部分对应什么职责。"
+    },
+    {
+      "id": "w15-clips-syntax",
+      "layer": "L2+L3",
+      "priority": "critical",
+      "title": "CLIPS 语法详解",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请仅讲解：CLIPS 的核心语法——数据类型（整数/浮点/符号/字符串）、前缀表达式、deftemplate 模板定义及五种约束（type/allowed-values/range/cardinality/default）、defrule 规则结构、模式匹配变量与约束符（&|~）。\n\n依据：Week 15 课程记录、课件 03。\n要求：语法符号表 + 每项给一个极简代码示例；中文；标注来源。"
+    },
+    {
+      "id": "w15-complex-pattern",
+      "layer": "L3",
+      "priority": "important",
+      "title": "复杂模式匹配与逻辑条件",
+      "clear_conversation": true,
+      "prompt": "【单问·重要】请仅讲解：CLIPS 规则 LHS 中的高级模式匹配——多字段通配符 $?、多条件逻辑元素（And/Or/Not/Exists/Forall）。给出至少一个经典组合示例（如眼/发色约束查询）。\n\n依据：Week 15 课程记录、课件 03。\n要求：每个元素一个代码片段；中文；标注来源。"
+    },
+    {
+      "id": "w15-animal-game",
+      "layer": "L1+L2",
+      "priority": "important",
+      "title": "猜动物决策树示例",
+      "clear_conversation": true,
+      "prompt": "【单问】请仅描述：CLIPS 猜动物决策树交互系统的设计思路。它如何用 defrule 实现交互式问答和知识学习？这个示例为何是考试重点？\n\n依据：Week 15 课程记录、课件 03。\n要求：中文；标注来源。"
+    },
+    {
+      "id": "w15-bridge",
+      "layer": "L4",
+      "priority": "important",
+      "title": "与前后知识衔接",
+      "clear_conversation": true,
+      "prompt": "【单问】请仅说明：Week 15（CLIPS 前向推理）与 Week 13（不确定性推理/确定性因子）、Week 14（逻辑/Prolog）的衔接关系，以及它在整个符号主义框架中的定位。\n\n要求：中文；标注来源。"
+    },
+    {
+      "id": "w15-mistakes",
+      "layer": "L3",
+      "priority": "important",
+      "title": "易混淆概念",
+      "clear_conversation": true,
+      "prompt": "【单问】请列出前向推理与产生式系统最易混淆的 3-5 组概念，用对比表说明：为什么易混、正确理解、记忆技巧。\n\n依据：Week 15 课程记录、课件 03。\n要求：中文；标注来源。"
+    }
+  ]
+}
