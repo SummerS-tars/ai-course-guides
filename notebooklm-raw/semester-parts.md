@@ -13,15 +13,15 @@
 
 | Part | module 目录 | 覆盖周次 | 主题 | 主要课件 | 指南目标 |
 |------|-------------|----------|------|----------|----------|
-| **P1** | `week1-2` | W1–W2 | AI 概述 + 感知机/MLP 基础 | 01, 08 | `guides/AI-Week1-2-学习指南.md` ✅ |
-| **P2** | `week3-4` | W3–W4 | 反向传播 + CNN 概览 + PJ1 | 08, 09 | `guides/AI-Week3-4-学习指南.md` ✅ |
-| **P3** | `week5-6` | W5–W6 | 序列建模 HMM/CRF → 词嵌入/早期 DL | 09, 05 | `guides/AI-Week5-6-学习指南.md` 待写 |
+| **P1** | `week1-2` | W1–W2 | AI 概述 + 感知机/MLP 基础 | 01, 08 | `guides/AI-Week1-2-学习指南.md` ✅ 定稿 |
+| **P2** | `week3-4` | W3–W4 | 反向传播 + CNN 概览 + PJ1 | 08, 09 | `guides/AI-Week3-4-学习指南.md` ✅ v2.3 待 Review |
+| **P3** | `week5-6` | W5–W6 | 序列建模 HMM/CRF → 词嵌入/早期 DL | 09, 05 | `guides/AI-Week5-6-学习指南.md` ✅ 初版 |
 | **P4** | `week7` | W7 | 卷积数学原理、互相关、池化、LeNet | 08, 09 | 并入 P2 指南 §2.3 |
-| **P5** | `week8` | W8 | 深度生成模型 VAE/扩散/GAN | 09 | `guides/AI-Week8-学习指南.md` 待写 |
-| **P6** | `week10` | W10 | 神经网络优化技术 | 09 | `guides/AI-Week10-学习指南.md` 待写 |
-| **P7** | `week12` | W12 | Transformer 与大语言模型 | 09 | `guides/AI-Week12-学习指南.md` 待写 |
-| **P8** | `week13-14` | W13–W14 | 不确定性推理 + 逻辑/消解/Prolog | 05, 02, 07 | `guides/AI-Week13-14-学习指南.md` 待写 |
-| **P9** | `week15` | W15 | 前向推理与 CLIPS 产生式系统 | 03 | `guides/AI-Week15-学习指南.md` 待写 |
+| **P5** | `week8` | W8 | 深度生成模型 VAE/扩散/GAN | 09 | `guides/AI-Week8-学习指南.md` ✅ 初版 |
+| **P6** | `week10` | W10 | 神经网络优化技术 | 09 | `guides/AI-Week10-学习指南.md` ✅ 初版 |
+| **P7** | `week12` | W12 | Transformer 与大语言模型 | 09 | `guides/AI-Week12-学习指南.md` ✅ 初版 |
+| **P8** | `week13-14` | W13–W14 | 不确定性推理 + 逻辑/消解/Prolog | 05, 02, 07 | `guides/AI-Week13-14-学习指南.md` ✅ 初版 |
+| **P9** | `week15` | W15 | 前向推理与 CLIPS 产生式系统 | 03 | `guides/AI-Week15-学习指南.md` ✅ 初版 |
 
 ### 叙事链（Part 间承接）
 
@@ -36,11 +36,13 @@ P1 三大流派/MLP → P2 BP+CNN+PJ1 → P3 序列 HMM/CRF
 
 ## 本地资料对齐（`1_人工智能H/`）
 
-| 类别 | 本地状态 | 说明 |
-|------|----------|------|
-| 课件 01–10 | ✅ 10/10 PDF | `/mnt/e/.../3_课件/` |
-| 课程记录 W1–W8, W10, W12–W15 | ✅ 13 份 md/pdf | W9/W11 停课无记录 |
-| PJ1 / PJ2 文档 | ✅ | `4_Lab/Project1/`、`5_Project/PJ2/` |
+| 类别 | 本地状态 | NotebookLM 期望 |
+|------|----------|-----------------|
+| 课件 01–10 | ✅ 10/10 PDF | `课件01-Introduction` … `课件10-Genetic-algorithm` |
+| 课程记录 W1–W8, W10, W12–W15 | ✅ 13 份 md（W1/2/7 另有 pdf） | `笔记-week0N-周五-AI` |
+| 课纲 | ✅ pdf + doc | `课纲-人工智能H` |
+| 教材 ×3 | ✅ pdf（花书另有 epub） | `参考书-*` |
+| PJ1 / PJ2 文档 | ✅ | `Project1-*`、`PJ2-作业说明` |
 
 ---
 
