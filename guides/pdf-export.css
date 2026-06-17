@@ -74,7 +74,17 @@ a {
   text-decoration: none;
 }
 
+.katex {
+  font-size: 1.05em;
+}
+
 .katex-display {
   overflow-x: auto;
   overflow-y: hidden;
+  margin: 0.6em 0;
+}
+
+/* markdown-katex converts inline SVG to <img> for WeasyPrint */
+.katex img {
+  vertical-align: middle;
 }
