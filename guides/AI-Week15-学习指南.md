@@ -5,7 +5,8 @@
 > **主要来源**：Week 15 课程记录、课件 03 CLIPS  
 > **生成方式**：NotebookLM 分层问答 → Agent 审核整合  
 > **生成日期**：2026-06-16  
-> **Raw run**：`notebooklm-raw/week15/runs/latest/`（8/8 batch）
+> **Raw run**：`notebooklm-raw/week15/runs/latest/`（8/8 batch）  
+> **术语格式**：术语表及正文**首次出现**的重要专业名词采用 **中文（English）** 格式，便于对照英文试卷。
 
 ---
 
@@ -14,8 +15,8 @@
 | 项 | 内容 |
 |----|------|
 | **考试形式** | **开卷**、**英文试卷**；内容均在 **PPT** |
-| **★核心考点** | **猜动物 (Animal Game)** 示例：读代码、理解交互/学习流程、简答产生式机制 |
-| **必掌握** | 前向 vs 反向对比、产生式三部件、Recognize-Act 循环、deftemplate/defrule 语法 |
+| **★核心考点** | **猜动物（Animal Game）** 示例：读代码、理解交互/学习流程、简答产生式机制 |
+| **必掌握** | 前向 vs 反向对比、产生式三部件、识别-执行循环（Recognize-Act）、deftemplate/defrule 语法 |
 | **不要求** | 实际开发完整专家系统，但须**读懂** PPT 中的 CLIPS 代码 |
 
 > **备考建议**：在本地或在线 CLIPS 环境**跑一遍**猜动物程序，对照本指南 §2.5 逐步跟踪事实库变化。
@@ -28,22 +29,22 @@
 
 | 术语 | 大白话解释 | 生活类比 |
 |------|-----------|----------|
-| 🔗 **前向推理** | 从已知事实出发，匹配规则推出新事实 | 化验单出来 → 一路推导诊断 |
-| 🔗 **反向推理** | 从待证目标出发，反向找条件 | 侦探：死者是他杀 → 查谁有动机 |
-| 🔗 **产生式系统** | 事实库 + 规则库 + 推理引擎 | 厨房：食材 + 菜谱 + 厨师 |
-| 🔗 **产生式规则** | IF 前提(LHS) THEN 动作(RHS) | 菜谱一条：「若…则…」 |
-| 🔗 **事实 (Fact)** | 工作内存中的具体断言 | 黑板上的当前情报 |
-| 🔗 **Agenda 议程** | 已激活、待触发的规则队列 | 候补执行名单 |
-| 🔗 **激活 (Activation)** | LHS 被满足，规则进入 Agenda | 上榜候补 |
-| 🔗 **触发 (Firing)** | 从 Agenda 选中规则执行 RHS | 正式上场干活 |
-| 🔗 **冲突消解** | 多规则同时激活时的优先级决策 | 多个候补，选谁先上 |
-| 🔗 **Recognize-Act** | 匹配→激活→消解→执行 循环 | 厨师每轮：看食材→选菜→下锅 |
-| 🔗 **deftemplate** | 定义事实结构（槽位+约束） | 表格模板：姓名/年龄/性别列 |
-| 🔗 **defrule** | 定义产生式规则 | 一条完整菜谱 |
-| 🔗 **assert / retract** | 添加 / 撤销事实 | 黑板上写/擦 |
-| 🔗 **modify** | 就地修改已有事实 | 改表格某行某列 |
-| 🔗 **Rete 算法** | 用网络缓存匹配，事实变才更新 | 快递通知：有货才敲门 |
-| 🔗 **?var / $?var** | 单字段 / 多字段模式变量 | 匹配一个格 / 匹配一串格 |
+| 🔗 **前向推理（Forward chaining）** | 从已知事实出发，匹配规则推出新事实 | 化验单出来 → 一路推导诊断 |
+| 🔗 **反向推理（Backward chaining）** | 从待证目标出发，反向找条件 | 侦探：死者是他杀 → 查谁有动机 |
+| 🔗 **产生式系统（Production system）** | 事实库 + 规则库 + 推理引擎 | 厨房：食材 + 菜谱 + 厨师 |
+| 🔗 **产生式规则（Production rule）** | IF 前提(LHS) THEN 动作(RHS) | 菜谱一条：「若…则…」 |
+| 🔗 **事实（Fact）** | 工作内存中的具体断言 | 黑板上的当前情报 |
+| 🔗 **议程（Agenda）** | 已激活、待触发的规则队列 | 候补执行名单 |
+| 🔗 **激活（Activation）** | LHS 被满足，规则进入 Agenda | 上榜候补 |
+| 🔗 **触发（Firing）** | 从 Agenda 选中规则执行 RHS | 正式上场干活 |
+| 🔗 **冲突消解（Conflict resolution）** | 多规则同时激活时的优先级决策 | 多个候补，选谁先上 |
+| 🔗 **识别-执行循环（Recognize-Act cycle）** | 匹配→激活→消解→执行 循环 | 厨师每轮：看食材→选菜→下锅 |
+| 🔗 **事实模板（deftemplate）** | 定义事实结构（槽位+约束） | 表格模板：姓名/年龄/性别列 |
+| 🔗 **规则定义（defrule）** | 定义产生式规则 | 一条完整菜谱 |
+| 🔗 **assert / retract（添加/撤销事实）** | 添加 / 撤销事实 | 黑板上写/擦 |
+| 🔗 **modify（修改事实）** | 就地修改已有事实 | 改表格某行某列 |
+| 🔗 **Rete 算法（Rete algorithm）** | 用网络缓存匹配，事实变才更新 | 快递通知：有货才敲门 |
+| 🔗 **?var / $?var（模式变量）** | 单字段 / 多字段模式变量 | 匹配一个格 / 匹配一串格 |
 
 ---
 
@@ -51,7 +52,7 @@
 
 ### 1.1 在整门课中的位置
 
-Week 15 是 **符号主义收官**：把 Week 1 的「知识形式化为规则」落到 CLIPS 工程实现，与 Week 14 Prolog 构成推理双路径。
+Week 15 是 **符号主义（Symbolism）收官**：把 Week 1 的「知识形式化为规则」落到 CLIPS 工程实现，与 Week 14 Prolog **反向推理（Backward chaining）** 构成推理双路径。
 
 ```mermaid
 flowchart TB
@@ -67,8 +68,8 @@ flowchart TB
 |--------|------|------|
 | **★★★** | 猜动物：交互 + 学习 + defrule 流程 | **核心考点** |
 | **★★** | 前向 vs 反向完整对比 | 选择/简答 |
-| **★★** | 产生式三部件 + Recognize-Act | 简答 |
-| **★★** | deftemplate 五约束 + defrule 结构 | 读代码 |
+| **★★** | 产生式三部件 + 识别-执行循环（Recognize-Act） | 简答 |
+| **★★** | 事实模板（deftemplate）五约束 + 规则定义（defrule）结构 | 读代码 |
 | **★** | 复杂模式 $? / and-or-not-exists | 读代码 |
 | **★** | 激活 vs 触发、Rete 直觉 | 易混选择 |
 
@@ -104,18 +105,18 @@ flowchart TB
 
 ---
 
-#### A. 前向推理 vs 反向推理
+#### A. 前向推理（Forward chaining）vs 反向推理（Backward chaining）
 
-> **承接 Week 14**：Prolog 从目标出发反向归约；Week 15 转向从事实出发正向推导。
+> **承接 Week 14**：Prolog 从目标出发反向归约；Week 15 转向从事实出发**前向推理（Forward chaining）**正向推导。
 
-| 特性 | **前向推理 (CLIPS)** | **反向推理 (Prolog)** |
+| 特性 | **前向推理（Forward chaining, CLIPS）** | **反向推理（Backward chaining, Prolog）** |
 |------|---------------------|----------------------|
 | 代表工具 | CLIPS | Prolog |
 | 核心思想 | 从**已知事实**出发，不断推出新事实 | 从**待证目标**出发，反向找条件 |
 | 驱动方式 | **数据驱动** | **目标驱动** |
-| 理论基础 | 产生式系统 | 消解 + 霍恩子句 |
-| 工作循环 | Match → Agenda → Fire | 子目标归约 + 回溯 |
-| 效率优化 | **Rete 算法** | **Cut `!`** 剪枝 |
+| 理论基础 | 产生式系统（Production system） | 消解（Resolution）+ 霍恩子句（Horn clause） |
+| 工作循环 | Match → Agenda → Fire | 子目标归约 + 回溯（Backtracking） |
+| 效率优化 | **Rete 算法（Rete algorithm）** | **Cut `!`（剪枝）** |
 | 典型场景 | 故障监控、传感器实时响应 | 定理证明、关系查询 |
 | 比喻 | 科学家：现有材料不断实验 | 侦探：从结论倒查证据 |
 
@@ -136,7 +137,7 @@ flowchart TB
 
 ---
 
-#### B. 产生式系统架构
+#### B. 产生式系统架构（Production system architecture）
 
 > **本节要回答**：三部件各存什么？Agenda 在循环里扮演什么角色？
 
@@ -144,11 +145,11 @@ flowchart TB
 
 | 部件 | 别名 | 职责 |
 |------|------|------|
-| **事实库** | Working Memory | 当前已知事实，动态增删改 |
-| **知识库** | Production Memory | 静态 IF-THEN 规则集合 |
-| **推理引擎** | Inference Engine | 匹配、调度、执行 |
+| **事实库（Fact base / Working Memory）** | Working Memory | 当前已知事实，动态增删改 |
+| **知识库（Rule base / Production Memory）** | Production Memory | 静态 IF-THEN 规则集合 |
+| **推理引擎（Inference Engine）** | Inference Engine | 匹配、调度、执行 |
 
-**Agenda（议程）**：LHS 被满足的规则**激活**后进入 Agenda；冲突消解按优先级选出一条**触发**。
+**议程（Agenda）**：LHS 被满足的规则**激活（Activation）**后进入 Agenda；**冲突消解（Conflict resolution）**按优先级选出一条**触发（Firing）**。
 
 ```mermaid
 flowchart TB
@@ -161,12 +162,12 @@ flowchart TB
     CHECK -->|是| END([结束])
 ```
 
-**Recognize-Act 四步**：
+**识别-执行循环（Recognize-Act cycle）四步**：
 
-1. **Match**：事实库与所有规则 LHS 模式匹配（Rete 优化此步）
-2. **Activate**：匹配成功的规则入 Agenda
-3. **Conflict Resolution**：按 salience 等策略选一条
-4. **Fire**：执行 RHS（`assert`/`retract`/`modify`/`printout`），更新事实库 → 回到 Match
+1. **Match（模式匹配）**：事实库与所有规则 LHS 模式匹配（Rete 优化此步）
+2. **Activate（激活）**：匹配成功的规则入 Agenda
+3. **Conflict Resolution（冲突消解）**：按 salience 等策略选一条
+4. **Fire（触发）**：执行 RHS（`assert`/`retract`/`modify`/`printout`），更新事实库 → 回到 Match
 
 （来源：`w15-production-system`、课件 03）
 
@@ -189,7 +190,7 @@ flowchart TB
 
 **前缀表达式**：`(+)`, `(* 4 5)`, `(+ 3 (* 4 5))`
 
-##### C.2 deftemplate：事实模板 + 五约束
+##### C.2 事实模板（deftemplate）：事实模板 + 五约束
 
 ```clips
 (deftemplate person
@@ -208,7 +209,7 @@ flowchart TB
 | **cardinality** | multislot 元素个数 |
 | **default** | 缺省值 |
 
-##### C.3 defrule：规则结构
+##### C.3 规则定义（defrule）：规则结构
 
 ```clips
 (defrule fire-emergency
