@@ -31,3 +31,6 @@ venv/
 
 # Bulky: full NotebookLM JSON payloads (references + duplicate answer text)
 notebooklm-raw/**/*.answer.json
+
+# --- Generated PDF exports (not versioned) ---
+*.pdf

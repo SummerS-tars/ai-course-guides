@@ -22,3 +22,11 @@
 [12:47:50] 提问 (376 字, nlm_timeout=120s)…
 [12:48:52] 完成 L3L4-deep-dive (62.1s)
 [12:48:52] 采集结束: status=completed | ok=4 skipped=0 failed=0/4 | 重试 0 次 | 耗时 255.75s
+[23:37:23] 模块: week1-2 | 批次数: 1 | 输出: /home/thesumst/.cursor/worktrees/ai__SSH__wsl_/zodi/notebooklm-raw/week1-2/runs/latest
+[23:37:23] 同步认证…
+[23:37:26] 认证 OK
+[23:37:26] 选定 Notebook: 505bdb1c-0034-4e14-89df-0b14bf3fc723
+[23:37:32] --- batch 1/1: [L1+L2] supplement-slide08-unsupervised ---
+[23:37:32] 清空会话上下文 (notebooklm clear)
+[23:37:32] 提问 (368 字, nlm_timeout=120s)…
+[23:38:35] 完成 supplement-slide08-unsupervised (62.6s)

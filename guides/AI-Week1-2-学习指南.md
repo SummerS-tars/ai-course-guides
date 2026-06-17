@@ -322,7 +322,7 @@ $$w = (\Phi^T \Phi)^{-1} \Phi^T \mathbf{y}$$
 ```
 
 - Sigmoid（Sigmoid function，S 型激活函数）：$f(\sigma) = \dfrac{1}{1 + e^{-\sigma}}$
-- Tanh（Hyperbolic Tangent，双曲正切）：输出含负值，有助于特征表示和收敛
+- Tanh（Hyperbolic Tangent，双曲正切）：$f(x) = \tanh(x) = \dfrac{e^x - e^{-x}}{e^x + e^{-x}}$，输出 $(-1,1)$ 且**零中心**，隐层通常比 Sigmoid 收敛更快；导数 $f'(x) = 1 - \tanh^2(x)$
 
 **参数空间对称性**（来源：Week 2 记录）
 
@@ -371,6 +371,48 @@ $$w = (\Phi^T \Phi)^{-1} \Phi^T \mathbf{y}$$
 | 全量梯度 | 方向准确 | 计算慢，易陷鞍点 |
 | 单样本 | 速度快 | 噪声极大，震荡 |
 | **Mini-batch** | 稳定性 + 适度随机性 | 需选 Batch Size（通常几十到几百） |
+
+#### F. 课件08 补充：无监督学习与竞争学习（了解即可，非期末重点）
+
+> **来源**：NotebookLM 补采 `supplement-slide08-unsupervised`（课件 08 Connectionist 末尾；FiCS 主线未展开）
+
+课件 08 在讲完有监督的感知机 / MLP / 梯度下降之后，用两节作**拓展**：无标签、靠数据自身结构学习。Week 1–2 授课与 **PJ1（BP + CNN）** 均走有监督主线，本节**了解即可**。
+
+**与有监督的关系**
+
+| 维度 | 有监督（Week 1–2 主线） | 无监督 / 竞争学习（课件08 末尾） |
+|------|------------------------|--------------------------------|
+| 信号 | 需要期望输出 $d_i$ | 无显式标签 |
+| 驱动 | **误差驱动**（$d_i - O_i$） | **激活驱动**（找最匹配节点） |
+| 代表 | 感知机 Delta 规则、BP | Winner-Take-All（WTA，赢者通吃） |
+
+**无监督学习（Unsupervised Learning）**
+
+- **目标**：在无外部反馈时发现输入的模式/结构（聚类、模式识别）（来源：课件 08）
+- **课件示例**：**Kohonen 学习网络** — 对数据点聚类，本质是一种**自组织映射（Self-Organizing Map，SOM）**（来源：课件 08）
+
+**竞争学习（Competitive Learning）与 WTA**
+
+1. 输入 $X=(x_1,\ldots,x_n)$ 进入一层，各节点**竞争**
+2. **赢家**：通常与 $X$ **欧几里得距离最近**（或激活最大）的节点
+3. **仅更新赢家权重**，其余不变
+
+**WTA 更新**（课件 08）：
+
+$$\Delta W_t = c\,(X_{t-1} - W_{t-1})$$
+
+$c$ 为学习常数；效果是让赢家权重向量**向输入靠近**。
+
+**与感知机 Delta 规则对比**
+
+| | Delta 规则（有监督） | WTA（无监督） |
+|--|---------------------|---------------|
+| 依据 | 期望 $d_i$ 与实际 $O_i$ 之差 | 输入 $X$ 与当前权重 $W$ 之差 |
+| 更新范围 | 参与计算的连接 | **仅赢家**（局部更新） |
+
+**后续弱关联**（不必 Week 1–2 深挖）：Week 8 生成模型（VAE/GAN）、Week 6/12 词嵌入与无监督预训练（BERT/GPT），思想上都与「无标签发现表征」同源。
+
+（来源：课件 08、`supplement-slide08-unsupervised`、Project1 任务书）
 
 ---
 
@@ -530,10 +572,26 @@ Week 1-2                    Week 3                     Week 4
 | 教材 | `2_课程资料/书/AIMA 4th Ed` | 参考书-AIMA |
 | 教材 | `2_课程资料/书/Deep Learning` | 参考书-Deep Learning |
 | 教材 | `2_课程资料/书/Luger` | 参考书-AI Structures |
+| 补采 raw | `notebooklm-raw/week1-2/runs/20260616-124436/supplement-slide08-unsupervised.answer.md` | 课件08 无监督/竞争学习 |
 
 ---
 
-## 6. 调查结论
+## 6. Step 4 补充采集说明
+
+| batch | 用途 | 状态 |
+|-------|------|------|
+| `supplement-slide08-unsupervised` | 课件08 末尾无监督学习 + 竞争学习（WTA/Kohonen） | ✅ 已采（2026-06-17） |
+
+```bash
+python .cursor/skills/ai-course-notebooklm/scripts/nlm-collect.py \
+  notebooklm-raw/manifests/week1-2.json \
+  --only supplement-slide08-unsupervised \
+  --resume notebooklm-raw/week1-2/runs/20260616-124436
+```
+
+---
+
+## 7. 调查结论
 
 1. **Week 1–2 资料完整**：课程记录 + 课件 + 教材均已导入 NotebookLM，可支撑系统学习。
 2. **知识主线清晰**：从 AI 宏观认知 → 感知机数学基础 → MLP 结构与优化预备，逻辑链完整。

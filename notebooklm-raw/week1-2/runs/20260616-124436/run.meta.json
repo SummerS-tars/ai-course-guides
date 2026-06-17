@@ -4,10 +4,10 @@
   "manifest": "notebooklm-raw/manifests/week1-2.json",
   "run_dir": "notebooklm-raw/week1-2/runs/20260616-124436",
   "started_at": "2026-06-16T04:44:36.751334+00:00",
-  "finished_at": "2026-06-16T04:48:52.506179+00:00",
-  "batches_total": 4,
-  "batches_completed": 4,
-  "batches_ok": 4,
+  "finished_at": "2026-06-17T15:38:35.192331+00:00",
+  "batches_total": 5,
+  "batches_completed": 5,
+  "batches_ok": 5,
   "batches_skipped": 0,
   "batches_failed": 0,
   "batches_pending": 0,
@@ -43,9 +43,17 @@
       "elapsed_seconds": 62.12,
       "retry_count": 0,
       "conversation_id": "d13d0d41-ec2c-4ef2-a171-241823849baa"
+    },
+    {
+      "id": "supplement-slide08-unsupervised",
+      "layer": "L1+L2",
+      "status": "ok",
+      "elapsed_seconds": 62.62,
+      "retry_count": 0,
+      "conversation_id": "d377b70f-1e48-446e-b33a-566070f0bbc1"
     }
   ],
   "status": "completed",
-  "total_elapsed_seconds": 255.75,
+  "total_elapsed_seconds": 71.79,
   "total_retry_count": 0
 }

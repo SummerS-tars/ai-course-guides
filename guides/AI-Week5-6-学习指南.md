@@ -734,6 +734,7 @@ flowchart LR
 
 | Week 3–4 概念 | Week 5–6 演进 |
 |--------------|--------------|
+| Week 4 §I 深度学习史（Hopfield→RBM/DBN→逐层预训练→ReLU/ResNet） | 了解宏观脉络即可；Week 6 词嵌入/RNN 属另一演进线 |
 | Softmax 多分类 | 序列每步分类；CRF 为路径级 Softmax |
 | 交叉熵损失 | 窗口模型每位置 CE |
 | BP 链式法则 | 误差回传到 Embedding |
