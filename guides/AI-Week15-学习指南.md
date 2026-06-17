@@ -6,7 +6,7 @@
 > **生成方式**：NotebookLM 分层问答 → Agent 审核整合  
 > **生成日期**：2026-06-16  
 > **Raw run**：`notebooklm-raw/week15/runs/latest/`（8/8 batch）  
-> **术语格式**：术语表及正文**首次出现**的重要专业名词采用 **中文（English）** 格式，便于对照英文试卷。
+> **术语格式**：术语表及正文**首次出现**时，专业名词采用 **中文（English）**；英文缩写采用 **缩写（English full form，中文）**，便于对照英文试卷。
 
 ---
 
@@ -32,7 +32,9 @@
 | 🔗 **前向推理（Forward chaining）** | 从已知事实出发，匹配规则推出新事实 | 化验单出来 → 一路推导诊断 |
 | 🔗 **反向推理（Backward chaining）** | 从待证目标出发，反向找条件 | 侦探：死者是他杀 → 查谁有动机 |
 | 🔗 **产生式系统（Production system）** | 事实库 + 规则库 + 推理引擎 | 厨房：食材 + 菜谱 + 厨师 |
-| 🔗 **产生式规则（Production rule）** | IF 前提(LHS) THEN 动作(RHS) | 菜谱一条：「若…则…」 |
+| 🔗 **产生式规则（Production rule）** | IF 前提 THEN 动作 | 菜谱一条：「若…则…」 |
+| 🔗 **LHS（Left-Hand Side，规则前提/左侧）** | 模式匹配条件 | 菜谱的「若…」部分 |
+| 🔗 **RHS（Right-Hand Side，规则动作/右侧）** | 触发后执行的动作 | 菜谱的「则…」部分 |
 | 🔗 **事实（Fact）** | 工作内存中的具体断言 | 黑板上的当前情报 |
 | 🔗 **议程（Agenda）** | 已激活、待触发的规则队列 | 候补执行名单 |
 | 🔗 **激活（Activation）** | LHS 被满足，规则进入 Agenda | 上榜候补 |
@@ -44,7 +46,8 @@
 | 🔗 **assert / retract（添加/撤销事实）** | 添加 / 撤销事实 | 黑板上写/擦 |
 | 🔗 **modify（修改事实）** | 就地修改已有事实 | 改表格某行某列 |
 | 🔗 **Rete 算法（Rete algorithm）** | 用网络缓存匹配，事实变才更新 | 快递通知：有货才敲门 |
-| 🔗 **?var / $?var（模式变量）** | 单字段 / 多字段模式变量 | 匹配一个格 / 匹配一串格 |
+| 🔗 **?var / $?var（模式变量，Pattern variable）** | 单字段 / 多字段模式变量 | 匹配一个格 / 匹配一串格 |
+| 🔗 **CLIPS（C Language Integrated Production System，C 语言集成产生式系统）** | NASA 开发的产生式系统语言 | 把规则写成可运行代码 |
 
 ---
 
@@ -77,7 +80,7 @@ flowchart TB
 
 ## 2. 核心知识
 
-### 2.0 CLIPS 全景：符号主义的数据驱动路径
+### 2.0 CLIPS（C Language Integrated Production System，C 语言集成产生式系统）全景：符号主义的数据驱动路径
 
 > **本节叙事线**：
 >
@@ -222,9 +225,9 @@ flowchart TB
 | 部分 | 符号 | 含义 |
 |------|------|------|
 | 规则名 | `defrule <name>` | 唯一标识 |
-| LHS | `(pattern)*` | 前提条件 |
+| LHS | `(pattern)*` | 前提条件（Left-Hand Side，规则前提） |
 | 箭头 | `=>` | 分隔条件与动作 |
-| RHS | `(action)*` | assert/retract/modify/printout 等 |
+| RHS | `(action)*` | assert/retract/modify/printout 等（Right-Hand Side，规则动作） |
 
 ##### C.4 模式变量与约束符
 

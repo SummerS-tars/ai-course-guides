@@ -6,7 +6,7 @@
 > **生成方式**：NotebookLM 分层问答 → Agent 审核整合  
 > **生成日期**：2026-06-16  
 > **原始数据**：`notebooklm-raw/week8/runs/latest/`（13/13 batch）  
-> **术语格式**：术语表及正文**首次出现**的重要专业名词采用 **中文（English）** 格式，便于对照英文试卷。
+> **术语格式**：术语表及正文**首次出现**时，专业名词采用 **中文（English）**；英文缩写采用 **缩写（English full form，中文）**，便于对照英文试卷。
 
 ---
 
@@ -21,12 +21,13 @@
 | 🔗 **可生成性（Generatability）** | 从 $Z$ 任意采样都能解码出合理 $X$ | 从乐谱库随机抽一页，仍能演奏出像样的曲子 |
 | 🔗 **编码器 $q_\phi(z\|x)$（Encoder）** | 把观测 $x$ 映射为 $z$ 的分布参数 | 压缩软件：把照片压成 zip |
 | 🔗 **解码器 $p_\theta(x\|z)$（Decoder）** | 从 $z$ 重建 $x$ | 解压软件：从 zip 还原照片 |
-| 🔗 **ELBO（Evidence Lower Bound）** | 对数似然 $\log p(x)$ 的可计算下界，VAE 的训练目标 | 考试估分：算不出真分，但能算一个「至少这么多」的下限 |
-| 🔗 **KL 散度（KL divergence）** | 衡量两个分布差异的非负指标 | 两幅画的「不像程度」 |
+| 🔗 **VAE（Variational Autoencoder，变分自编码器）** | 编码器-解码器 + 变分推断 + ELBO 训练 | 带正则的压缩-重建系统 |
+| 🔗 **ELBO（Evidence Lower Bound，证据下界）** | 对数似然 $\log p(x)$ 的可计算下界，VAE 的训练目标 | 考试估分：算不出真分，但能算一个「至少这么多」的下限 |
+| 🔗 **KL（Kullback-Leibler divergence，KL 散度）** | 衡量两个分布差异的非负指标 | 两幅画的「不像程度」 |
 | 🔗 **重参数化（Reparameterization trick）** | $z=\mu+\sigma\odot\varepsilon$，把随机采样变成可导变换 | 掷骰子结果不可导，但「底数+倍数×随机数」可导 |
 | 🔗 **扩散模型（Diffusion model）** | 前向加噪、反向学去噪，多步生成 | 把清晰照片逐步糊成噪声，再学会一步步擦回去 |
 | 🔗 **流匹配（Flow matching）** | 学确定性向量场，沿 ODE 从噪声走到数据 | 导航：规定从 A 到 B 的固定路线，不靠随机拐弯 |
-| 🔗 **生成对抗网络（GAN, Generative Adversarial Network）** | 生成器与判别器对抗博弈 | 造假者 vs 鉴定师，互相逼到极限 |
+| 🔗 **GAN（Generative Adversarial Network，生成对抗网络）** | 生成器与判别器对抗博弈 | 造假者 vs 鉴定师，互相逼到极限 |
 | 🔗 **模式坍缩（Mode collapse）** | GAN 生成器只产出少数几种样本 | 造假者只会画同一张脸 |
 | 🔗 **对抗样本（Adversarial example）** | 微小扰动使模型误判（≠ GAN 的「对抗」） | 在停车标志上贴几条胶带，自动驾驶认错 |
 
@@ -173,7 +174,7 @@ mindmap
 
 ---
 
-### 2.2 变分自编码器（VAE）与 ELBO：变分推断的核心
+### 2.2 VAE（Variational Autoencoder，变分自编码器）与 ELBO（Evidence Lower Bound，证据下界）：变分推断的核心
 
 > **本节叙事线**：C. 为何直接算 $\log p(x)$ 不可行？ → D. ELBO 如何分解？ → E. 两项各自干什么？
 

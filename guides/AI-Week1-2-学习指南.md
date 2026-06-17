@@ -5,7 +5,7 @@
 > **主要来源**：Week 1/2 课程记录、课件 01 Introduction、课件 08 Connectionist  
 > **生成方式**：NotebookLM 分层问答 → Agent 审核整合  
 > **生成日期**：2026-06-09  
-> **术语格式**：术语表及正文**首次出现**的重要专业名词采用 **中文（English）** 格式，便于对照英文试卷。
+> **术语格式**：术语表及正文**首次出现**时，专业名词采用 **中文（English）**；英文缩写采用 **缩写（English full form，中文）**，便于对照英文试卷。
 
 ---
 
@@ -17,13 +17,13 @@
 | 🔗 **连接主义（Connectionism）** | 模仿大脑神经元，靠大量数据调整连接强度来学习 | 学骑自行车：练出来的肌肉记忆 |
 | 🔗 **进化主义（Evolutionism）** | 随机生成方案，优胜劣汰、交叉变异来进化 | 培育赛马：配种 + 突变选出冠军 |
 | 🔗 **图灵测试（Turing Test）** | 人通过文字对话分辨对方是人还是机器 | 网恋奔现：聊半天猜不出对方是 AI |
-| 🔗 **MP 模型（McCulloch-Pitts model）** | 第一个神经元数学模型，权重手动设定 | 教条派：规则写死，不会自学 |
+| 🔗 **MP（McCulloch-Pitts model，MP 神经元模型）** | 第一个神经元数学模型，权重手动设定 | 教条派：规则写死，不会自学 |
 | 🔗 **感知机（Perceptron）** | 能自动从错误中调整权重的单层神经元 | 演化派：错了就改，慢慢学会 |
-| 🔗 **异或（XOR, exclusive OR）** | 输入相同输出 0，输入不同输出 1 | 对角线上的点无法用一条线分开 |
+| 🔗 **XOR（exclusive OR，异或）** | 输入相同输出 0，输入不同输出 1 | 对角线上的点无法用一条线分开 |
 | 🔗 **基函数（Basis function）** | 把原始输入变换到新特征空间的函数 | 换一副眼镜看数据，原本分不清的可能分开 |
 | 🔗 **设计矩阵（Design matrix）** | 所有样本的基函数向量排成的矩阵 | 全班同学的"特征成绩单" |
 | 🔗 **正规方程（Normal equation）** | 线性模型损失函数的解析解，一步算出最优权重 | 不用试，直接算出最佳答案 |
-| 🔗 **多层感知机（MLP, Multi-Layer Perceptron）** | 有隐层的神经网络 | 多道关卡，每关提炼更抽象的特征 |
+| 🔗 **MLP（Multi-Layer Perceptron，多层感知机）** | 有隐层的神经网络 | 多道关卡，每关提炼更抽象的特征 |
 | 🔗 **激活函数（Activation function）** | 神经元输出前的非线性变换 | 门槛：不够刺激不兴奋，够了才输出 |
 | 🔗 **梯度下降（Gradient descent）** | 沿损失下降最快的方向小步调整参数 | 蒙眼下山：每步往最陡的下坡走 |
 | 🔗 **鞍点（Saddle point）** | 某些方向是谷底、某些方向是山顶的点 | 马鞍中间：前后低、左右高 |
@@ -39,7 +39,7 @@ Week 1–2 处于 **「概述与理论奠基」** 阶段，负责：
 
 1. 建立 AI 宏观版图（三大流派（Three AI paradigms）、历史脉络）
 2. 切入连接主义（Connectionism）的技术起点（感知机 → 多层网络）
-3. 为 Week 3 反向传播（Backpropagation）、Week 4 卷积神经网络（CNN）、PJ1 手写神经网络铺路
+3. 为 Week 3 反向传播（Backpropagation）、Week 4 CNN（Convolutional Neural Network，卷积神经网络）、PJ1 手写神经网络铺路
 
 （来源：Week 1 记录、Week 2 记录、课件 01）
 
@@ -72,12 +72,12 @@ Week 1–2 处于 **「概述与理论奠基」** 阶段，负责：
 **Week 1**
 - AI 起源（1956 达特茅斯会议）、定义、图灵测试
 - 三大流派：符号主义（Symbolism）/ 连接主义（Connectionism）/ 进化主义（Evolutionism）
-- 连接主义历史：MP 模型 → 感知机（Perceptron）→ 反向传播（BP）→ AlexNet
+- 连接主义历史：MP 模型 → 感知机（Perceptron）→ BP（Backpropagation，反向传播）→ AlexNet
 - 课程要求：期末 50% + Project 50%，强调手写实现
 
 **Week 2**
 - 单层感知机（Perceptron）：模型、学习规则、几何意义（超平面）
-- 异或问题（XOR）与阶跃函数不可微
+- 异或问题 XOR（exclusive OR，异或）与阶跃函数不可微
 - 线性模型：基函数（Basis function）、设计矩阵（Design matrix）、正规方程（Normal equation）、伪逆
 - 多层感知机（MLP）：深度/宽度/全连接、激活函数（Activation function）演变、参数对称性
 - 优化基础：凸/非凸、梯度下降（Gradient descent）、鞍点（Saddle point）、小批量 SGD（Mini-batch SGD）
@@ -94,7 +94,7 @@ Week 1–2 处于 **「概述与理论奠基」** 阶段，负责：
 |------|---------|------|---------|
 | **符号主义（Symbolism）** | 知识形式化为逻辑规则，字符串改写实现推理 | MYCIN、Prolog、CLIPS；麦卡锡、莱布尼茨 | 知识获取瓶颈；不可判定问题（推理可能不终止） |
 | **连接主义（Connectionism）** | 模拟神经网络，数据驱动调整权重 | 感知机、AlexNet；Hinton、LeCun、Bengio | 早期无法解 XOR；现代黑箱、需大量数据 |
-| **进化主义（Evolutionism）** | 模拟自然选择：编码→评估→选择→交叉→变异 | 遗传算法（Genetic Algorithm, GA） | 随机性强、收敛慢，关注度低于连接主义 |
+| **进化主义（Evolutionism）** | 模拟自然选择：编码→评估→选择→交叉→变异 | GA（Genetic Algorithm，遗传算法） | 随机性强、收敛慢，关注度低于连接主义 |
 
 （来源：Week 1 记录、课件 01、AIMA）
 

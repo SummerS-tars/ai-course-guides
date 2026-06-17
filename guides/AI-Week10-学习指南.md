@@ -6,7 +6,7 @@
 > **生成方式**：NotebookLM 分层问答 → Agent 审核整合  
 > **生成日期**：2026-06-16  
 > **原始数据**：`notebooklm-raw/week10/runs/latest/`（16/16 batch）  
-> **术语格式**：术语表及正文**首次出现**的重要专业名词采用 **中文（English）** 格式，便于对照英文试卷。
+> **术语格式**：术语表及正文**首次出现**时，专业名词采用 **中文（English）**；英文缩写采用 **缩写（English full form，中文）**，便于对照英文试卷。
 
 ---
 
@@ -18,17 +18,17 @@
 | 🔗 **海森矩阵（Hessian matrix）** | 损失对参数的二阶导数矩阵，刻画曲率 | 山坡的弯曲程度：碗底还是马鞍 |
 | 🔗 **条件数（Condition number）** | 海森最大/最小特征值之比，越大越病态 | 峡谷越窄越长，条件数越高 |
 | 🔗 **鞍点（Saddle point）** | 某些方向谷底、某些方向山顶的临界点 | 山口：前后下坡、左右上坡 |
-| 🔗 **随机梯度下降（SGD, Stochastic Gradient Descent）** | 用小批量梯度估计更新参数 | 不全班考也不单人考，抽一组人估方向 |
+| 🔗 **SGD（Stochastic Gradient Descent，随机梯度下降）** | 用小批量梯度估计更新参数 | 不全班考也不单人考，抽一组人估方向 |
 | 🔗 **动量法（Momentum）** | 累积历史梯度的指数加权平均 | 曲棍球滑行：惯性冲过平坦区 |
 | 🔗 **Adagrad 算法** | 按历史梯度平方累积自适应缩小学习率 | 常走的路减速，少走的路保持大步 |
 | 🔗 **RMSprop 算法** | 用指数移动平均替代 Adagrad 全历史累积 | 只记近期路况，不忘太早的事 |
-| 🔗 **Adam 优化器** | 动量 + RMSprop + 偏差修正 | 既看惯性又看路况，还修正冷启动 |
-| 🔗 **AdamW 优化器** | 权重衰减与梯度更新解耦的 Adam | 罚款不跟步长打折，该罚多少罚多少 |
-| 🔗 **Xavier 初始化（Glorot initialization）** | 为 Sigmoid/Tanh 保持方差稳定的初始化 | 给饱和激活合适的起跑力度 |
-| 🔗 **He 初始化（Kaiming initialization）** | 为 ReLU 补偿「砍半」方差的初始化 | ReLU 丢一半信号，初始权重大一点补回来 |
-| 🔗 **批量归一化（Batch Normalization, Batch Norm）** | 按 mini-batch 对每个特征维归一化 | 全班同一科成绩统一标准分 |
-| 🔗 **层归一化（Layer Normalization, Layer Norm）** | 对单个样本的所有特征维归一化 | 每个学生自己的各科成绩统一标准分 |
-| 🔗 **内部协变量偏移（ICS, Internal Covariate Shift）** | 层间输入分布漂移 | 上游改规则，下游措手不及 |
+| 🔗 **Adam（Adaptive Moment Estimation，自适应矩估计）** | 动量 + RMSprop + 偏差修正 | 既看惯性又看路况，还修正冷启动 |
+| 🔗 **AdamW（Adam with decoupled Weight decay，解耦权重衰减的 Adam）** | 权重衰减与梯度更新解耦的 Adam | 罚款不跟步长打折，该罚多少罚多少 |
+| 🔗 **Xavier（Glorot initialization，Glorot 初始化）** | 为 Sigmoid/Tanh 保持方差稳定的初始化 | 给饱和激活合适的起跑力度 |
+| 🔗 **He（Kaiming initialization，Kaiming 初始化）** | 为 ReLU 补偿「砍半」方差的初始化 | ReLU 丢一半信号，初始权重大一点补回来 |
+| 🔗 **Batch Norm（Batch Normalization，批量归一化）** | 按 mini-batch 对每个特征维归一化 | 全班同一科成绩统一标准分 |
+| 🔗 **Layer Norm（Layer Normalization，层归一化）** | 对单个样本的所有特征维归一化 | 每个学生自己的各科成绩统一标准分 |
+| 🔗 **ICS（Internal Covariate Shift，内部协变量偏移）** | 层间输入分布漂移 | 上游改规则，下游措手不及 |
 | 🔗 **权重衰减（Weight decay）** | L2 正则：惩罚大权重 | 限制模型「用力过猛」 |
 | 🔗 **Dropout（随机失活）** | 训练时随机置零神经元 | 每次考试随机蒙住几个专家 |
 | 🔗 **早停（Early stopping）** | 验证集不再改善时停止训练 | 尝到最高分就交卷 |
@@ -188,7 +188,7 @@ flowchart TB
 
 ---
 
-### 2.2 优化器演进：SGD → AdamW（Stochastic Gradient Descent → AdamW）
+### 2.2 优化器演进：SGD（Stochastic Gradient Descent，随机梯度下降）→ AdamW
 
 > **本节叙事线**：C. SGD 局限 → D. Momentum / 自适应学习率 → E. Adam 集大成 → F. AdamW 解耦正则
 
@@ -297,7 +297,7 @@ flowchart LR
 
 ---
 
-### 2.4 归一化：批量归一化（Batch Norm）与层归一化（Layer Norm）
+### 2.4 归一化：Batch Norm（Batch Normalization，批量归一化）与 Layer Norm（Layer Normalization，层归一化）
 
 #### Batch Normalization 全景
 

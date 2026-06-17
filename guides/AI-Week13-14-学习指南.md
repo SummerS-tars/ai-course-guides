@@ -6,7 +6,7 @@
 > **生成方式**：NotebookLM 分层问答 → Agent 审核整合  
 > **生成日期**：2026-06-16  
 > **Raw run**：`notebooklm-raw/week13-14/runs/latest/`（19/19 batch）  
-> **术语格式**：术语表及正文**首次出现**的重要专业名词采用 **中文（English）** 格式，便于对照英文试卷。
+> **术语格式**：术语表及正文**首次出现**时，专业名词采用 **中文（English）**；英文缩写采用 **缩写（English full form，中文）**，便于对照英文试卷。
 
 ---
 
@@ -16,9 +16,9 @@
 |----|------|
 | **考试形式** | **开卷**；试卷 **英文**；选择 + 解答 |
 | **复习范围** | 内容均在 **课程 PPT** 中；开卷务必熟悉 PPT 定位 |
-| **★必考 1** | **确定性因子（Certainty Factor, CF）计算题**——公式 + 多规则合成手算 |
-| **★必考 2** | **消解证明（Resolution proof）大题**——NL → FOL → CNF → Resolution → 空子句 |
-| **明确不考** | **深度生成模型**（VAE/扩散/流匹配等，Week 12 已标注） |
+| **★必考 1** | **CF（Certainty Factor，确定性因子）计算题**——公式 + 多规则合成手算 |
+| **★必考 2** | **消解证明大题**——NL → FOL → CNF → Resolution → 空子句（见 §0 缩写释义） |
+| **明确不考** | **深度生成模型**（VAE（Variational Autoencoder，变分自编码器）/扩散/流匹配等，Week 12 已标注） |
 | **概念级** | PageRank、模糊逻辑（Fuzzy Logic）、贝叶斯框架（Bayesian framework）、Prolog 机制 |
 
 > **备考策略**：CF 手算练到闭卷也能写步骤；消解大题按 **9 步 CNF + 反证法流水线** 做成 checklist，开卷时逐步勾选。
@@ -31,25 +31,27 @@
 
 | 术语 | 大白话解释 | 生活类比 |
 |------|-----------|----------|
-| 🔗 **确定性因子（Certainty Factor, CF）** | 用 $[-1,1]$ 数值表示对命题的信任程度 | 医生说「八成像是感冒」——不是严格概率 |
+| 🔗 **CF（Certainty Factor，确定性因子）** | 用 $[-1,1]$ 数值表示对命题的信任程度 | 医生说「八成像是感冒」——不是严格概率 |
 | 🔗 **$CF(E,e)$（证据可信度）** | 观测事实 $e$ 下，证据 $E$ 有多可信 | 体温计读数让你多相信「发烧」 |
 | 🔗 **$CF(H,E)$（规则强度）** | 若 $E$ 肯定成立，规则推 $H$ 的强度 | 专家写的规则置信度 0.7 |
 | 🔗 **$CF(H,e)$（结论强度）** | 单条规则推出的结论强度 | $CF(E,e) \times CF(H,E)$ |
 | 🔗 **$CF_{comb}$（多规则合成）** | 多条规则指向同一 $H$ 时的合成 | 两个医生意见怎么合并 |
 | 🔗 **贝叶斯后验（Bayesian posterior）** | 先验 × 似然 → 证据更新后的信念 | 收到新化验单后更新诊断 |
-| 🔗 **MAP / L2 正则（Maximum A Posteriori / L2 regularization）** | 最大后验 ≈ 损失 + 权重平方惩罚 | 「偏好简单模型」的数学版 |
+| 🔗 **MAP（Maximum A Posteriori，最大后验估计）** | 最大后验 ≈ 损失 + 权重平方惩罚 | 「偏好简单模型」的数学版 |
+| 🔗 **L2 正则（L2 regularization，L2 正则化）** | 等价于高斯先验的参数惩罚项 | 限制权重大小 |
 | 🔗 **马尔可夫性（Markov property）** | 下一状态只依赖当前，与更早历史无关 | 下棋：只关心当前局面 |
 | 🔗 **PageRank（网页排名算法）** | 网页图上随机游走的稳态分布 = 质量分 | 被名站链接的网页更「重要」 |
 | 🔗 **隶属度 $\mu(x)$（membership degree）** | 元素属于模糊集合的程度 $[0,1]$ | 「比较高」不是非 0 即 1 |
 | 🔗 **命题逻辑（Propositional Logic）** | 原子命题 + 连接词，无个体/量词 | 只能写 $P$、$Q$，不能说「所有人」 |
-| 🔗 **一阶谓词逻辑（First-Order Logic, FOL）** | 常元/变元/谓词/量词，可表达个体关系 | 「所有人都会死，苏格拉底是人」 |
+| 🔗 **FOL（First-Order Logic，一阶谓词逻辑）** | 常元/变元/谓词/量词，可表达个体关系 | 「所有人都会死，苏格拉底是人」 |
 | 🔗 **霍恩子句（Horn clause）** | 至多一个正文字的子句；Prolog 的基础 | `A :- B, C.` |
-| 🔗 **合取范式 / 子句集（CNF / clause set）** | 合取范式：子句的合取，每子句是文字的析取 | 消解算法的输入格式 |
+| 🔗 **CNF（Conjunctive Normal Form，合取范式）** | 子句的合取，每子句是文字的析取 | 消解算法的输入格式 |
 | 🔗 **Skolem 化（Skolemization）** | 用 Skolem 常元/函数消去 $\exists$ | 「存在某人」→ 给个具体代表 |
 | 🔗 **合一（Unification）** | 找替换使两表达式相同 | 把规则里的 $x$ 换成 `socrates` |
 | 🔗 **消解（Resolution）** | 互补文字消去，产生新子句 | 反证法：假设否定，推出矛盾 |
 | 🔗 **空子句 $\square$（empty clause）** | 消解成功标志：矛盾 | 证明原命题必真 |
-| 🔗 **CWA / OWA（Closed / Open World Assumption）** | 封闭世界：未知=假；开放世界：未知=未知 | Prolog 否定即失败 vs 知识图谱 |
+| 🔗 **CWA（Closed World Assumption，封闭世界假设）** | 未知=假 | Prolog 否定即失败 |
+| 🔗 **OWA（Open World Assumption，开放世界假设）** | 未知=未知 | 知识图谱默认 |
 
 ---
 
@@ -70,16 +72,16 @@ flowchart TB
 
 | 转折 | Week 13 | Week 14 |
 |------|---------|---------|
-| 不确定性 → 确定性逻辑 | 确定性因子（CF）量化规则强度 | 命题逻辑（Propositional Logic）/ 谓词逻辑形式化 |
-| 启发式 → 严格证明 | MYCIN 风格代数 | 消解（Resolution）反证法 |
-| 铺垫 → 工具 | 产生式规则（Production rule）的不确定性 | Prolog 霍恩子句（Horn clause）+ 反向推理（Backward chaining） |
+| 不确定性 → 确定性逻辑 | CF 量化规则强度 | 命题逻辑 / FOL 形式化 |
+| 启发式 → 严格证明 | MYCIN 风格代数 | Resolution（消解）反证法 |
+| 铺垫 → 工具 | 产生式规则的不确定性 | Prolog 霍恩子句 + Backward chaining |
 
 ### 1.3 核心子主题与期末权重
 
 | 优先级 | 主题 | 期末 |
 |--------|------|------|
-| **★★★** | 确定性因子（CF）公式 + 多规则手算 | **必考计算** |
-| **★★★** | 合取范式（CNF）9 步 + 消解（Resolution）流水线 | **必考大题** |
+| **★★★** | CF 公式 + 多规则手算 | **必考计算** |
+| **★★★** | CNF 9 步 + Resolution 流水线 | **必考大题** |
 | **★★** | 命题逻辑（Propositional Logic）连接词/局限 | 基础 |
 | **★★** | 一阶谓词逻辑（FOL）量词/合一/三段论 | 大题前置 |
 | **★** | 贝叶斯（Bayesian）、L2=高斯先验 | 概念 |
@@ -165,7 +167,7 @@ $$\log P(w|Data) = \log P(Data|w) + \log P(w)$$
 
 ---
 
-#### C. 确定性因子理论（Certainty Factor theory）（★必考）
+#### C. CF（Certainty Factor，确定性因子）理论（★必考）
 
 > **本节要回答**：$CF(E,e)$ 和 $CF(H,E)$ 分别量化什么？三条合成规则是什么？
 
@@ -347,13 +349,13 @@ flowchart TB
 2. 缺乏量词 $\forall, \exists$
 3. 规模化困难（$n$ 个原子命题真值表 $2^n$ 行）
 
-→ 需要 **一阶谓词逻辑（First-Order Logic, FOL）**。
+→ 需要 **FOL（First-Order Logic，一阶谓词逻辑）**。
 
 （来源：`w14-propositional`、课件 07）
 
 ---
 
-#### H. 一阶谓词逻辑（First-Order Logic, FOL）
+#### H. FOL（First-Order Logic，一阶谓词逻辑）
 
 > **本节要回答**：项、谓词、量词各是什么？三段论怎么用 FOL + UI 推理？
 
@@ -372,7 +374,7 @@ flowchart TB
 
 1. $\forall x\,(man(x) \rightarrow mortal(x))$ （规则）
 2. $man(socrates)$ （事实）
-3. **UI**：将 $x$ 替换为 `socrates` → $man(socrates) \rightarrow mortal(socrates)$
+3. **UI（Universal Instantiation，全称例化）**：将 $x$ 替换为 `socrates` → $man(socrates) \rightarrow mortal(socrates)$
 4. **肯定前件** → $mortal(socrates)$
 
 **合一（Unification）**：找替换 $\theta$ 使两表达式形式一致；消解前必须会合一。**出现检查（Occur Check）**：$x$ 不能与含 $x$ 的复杂项合一（如 $x$ vs $f(x)$）。
@@ -390,8 +392,8 @@ flowchart TB
 要证 $KB \models E$：
 
 1. 构造 $S = KB \cup \{\neg E\}$
-2. 将 $S$ 中所有公式化为 **合取范式（CNF）子句集（clause set）**
-3. 反复应用消解（Resolution）规则
+2. 将 $S$ 中所有公式化为 **CNF（Conjunctive Normal Form，合取范式）子句集**
+3. 反复应用 **Resolution（消解）** 规则
 4. 若推出 **空子句 $\square$（empty clause）** → $S$ 不可满足 → $\neg E$ 假 → **$E$ 必真**
 
 > **追问：为什么不直接「证明」$E$，而要证 $\neg E$ 矛盾？**
@@ -414,7 +416,7 @@ flowchart TB
 
 ##### I.3 消解规则
 
-- **合一**：找 MGU $\theta$ 使 $L_i$ 与 $\neg M_j$ 一致
+- **合一（Unification）**：找 MGU（Most General Unifier，最一般合一子） $\theta$ 使 $L_i$ 与 $\neg M_j$ 一致
 - **二进制消解**：从 $C_1, C_2$ 消去互补对，余下文字析取并应用 $\theta$
 - **因子化**：子句内可合一的文字合并（保证完备性）
 

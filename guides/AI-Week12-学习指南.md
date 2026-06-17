@@ -6,7 +6,7 @@
 > **生成方式**：NotebookLM 分层问答 → Agent 审核整合  
 > **生成日期**：2026-06-16  
 > **Raw run**：`notebooklm-raw/week12/runs/latest/`（14/14 batch）  
-> **术语格式**：术语表及正文**首次出现**的重要专业名词采用 **中文（English）** 格式，便于对照英文试卷。
+> **术语格式**：术语表及正文**首次出现**时，专业名词采用 **中文（English）**；英文缩写采用 **缩写（English full form，中文）**，便于对照英文试卷。
 
 ---
 
@@ -16,17 +16,17 @@
 |------|-----------|----------|
 | 🔗 **长程依赖（Long-range dependency）** | 序列中相距很远的词之间仍需建立关联 | 读长篇小说：第一章伏笔在第十章才揭晓 |
 | 🔗 **注意力机制（Attention）** | 按相关性从全序列「检索」信息，而非逐步压缩记忆 | 开卷考试：翻到最相关页，而非背整本书 |
-| 🔗 **Q / K / V（Query / Key / Value）** | 查询、键、值——检索系统的三角色 | 图书馆：搜索词、书名索引、书内干货 |
+| 🔗 **Q / K / V（Query / Key / Value，查询/键/值）** | 检索系统的三角色 | 图书馆：搜索词、书名索引、书内干货 |
 | 🔗 **自注意力（Self-Attention）** | 同一序列内部做 Q/K/V 检索 | 读一句话时，每个词去「问」其他词 |
 | 🔗 **缩放点积注意力（Scaled Dot-Product Attention）** | $QK^T/\sqrt{d}$ 再 softmax 加权 $V$ | 打分前先除以维度，防止分数爆炸 |
-| 🔗 **多头注意力（Multi-Head Attention, MHAttn）** | 多个子空间并行做注意力再拼接 | 多副眼镜同时看同一段文字的不同侧面 |
+| 🔗 **MHAttn（Multi-Head Attention，多头注意力）** | 多个子空间并行做注意力再拼接 | 多副眼镜同时看同一段文字的不同侧面 |
 | 🔗 **因果掩码（Causal Mask）** | 生成时禁止「偷看」未来 token | 写作文：只能根据已写内容续写 |
 | 🔗 **交叉注意力（Cross-Attention）** | Q 来自解码器，K/V 来自编码器 | 翻译时：用已译片段去原文里找对应 |
 | 🔗 **位置嵌入（Positional embedding）** | 给无位置感的注意力机制注入词序 | 给每页书贴页码，否则顺序全乱 |
 | 🔗 **残差连接 + 层归一化（Residual + LayerNorm）** | $x + f(x)$ 后归一化，稳住深层训练 | 高速公路旁修辅路：信息总有直达通道 |
-| 🔗 **BERT（Bidirectional Encoder Representations）** | Encoder-only，双向掩码语言模型 | 完形填空专家：上下文双向理解 |
-| 🔗 **GPT（Generative Pre-trained Transformer）** | Decoder-only，自回归预测下一词 | 接龙高手：只看上文往下写 |
-| 🔗 **KV 缓存（KV cache）** | 已算过的 K/V 向量在生成时复用 | 查过的索引卡片不用重抄一遍 |
+| 🔗 **BERT（Bidirectional Encoder Representations from Transformers，双向编码器表示）** | Encoder-only，双向掩码语言模型 | 完形填空专家：上下文双向理解 |
+| 🔗 **GPT（Generative Pre-trained Transformer，生成式预训练 Transformer）** | Decoder-only，自回归预测下一词 | 接龙高手：只看上文往下写 |
+| 🔗 **KV cache（Key-Value cache，键值缓存）** | 已算过的 K/V 向量在生成时复用 | 查过的索引卡片不用重抄一遍 |
 | 🔗 **零样本（Zero-shot）** | 不改权重，靠提示词完成新任务 | 没练过这题，但会读题干照做 |
 | 🔗 **语义网络 / 框架（Semantic network / Frame）** | 符号主义知识表示：节点+边 / 结构化槽位 | 家谱图 / 填表式人物档案 |
 
