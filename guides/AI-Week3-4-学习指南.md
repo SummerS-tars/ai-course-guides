@@ -988,14 +988,14 @@ $$\boxed{y[n] = \sum_m x[m]\,h[n-m] = (x * h)[n]}$$
 flowchart TB
     subgraph step1["① 单位冲激 δ[n]"]
         I[敲一下系统]
-        I --> H[测得冲激响应 h[n]]
+        I --> H["测得冲激响应 h[n]"]
     end
     subgraph step2["② 任意输入 x[m]"]
-        X[每个 m 看作强度 x[m] 的冲激]
+        X["每个 m 看作强度 x[m] 的冲激"]
     end
     subgraph step3["③ LTI 叠加"]
-        S[各 m 的响应 x[m]·h[n−m] 相加]
-        S --> Y[输出 y[n] = Σ x[m]h[n−m]]
+        S["各 m 的响应 x[m]·h[n−m] 相加"]
+        S --> Y["输出 y[n] = Σ x[m]h[n−m]"]
     end
     step1 --> step2 --> step3
 ```
