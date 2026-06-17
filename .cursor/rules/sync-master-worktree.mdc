@@ -1,0 +1,33 @@
+---
+description: commit 后默认将改动同步到 master worktree（cherry-pick/ff-merge）
+alwaysApply: true
+---
+
+# 同步 master worktree
+
+## 环境
+
+| 项 | 路径 |
+|----|------|
+| 本 worktree（如 zodi） | `/home/thesumst/.cursor/worktrees/ai__SSH__wsl_/zodi` |
+| master worktree | `/home/thesumst/development/ai` |
+
+同一 git 仓库的两个 worktree；在任一 wt 提交后，**默认**把该 commit 同步到 master wt。
+
+## 默认流程（用户未说「不要同步」时）
+
+1. 在本 wt 完成 `git commit`（排除 `.venv-pdf/`、`.tools/`、未跟踪的 `*.pdf` 等本地工具目录）。
+2. 在 master wt：`git cherry-pick <hash>`；若历史已分叉且可安全快进，可用 `ff-merge`，**禁止 force**。
+3. **不默认 push remote**，除非用户明确要求。
+4. 同步后简要报告：本 wt 与 master wt 的 HEAD commit hash 及 message，并说明两 wt 工作区是否干净。
+
+## PDF（guides）
+
+- 课纲 PDF 位于 `guides/*.pdf`，由 git 忽略。
+- 若 **`guides/AI课程-14周内容梳理.md`** 有更新：用 WeasyPrint 重导 PDF，并 **`cp` 到 master wt 的 `guides/`**。
+- 仅改单周学习指南（如 `AI-Week3-4-学习指南.md`）且课纲 md 未变：**不必**重导 PDF。
+
+## 禁止
+
+- force push `master`
+- 无用户明确要求时 amend / 改 git config
