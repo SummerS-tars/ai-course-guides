@@ -28,9 +28,9 @@
 | 🔗 **GPT（Generative Pre-trained Transformer，生成式预训练 Transformer）** | Decoder-only，自回归预测下一词 | 接龙高手：只看上文往下写 |
 | 🔗 **KV cache（Key-Value cache，键值缓存）** | 已算过的 K/V 向量在生成时复用 | 查过的索引卡片不用重抄一遍 |
 | 🔗 **零样本（Zero-shot）** | 不改权重，靠提示词完成新任务 | 没练过这题，但会读题干照做 |
+| 🔗 **FFN（Feed-Forward Network，前馈网络）** | 逐位置两层线性+ReLU 的非注意力子层 | Transformer 块里的 MLP 部分 |
+| 🔗 **MLM（Masked Language Model，掩码语言模型）** | 随机遮词再预测，BERT 预训练目标 | 完形填空式预训练 |
 | 🔗 **语义网络 / 框架（Semantic network / Frame）** | 符号主义知识表示：节点+边 / 结构化槽位 | 家谱图 / 填表式人物档案 |
-
----
 
 ## 1. 知识地图（L0）
 
@@ -191,7 +191,7 @@ $$\text{Attention}(Q, K, V) = \mathrm{softmax}\!\left(\frac{QK^T}{\sqrt{d}}\righ
 | 组件 | 作用 |
 |------|------|
 | **双向 MHAttn** | 输入全给定，每位置融合上下文明 |
-| **FFN** | 逐位置相同的两层线性+ReLU，进一步非线性变换 |
+| **FFN（Feed-Forward Network，前馈网络）** | 逐位置相同的两层线性+ReLU，进一步非线性变换 |
 | **残差 + LayerNorm** | 子层输出 $=\mathrm{LayerNorm}(x + f(x))$，稳梯度、快收敛 |
 | **位置嵌入** | 与词嵌入相加，注入顺序信息 |
 | **堆叠** | 通常 6+ 层，逐层抽象语义 |

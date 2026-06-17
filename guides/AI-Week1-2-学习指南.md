@@ -27,6 +27,13 @@
 | 🔗 **激活函数（Activation function）** | 神经元输出前的非线性变换 | 门槛：不够刺激不兴奋，够了才输出 |
 | 🔗 **梯度下降（Gradient descent）** | 沿损失下降最快的方向小步调整参数 | 蒙眼下山：每步往最陡的下坡走 |
 | 🔗 **鞍点（Saddle point）** | 某些方向是谷底、某些方向是山顶的点 | 马鞍中间：前后低、左右高 |
+| 🔗 **MSE（Mean Squared Error，均方误差）** | 预测与真值差的平方和平均 | 回归最常用的损失函数 |
+| 🔗 **SGD（Stochastic Gradient Descent，随机梯度下降）** | 用小批量样本估计梯度更新参数 | 不全班考也不单人考，抽一组估方向 |
+| 🔗 **BP（Backpropagation，反向传播）** | 链式法则把输出误差分摊到各层权重 | Week 3 核心算法 |
+| 🔗 **Sigmoid（Sigmoid function，S 型激活函数）** | 输出 $(0,1)$，处处可微 | 早期神经网络默认激活 |
+| 🔗 **Tanh（Hyperbolic Tangent，双曲正切）** | 输出 $(-1,1)$，零中心 | 隐层常优于 Sigmoid |
+| 🔗 **ReLU（Rectified Linear Unit，修正线性单元）** | $\max(0,x)$，计算简单、缓解梯度消失 | Week 4 起主流激活 |
+| 🔗 **伪逆（Moore-Penrose pseudoinverse，摩尔-彭罗斯伪逆）** | 矩阵不可逆时的广义逆 | 正规方程的「备选解」 |
 | 🔗 **小批量（Mini-batch）** | 每次用一小批样本算梯度 | 不全班考试也不单人考，抽一组人测验 |
 
 ---
@@ -80,7 +87,7 @@ Week 1–2 处于 **「概述与理论奠基」** 阶段，负责：
 - 异或问题 XOR（exclusive OR，异或）与阶跃函数不可微
 - 线性模型：基函数（Basis function）、设计矩阵（Design matrix）、正规方程（Normal equation）、伪逆
 - 多层感知机（MLP）：深度/宽度/全连接、激活函数（Activation function）演变、参数对称性
-- 优化基础：凸/非凸、梯度下降（Gradient descent）、鞍点（Saddle point）、小批量 SGD（Mini-batch SGD）
+- 优化基础：凸/非凸、梯度下降（Gradient descent）、鞍点（Saddle point）、Mini-batch SGD（Mini-batch Stochastic Gradient Descent，小批量随机梯度下降）
 
 ---
 
@@ -239,7 +246,7 @@ A 类（输出 0）在左下和右上，B 类（输出 1）在左上和右下—
                       阈值
 ```
 
-阶跃函数额外的问题：在阈值处不连续、其余处导数为 0 → **梯度传不回去，无法做梯度下降**（Week 3 的 BP 需要可微激活，因此必须换成 Sigmoid 等）。
+阶跃函数额外的问题：在阈值处不连续、其余处导数为 0 → **梯度传不回去，无法做梯度下降**（Week 3 的 BP（Backpropagation，反向传播）需要可微激活，因此必须换成 Sigmoid 等）。
 
 **B 节小结——两层结论，对应两条出路**
 
@@ -263,7 +270,7 @@ $$y = w^T \phi(x)$$
 | $\phi(x)$ | 基函数，将输入映射到特征空间 |
 | $w$ | 待求权重向量 |
 
-**MSE 损失**：
+**MSE（Mean Squared Error，均方误差）损失**：
 
 $$J(w) = \frac{1}{2}\sum_{i=1}^{N}\bigl(y_i - w^T\phi(x_i)\bigr)^2$$
 
@@ -294,7 +301,7 @@ $$w = (\Phi^T \Phi)^{-1} \Phi^T \mathbf{y}$$
 >
 > **几何意义**：所有可能的预测 $\Phi w$ 构成一个子空间（特征张成的空间）。最优 $w$ 让 $\Phi w$ 成为 $\mathbf{y}$ 在该子空间上的**最近点**——就像把一根棍子（$\mathbf{y}$）投影到一张平面上，找平面上离棍子最近的点。
 >
-> **矩阵不可逆时**：样本太少或特征有冗余（如只有 1 个样本却有 3 个特征）→ $\Phi^T\Phi$ 不满秩，无穷多解。此时用 **伪逆** 选一个「最省事」的解（欧几里得范数最小）。
+> **矩阵不可逆时**：样本太少或特征有冗余（如只有 1 个样本却有 3 个特征）→ $\Phi^T\Phi$ 不满秩，无穷多解。此时用 **伪逆（Moore-Penrose pseudoinverse，摩尔-彭罗斯伪逆）** 选一个「最省事」的解（欧几里得范数最小）。
 
 #### D. 多层感知机（MLP）
 
@@ -310,12 +317,12 @@ $$w = (\Phi^T \Phi)^{-1} \Phi^T \mathbf{y}$$
 **激活函数演变**（来源：Week 2 记录、课件 08）：
 
 ```
-阶跃函数 → Sigmoid → Tanh
-(不可微)   (0,1)可微  (-1,1)可微，隐层通常优于 Sigmoid
+阶跃函数 → Sigmoid（S 型激活） → Tanh（双曲正切）
+(不可微)   (0,1)可微              (-1,1)可微，隐层通常优于 Sigmoid
 ```
 
-- Sigmoid：$f(\sigma) = \dfrac{1}{1 + e^{-\sigma}}$
-- Tanh：输出含负值，有助于特征表示和收敛
+- Sigmoid（Sigmoid function，S 型激活函数）：$f(\sigma) = \dfrac{1}{1 + e^{-\sigma}}$
+- Tanh（Hyperbolic Tangent，双曲正切）：输出含负值，有助于特征表示和收敛
 
 **参数空间对称性**（来源：Week 2 记录）
 
@@ -357,7 +364,7 @@ $$w = (\Phi^T \Phi)^{-1} \Phi^T \mathbf{y}$$
 - 非线性激活使曲面崎岖
 - 高维空间中**鞍点**比局部极小值更常见（某些方向极小、某些方向极大）→ 优化易停滞
 
-**Mini-batch SGD**：
+**Mini-batch SGD（Mini-batch Stochastic Gradient Descent，小批量随机梯度下降）**：
 
 | 方式 | 优点 | 缺点 |
 |------|------|------|
@@ -374,7 +381,7 @@ $$w = (\Phi^T \Phi)^{-1} \Phi^T \mathbf{y}$$
 | **偏置 $b$ vs 阈值 $t$** | 正负号易混 | 见下方展开 | 阈值是要跨的坎，偏置是助跑力 |
 | **MP 模型 vs 感知机** | 都是神经元模型 | 见下方展开 | MP 是教条派，感知机是演化派 |
 | **凸性** | 以为 NN 也是凸优化 | 线性回归凸；NN 因对称性非凸 | 凸 = 滑梯（终点唯一）；非凸 = 揉皱的纸 |
-| **阶跃 vs Sigmoid** | 忽略导数 | 阶跃不可微；Sigmoid 处处可微，BP 的基础 | 阶跃是悬崖；Sigmoid 是斜坡 |
+| **阶跃 vs Sigmoid** | 忽略导数 | 阶跃不可微；Sigmoid 处处可微，是 BP 的基础 | 阶跃是悬崖；Sigmoid 是斜坡 |
 | **线性模型中的非线性特征** | 以为用 $x^2$ 就是非线性模型 | 见下方展开 | 换特征不换喝水方式 |
 
 #### 易错点展开说明
@@ -473,7 +480,7 @@ $$w = (\Phi^T \Phi)^{-1} \Phi^T \mathbf{y}$$
 ```txt
 Week 1-2                    Week 3                     Week 4
 ─────────                   ──────                     ──────
-感知机 + XOR 局限    →    加隐层 + 可微激活    →    链式法则 / BP 算法
+感知机 + XOR 局限    →    加隐层 + 可微激活    →    链式法则 / BP（Backpropagation，反向传播）算法
 线性模型 + 基函数    →    净输入 vs 激活值     →    卷积核 = 自动特征提取
 梯度下降 + Mini-batch →   训练流程标准化       →    CNN 解决全连接参数爆炸
 ```
@@ -487,9 +494,9 @@ Week 1-2                    Week 3                     Week 4
 
 | Week 1-2 概念 | PJ1 应用 |
 |--------------|---------|
-| MLP 深度/宽度/全连接 | Part 1 手写 BP 网络结构设计 |
-| Sigmoid/ReLU/Tanh 及导数 | Part 1 激活函数实现 |
-| 线性模型 + MSE + 恒等输出 | Part 1 回归任务 $y = \sin(x)$ |
+| MLP 深度/宽度/全连接 | Part 1 手写 BP（Backpropagation，反向传播）网络结构设计 |
+| Sigmoid / ReLU（Rectified Linear Unit，修正线性单元）/ Tanh 及导数 | Part 1 激活函数实现 |
+| 线性模型 + MSE（Mean Squared Error，均方误差）+ 恒等输出 | Part 1 回归任务 $y = \sin(x)$ |
 | 数据归一化思想 | Part 1/2 汉字分类收敛前提 |
 | Mini-batch + 学习率 | Part 1/2 训练循环实现 |
 

@@ -31,6 +31,7 @@
 | 🔗 **词嵌入（Word embedding）** | 把词映射到低维稠密向量 | 给每个词一张「属性名片」，相近词靠近 |
 | 🔗 **窗口模型（Window model）** | 固定窗口拼接词向量 → FC → Softmax | 只看前后几个字，给当前字贴标签 |
 | 🔗 **BIES（Begin/Inside/End/Single，分词标签体系）** | 分词标签：B 词首 / I 词中 / E 词尾 / S 单字词 | 给每个汉字标它在词里的位置 |
+| 🔗 **LSTM（Long Short-Term Memory，长短期记忆网络）** | 门控机制缓解 RNN 长程依赖 | Week 6 窗口模型之后的主流 RNN |
 
 ---
 
@@ -744,7 +745,7 @@ flowchart LR
 ### 4.2 与后续 Week 7+ 的衔接
 
 - HMM 一阶马尔可夫 → 长程依赖不足 → **RNN 内部记忆**
-- 窗口固定 → **LSTM 门控** → **Transformer 注意力**
+- 窗口固定 → **LSTM（Long Short-Term Memory，长短期记忆网络）门控** → **Transformer 注意力**
 - Embedding → 大语言模型、跨模态生成的基石
 
 （来源：`w6-to-rnn`、`L0-positioning`）

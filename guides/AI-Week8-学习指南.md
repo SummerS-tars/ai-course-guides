@@ -30,6 +30,9 @@
 | 🔗 **GAN（Generative Adversarial Network，生成对抗网络）** | 生成器与判别器对抗博弈 | 造假者 vs 鉴定师，互相逼到极限 |
 | 🔗 **模式坍缩（Mode collapse）** | GAN 生成器只产出少数几种样本 | 造假者只会画同一张脸 |
 | 🔗 **对抗样本（Adversarial example）** | 微小扰动使模型误判（≠ GAN 的「对抗」） | 在停车标志上贴几条胶带，自动驾驶认错 |
+| 🔗 **ODE（Ordinary Differential Equation，常微分方程）** | 流匹配沿确定性路径积分 | 与 SDE 随机扩散对照 |
+| 🔗 **SDE（Stochastic Differential Equation，随机微分方程）** | 扩散模型加噪/去噪的随机过程 | 多步随机生成 |
+| 🔗 **AE（Autoencoder，自编码器）** | 仅重构、无 KL 的编解码器 | 对比 VAE 缺生成保证 |
 
 ---
 

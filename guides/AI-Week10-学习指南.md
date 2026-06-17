@@ -32,6 +32,7 @@
 | 🔗 **权重衰减（Weight decay）** | L2 正则：惩罚大权重 | 限制模型「用力过猛」 |
 | 🔗 **Dropout（随机失活）** | 训练时随机置零神经元 | 每次考试随机蒙住几个专家 |
 | 🔗 **早停（Early stopping）** | 验证集不再改善时停止训练 | 尝到最高分就交卷 |
+| 🔗 **EWMA（Exponentially Weighted Moving Average，指数加权移动平均）** | 只记近期梯度统计 | RMSprop/Adam 的基础 |
 
 ---
 
@@ -239,7 +240,7 @@ flowchart LR
 
 **Adagrad**：每参数独立学习率 $\eta / \sqrt{\sum g^2}$；稀疏特征大步、频繁特征小步。缺陷：分母单调增 → 后期学习率过小停滞。
 
-**RMSprop**：用 EWMA（$\rho \approx 0.9$）替代全历史累积，「遗忘」早期梯度。
+**RMSprop**：用 EWMA（Exponentially Weighted Moving Average，指数加权移动平均）（$\rho \approx 0.9$）替代全历史累积，「遗忘」早期梯度。
 
 **Adam**（来源：`w10-adaptive`）：
 - 一阶矩 $m_t$：类似 Momentum，平滑方向
