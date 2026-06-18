@@ -1,0 +1,18 @@
+---
+description: guides/ Markdown 导出 PDF 时先读 ai-guides-pdf skill
+globs: guides/**
+alwaysApply: false
+---
+
+# guides PDF 导出
+
+处理 `guides/` 下 Markdown **导出 PDF**、课纲 PDF 重导、PDF 字体/样式问题时：
+
+1. **先读 Skill**：`.cursor/skills/ai-guides-pdf/SKILL.md`
+2. 工具链在 `.cursor/skills/ai-guides-pdf/`（Puppeteer + skill 内嵌 Sarasa/Fira 字体）
+3. 完成后按 `.cursor/rules/sync-master-worktree.mdc` 提交、cherry-pick、复制 `guides/*.pdf`
+
+```bash
+npm install --prefix .cursor/skills/ai-guides-pdf
+node .cursor/skills/ai-guides-pdf/scripts/export-pdf.mjs
+```

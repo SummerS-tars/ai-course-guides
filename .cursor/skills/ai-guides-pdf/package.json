@@ -1,0 +1,15 @@
+{
+  "name": "ai-guides-pdf",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "postinstall": "node scripts/install-fonts.mjs && node scripts/install-chrome.mjs",
+    "install-fonts": "node scripts/install-fonts.mjs",
+    "export-pdf": "node scripts/export-pdf.mjs"
+  },
+  "dependencies": {
+    "7zip-bin": "^5.2.0",
+    "marked": "^15.0.7",
+    "puppeteer": "^24.2.1"
+  }
+}

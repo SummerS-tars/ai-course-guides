@@ -38,3 +38,9 @@ notebooklm-raw/**/*.answer.json
 # --- guides PDF toolchain (local npm) ---
 guides/node_modules/
 guides/package-lock.json
+
+# --- ai-guides-pdf skill (local npm + downloaded fonts) ---
+.cursor/skills/ai-guides-pdf/node_modules/
+.cursor/skills/ai-guides-pdf/package-lock.json
+.cursor/skills/ai-guides-pdf/fonts/.cache/
+.cursor/skills/ai-guides-pdf/fonts/*.ttf

@@ -1,13 +1,9 @@
 {
-  "name": "ai-guides-pdf",
+  "name": "ai-guides-pdf-wrapper",
   "private": true,
   "type": "module",
   "scripts": {
-    "postinstall": "node install-chrome.mjs",
+    "setup": "npm install --prefix ../.cursor/skills/ai-guides-pdf",
     "export-pdf": "node export-pdf.mjs"
-  },
-  "dependencies": {
-    "marked": "^15.0.7",
-    "puppeteer": "^24.2.1"
   }
 }

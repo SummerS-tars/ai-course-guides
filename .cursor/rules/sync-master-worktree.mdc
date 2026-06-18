@@ -26,7 +26,7 @@ alwaysApply: true
 
 ## 默认流程（用户未说「不要同步」时）
 
-1. 在本 wt 完成 `git commit`（排除 `guides/node_modules/`、`.tools/`、未跟踪的 `*.pdf` 等本地工具目录；**勿提交** `node_modules`、`.venv` 等）。
+1. 在本 wt 完成 `git commit`（排除 `guides/node_modules/`、`.cursor/skills/ai-guides-pdf/node_modules/`、`.cursor/skills/ai-guides-pdf/fonts/`、`.tools/`、未跟踪的 `*.pdf` 等本地工具目录；**勿提交** `node_modules`、`.venv`、字体 ttf 等）。
 2. 在 master wt：`git cherry-pick <hash>`；若历史已分叉且可安全快进，可用 `ff-merge`，**禁止 force**。
 3. 将需要的 gitignored / 未跟踪产物 **`cp`** 到 master wt 对应目录（见下节 PDF）。
 4. **不默认 push remote**，除非用户明确要求。
@@ -35,7 +35,7 @@ alwaysApply: true
 ## PDF（guides）
 
 - 课纲 PDF 位于 `guides/*.pdf`，由 git 忽略。
-- 若 **`guides/AI课程-14周内容梳理.md`** 有更新：用 Puppeteer 重导 PDF（`cd guides && npm install && node export-pdf.mjs`），并 **`cp` 到 master wt 的 `guides/`**。
+- 若 **`guides/AI课程-14周内容梳理.md`** 有更新：用 Puppeteer 重导 PDF（`npm install --prefix .cursor/skills/ai-guides-pdf && node .cursor/skills/ai-guides-pdf/scripts/export-pdf.mjs`），并 **`cp` 到 master wt 的 `guides/`**。
 - 仅改单周学习指南（如 `AI-Week3-4-学习指南.md`）且课纲 md 未变：**不必**重导 PDF；若 vkzo 侧已有最新 PDF 且需与 master 对齐，仍可 **`cp`**。
 
 ## 禁止
