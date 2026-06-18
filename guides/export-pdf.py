@@ -28,6 +28,54 @@ DEFAULT_PDF = GUIDES_DIR / "AI课程-14周内容梳理.pdf"
 CSS_FILE = GUIDES_DIR / "pdf-export.css"
 
 
+def prepare_blockquotes(text: str) -> str:
+    """Insert blank blockquote lines before lists inside ``>`` blocks.
+
+    python-markdown treats ``> intro:\\n> - item`` as one paragraph unless a
+    blank ``>`` line separates the intro from the list.
+    """
+    lines = text.splitlines()
+    result: list[str] = []
+    bq = re.compile(r"^>\s?(.*)$")
+    list_start = re.compile(r"^(\s*)([-*+]|\d+\.)\s")
+
+    i = 0
+    while i < len(lines):
+        line = lines[i]
+        match = bq.match(line)
+        if match and i + 1 < len(lines):
+            nxt = bq.match(lines[i + 1])
+            if nxt:
+                cur_content = match.group(1)
+                nxt_content = nxt.group(1)
+                cur_is_list = bool(list_start.match(cur_content))
+                nxt_is_list = bool(list_start.match(nxt_content))
+                if not cur_is_list and nxt_is_list and cur_content.strip():
+                    result.append(line)
+                    result.append(">")
+                    i += 1
+                    continue
+        result.append(line)
+        i += 1
+    return "\n".join(result)
+
+
+# Color emoji embed as raster images in WeasyPrint and leave green corner artifacts.
+PDF_SYMBOL_REPLACEMENTS = {
+    "✅": "✓",
+    "🏖️": "〔休〕",
+    "🏃": "〔运〕",
+    "🔜": "→",
+}
+
+
+def prepare_pdf_symbols(text: str) -> str:
+    """Replace color emoji with plain-text symbols safe for WeasyPrint."""
+    for src, dst in PDF_SYMBOL_REPLACEMENTS.items():
+        text = text.replace(src, dst)
+    return text
+
+
 def prepare_markdown_lists(text: str) -> str:
     """Normalize list markup for python-markdown.
 
@@ -72,9 +120,15 @@ def convert_dollar_math(text: str) -> str:
     return text
 
 
+def prepare_markdown(md_text: str) -> str:
+    return prepare_pdf_symbols(
+        prepare_markdown_lists(prepare_blockquotes(md_text))
+    )
+
+
 def md_to_html(md_text: str) -> str:
     body = markdown.markdown(
-        convert_dollar_math(prepare_markdown_lists(md_text)),
+        convert_dollar_math(prepare_markdown(md_text)),
         extensions=[
             KatexExtension(no_inline_svg=True),
             TableExtension(),

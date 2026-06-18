@@ -80,6 +80,29 @@ blockquote {
   color: #444;
 }
 
+blockquote > p {
+  margin: 0.2em 0;
+}
+
+blockquote ul,
+blockquote ol {
+  margin: 0.35em 0;
+  padding-left: 1.4em;
+}
+
+td ul,
+td ol,
+th ul,
+th ol {
+  margin: 0.15em 0;
+  padding-left: 1.2em;
+}
+
+td li,
+th li {
+  margin: 0.1em 0;
+}
+
 hr {
   border: none;
   border-top: 1px solid #ddd;
