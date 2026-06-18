@@ -28,6 +28,35 @@ DEFAULT_PDF = GUIDES_DIR / "AI课程-14周内容梳理.pdf"
 CSS_FILE = GUIDES_DIR / "pdf-export.css"
 
 
+def prepare_markdown_lists(text: str) -> str:
+    """Normalize list markup for python-markdown.
+
+    - Insert a blank line before a top-level list when it immediately follows prose
+      (e.g. ``**核心内容**：`` + ``- item``), otherwise the list is parsed as a paragraph.
+    - Expand 2-space nested list indents to 4-space (``  -`` → ``    -``).
+    """
+    lines = text.splitlines()
+    prepared: list[str] = []
+    list_line = re.compile(r"^(\s*)([-*+]|\d+\.)\s")
+
+    for line in lines:
+        match = list_line.match(line)
+        if match and match.group(1) == "" and prepared and prepared[-1].strip():
+            if not list_line.match(prepared[-1]):
+                prepared.append("")
+        prepared.append(line)
+
+    normalized: list[str] = []
+    for line in prepared:
+        match = list_line.match(line)
+        if match and match.group(1):
+            level = len(match.group(1)) // 2
+            normalized.append(" " * (4 * level) + line[len(match.group(1)) :])
+        else:
+            normalized.append(line)
+    return "\n".join(normalized)
+
+
 def convert_dollar_math(text: str) -> str:
     """Map $...$ / $$...$$ to markdown-katex fenced syntax ($`...`$)."""
     text = re.sub(
@@ -45,7 +74,7 @@ def convert_dollar_math(text: str) -> str:
 
 def md_to_html(md_text: str) -> str:
     body = markdown.markdown(
-        convert_dollar_math(md_text),
+        convert_dollar_math(prepare_markdown_lists(md_text)),
         extensions=[
             KatexExtension(no_inline_svg=True),
             TableExtension(),
