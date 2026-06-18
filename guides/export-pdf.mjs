@@ -10,9 +10,10 @@
  */
 
 import fs from "node:fs/promises";
+import os from "node:os";
 import path from "node:path";
 import process from "node:process";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { marked } from "marked";
 import puppeteer from "puppeteer";
 
@@ -28,6 +29,70 @@ const KATEX_JS = `https://cdn.jsdelivr.net/npm/katex@${KATEX_VERSION}/dist/katex
 const KATEX_AUTO_RENDER = `https://cdn.jsdelivr.net/npm/katex@${KATEX_VERSION}/dist/contrib/auto-render.min.js`;
 
 marked.setOptions({ gfm: true, breaks: false });
+
+/** @type {ReadonlyArray<{ family: string; weight: number; style: string; file: string }>} */
+const FONT_SPECS = [
+  { family: "Sarasa UI SC", weight: 400, style: "normal", file: "SarasaUiSC-Regular.ttf" },
+  { family: "Sarasa UI SC", weight: 600, style: "normal", file: "SarasaUiSC-SemiBold.ttf" },
+  { family: "Sarasa UI SC", weight: 700, style: "normal", file: "SarasaUiSC-Bold.ttf" },
+  { family: "Sarasa Mono SC", weight: 400, style: "normal", file: "SarasaMonoSC-Regular.ttf" },
+  { family: "Sarasa Mono SC", weight: 700, style: "normal", file: "SarasaMonoSC-Bold.ttf" },
+  { family: "Fira Code", weight: 400, style: "normal", file: "FiraCode-Regular.ttf" },
+  { family: "Fira Code", weight: 700, style: "normal", file: "FiraCode-Bold.ttf" },
+];
+
+async function pathExists(filePath) {
+  try {
+    await fs.access(filePath);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+async function resolveFontDir() {
+  const candidates = [
+    process.env.PDF_EXPORT_FONT_DIR,
+    "/mnt/c/Users/Sum/AppData/Local/Microsoft/Windows/Fonts",
+    path.join(os.homedir(), ".local/share/fonts"),
+    "/usr/share/fonts/truetype",
+  ].filter(Boolean);
+
+  for (const dir of candidates) {
+    if (await pathExists(path.join(dir, "SarasaUiSC-Regular.ttf"))) {
+      return dir;
+    }
+  }
+  return null;
+}
+
+async function buildFontFaceCss() {
+  const fontDir = await resolveFontDir();
+  if (!fontDir) {
+    console.warn("warn: Sarasa/Fira fonts not found; PDF may lack proper bold weights");
+    return "";
+  }
+
+  const rules = [];
+  for (const spec of FONT_SPECS) {
+    const fontPath = path.join(fontDir, spec.file);
+    if (!(await pathExists(fontPath))) {
+      continue;
+    }
+    const src = pathToFileURL(fontPath).href;
+    rules.push(`@font-face {
+  font-family: "${spec.family}";
+  font-style: ${spec.style};
+  font-weight: ${spec.weight};
+  src: url("${src}") format("truetype");
+}`);
+  }
+
+  if (rules.length) {
+    console.log(`Using fonts from ${fontDir} (${rules.length} @font-face rules)`);
+  }
+  return rules.join("\n\n");
+}
 
 function prepareBlockquotes(text) {
   const lines = text.split("\n");
@@ -88,7 +153,7 @@ function prepareMarkdown(mdText) {
   return prepareMarkdownLists(prepareBlockquotes(mdText));
 }
 
-async function mdToHtmlDocument(mdText, cssText) {
+async function mdToHtmlDocument(mdText, cssText, fontFaceCss) {
   const body = marked.parse(prepareMarkdown(mdText));
   return `<!DOCTYPE html>
 <html lang="zh-CN">
@@ -96,7 +161,7 @@ async function mdToHtmlDocument(mdText, cssText) {
   <meta charset="utf-8">
   <title>Guide Export</title>
   <link rel="stylesheet" href="${KATEX_CSS}">
-  <style>${cssText}</style>
+  <style>${fontFaceCss}${fontFaceCss ? "\n\n" : ""}${cssText}</style>
 </head>
 <body>
 ${body}
@@ -105,17 +170,23 @@ ${body}
 }
 
 async function exportPdf(mdPath, pdfPath) {
-  const [mdText, cssText] = await Promise.all([
+  const [mdText, cssText, fontFaceCss] = await Promise.all([
     fs.readFile(mdPath, "utf8"),
     fs.readFile(CSS_FILE, "utf8"),
+    buildFontFaceCss(),
   ]);
-  const htmlDoc = await mdToHtmlDocument(mdText, cssText);
+  const htmlDoc = await mdToHtmlDocument(mdText, cssText, fontFaceCss);
 
   await fs.mkdir(path.dirname(pdfPath), { recursive: true });
 
   const browser = await puppeteer.launch({
     headless: true,
-    args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    args: [
+      "--no-sandbox",
+      "--disable-setuid-sandbox",
+      "--font-render-hinting=medium",
+      "--allow-file-access-from-files",
+    ],
   });
 
   try {
