@@ -124,7 +124,7 @@ a {
   margin: 0.6em 0;
 }
 
-/* markdown-katex converts inline SVG to <img> for WeasyPrint */
+/* KaTeX inline/display math in Puppeteer print */
 .katex img {
   vertical-align: middle;
 }

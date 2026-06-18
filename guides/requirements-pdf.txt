@@ -1,3 +1,0 @@
-markdown>=3.5
-markdown-katex>=202406
-weasyprint>=60

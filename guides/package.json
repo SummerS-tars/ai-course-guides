@@ -1,0 +1,13 @@
+{
+  "name": "ai-guides-pdf",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "postinstall": "node install-chrome.mjs",
+    "export-pdf": "node export-pdf.mjs"
+  },
+  "dependencies": {
+    "marked": "^15.0.7",
+    "puppeteer": "^24.2.1"
+  }
+}

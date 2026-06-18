@@ -34,3 +34,7 @@ notebooklm-raw/**/*.answer.json
 
 # --- Generated PDF exports (not versioned) ---
 *.pdf
+
+# --- guides PDF toolchain (local npm) ---
+guides/node_modules/
+guides/package-lock.json
