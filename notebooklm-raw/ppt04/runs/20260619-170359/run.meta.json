@@ -1,0 +1,67 @@
+{
+  "module": "ppt04",
+  "notebook_id": "505bdb1c-0034-4e14-89df-0b14bf3fc723",
+  "manifest": "notebooklm-raw/manifests/ppt04-deep.json",
+  "run_dir": "notebooklm-raw/ppt04/runs/20260619-170359",
+  "started_at": "2026-06-19T09:03:59.512601+00:00",
+  "finished_at": "2026-06-19T09:09:05.122473+00:00",
+  "batches_total": 6,
+  "batches_completed": 6,
+  "batches_ok": 6,
+  "batches_skipped": 0,
+  "batches_failed": 0,
+  "batches_pending": 0,
+  "batches": [
+    {
+      "id": "ppt04-partA-representation",
+      "layer": "L1+L2",
+      "status": "ok",
+      "elapsed_seconds": 49.45,
+      "retry_count": 0,
+      "conversation_id": "8975e9ab-1362-4296-af47-cb2f7e2db3c7"
+    },
+    {
+      "id": "ppt04-partB-entropy",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 45.8,
+      "retry_count": 0,
+      "conversation_id": "619f6e7e-eb0b-4400-b852-ca46c4115572"
+    },
+    {
+      "id": "ppt04-partC-gain",
+      "layer": "L2+L3",
+      "status": "ok",
+      "elapsed_seconds": 42.72,
+      "retry_count": 0,
+      "conversation_id": "d315e03d-eba2-4956-aa97-564a6acd1a49"
+    },
+    {
+      "id": "ppt04-partD-induction",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 41.83,
+      "retry_count": 0,
+      "conversation_id": "a312d368-6cd4-480f-a515-09ca9744ee71"
+    },
+    {
+      "id": "ppt04-partE-application",
+      "layer": "L1",
+      "status": "ok",
+      "elapsed_seconds": 38.39,
+      "retry_count": 0,
+      "conversation_id": "24482e04-5e19-43c9-930d-3dddfbeceae8"
+    },
+    {
+      "id": "ppt04-mistakes",
+      "layer": "L3",
+      "status": "ok",
+      "elapsed_seconds": 52.7,
+      "retry_count": 0,
+      "conversation_id": "d8a56413-c2d2-4ef0-a534-71936522da90"
+    }
+  ],
+  "status": "completed",
+  "total_elapsed_seconds": 305.61,
+  "total_retry_count": 0
+}

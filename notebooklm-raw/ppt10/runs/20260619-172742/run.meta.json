@@ -1,0 +1,67 @@
+{
+  "module": "ppt10",
+  "notebook_id": "505bdb1c-0034-4e14-89df-0b14bf3fc723",
+  "manifest": "notebooklm-raw/manifests/ppt10-deep.json",
+  "run_dir": "notebooklm-raw/ppt10/runs/20260619-172742",
+  "started_at": "2026-06-19T09:27:42.826806+00:00",
+  "finished_at": "2026-06-19T09:33:04.295159+00:00",
+  "batches_total": 6,
+  "batches_completed": 6,
+  "batches_ok": 6,
+  "batches_skipped": 0,
+  "batches_failed": 0,
+  "batches_pending": 0,
+  "batches": [
+    {
+      "id": "ppt10-part1-encoding",
+      "layer": "L1+L2",
+      "status": "ok",
+      "elapsed_seconds": 40.87,
+      "retry_count": 0,
+      "conversation_id": "acb59d07-a8ee-44de-aec0-5c04ceeca815"
+    },
+    {
+      "id": "ppt10-part2-fitness",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 56.24,
+      "retry_count": 0,
+      "conversation_id": "49e0997b-0059-4028-b486-070be74ea0e8"
+    },
+    {
+      "id": "ppt10-part3-operators",
+      "layer": "L2+L3",
+      "status": "ok",
+      "elapsed_seconds": 44.85,
+      "retry_count": 0,
+      "conversation_id": "464ab300-c9a9-4871-9b1c-9da1bade48d8"
+    },
+    {
+      "id": "ppt10-part4-applications",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 44.54,
+      "retry_count": 0,
+      "conversation_id": "310804e2-eb7e-4cd1-a095-e23ba3ef7d6c"
+    },
+    {
+      "id": "ppt10-part5-schema",
+      "layer": "L2+L3",
+      "status": "ok",
+      "elapsed_seconds": 49.9,
+      "retry_count": 0,
+      "conversation_id": "05a2367a-ca41-43d9-a15a-e67810a13375"
+    },
+    {
+      "id": "ppt10-mistakes",
+      "layer": "L3",
+      "status": "ok",
+      "elapsed_seconds": 50.47,
+      "retry_count": 0,
+      "conversation_id": "95cd89d0-2765-4b04-9d31-f5087a0b519d"
+    }
+  ],
+  "status": "completed",
+  "total_elapsed_seconds": 321.47,
+  "total_retry_count": 0
+}

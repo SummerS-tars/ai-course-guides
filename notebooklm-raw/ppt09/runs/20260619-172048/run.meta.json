@@ -1,0 +1,83 @@
+{
+  "module": "ppt09",
+  "notebook_id": "505bdb1c-0034-4e14-89df-0b14bf3fc723",
+  "manifest": "notebooklm-raw/manifests/ppt09-deep.json",
+  "run_dir": "notebooklm-raw/ppt09/runs/20260619-172048",
+  "started_at": "2026-06-19T09:20:48.244770+00:00",
+  "finished_at": "2026-06-19T09:27:42.705610+00:00",
+  "batches_total": 8,
+  "batches_completed": 8,
+  "batches_ok": 8,
+  "batches_skipped": 0,
+  "batches_failed": 0,
+  "batches_pending": 0,
+  "batches": [
+    {
+      "id": "ppt09-partI-representation",
+      "layer": "L1+L2",
+      "status": "ok",
+      "elapsed_seconds": 41.39,
+      "retry_count": 0,
+      "conversation_id": "92c55381-f2d3-4f0a-b26d-97731a15f1d9"
+    },
+    {
+      "id": "ppt09-partII-cnn",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 47.57,
+      "retry_count": 0,
+      "conversation_id": "fed0eafe-c79a-48f2-b1af-9e29b74a1869"
+    },
+    {
+      "id": "ppt09-partIII-sequence",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 44.55,
+      "retry_count": 0,
+      "conversation_id": "ab6995dd-e127-4a4f-83c6-72f314e580df"
+    },
+    {
+      "id": "ppt09-partIV-rnn",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 49.3,
+      "retry_count": 0,
+      "conversation_id": "7b3f7a76-2c51-4c4f-b8b8-d0d5c4d84516"
+    },
+    {
+      "id": "ppt09-partV-gan",
+      "layer": "L1",
+      "status": "ok",
+      "elapsed_seconds": 51.89,
+      "retry_count": 0,
+      "conversation_id": "5f74570c-b107-4fe0-8c08-fe9aa2fe0604"
+    },
+    {
+      "id": "ppt09-partVI-optimization",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 46.89,
+      "retry_count": 0,
+      "conversation_id": "4f759c10-8732-42a5-af8b-5ffda9bf81d0"
+    },
+    {
+      "id": "ppt09-supplement-transformer",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 38.35,
+      "retry_count": 0,
+      "conversation_id": "f2f26d45-d523-4aac-bdd7-a0a22bd4a9c9"
+    },
+    {
+      "id": "ppt09-mistakes",
+      "layer": "L3",
+      "status": "ok",
+      "elapsed_seconds": 47.52,
+      "retry_count": 0,
+      "conversation_id": "4e00816f-3680-4cce-9a76-bfc724559bcc"
+    }
+  ],
+  "status": "completed",
+  "total_elapsed_seconds": 414.46,
+  "total_retry_count": 0
+}

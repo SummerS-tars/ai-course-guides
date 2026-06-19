@@ -1,0 +1,3 @@
+【单问·补充】课件 09 **缺少 Transformer 详页**，请根据 **Week 12 记录** 补充：Self-Attention Q/K/V、Encoder-Decoder、BERT vs GPT 三种范式。
+
+要求：中文；标明「课件09无详页，课堂补充」；标注来源。

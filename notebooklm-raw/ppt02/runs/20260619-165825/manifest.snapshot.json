@@ -1,0 +1,61 @@
+{
+  "module": "ppt02",
+  "notebook_id": "505bdb1c-0034-4e14-89df-0b14bf3fc723",
+  "description": "课件02 Knowledge Representation 知识点讲解",
+  "workflow": "v3-one-question-per-chat",
+  "sources_hint": [
+    "课件02-Knowledge-representation",
+    "笔记-week12-周五-AI",
+    "笔记-week13-周五-AI"
+  ],
+  "batches": [
+    {
+      "id": "ppt02-partA-kr-basics",
+      "layer": "L1+L2",
+      "priority": "important",
+      "title": "Part A KR 基础",
+      "clear_conversation": true,
+      "prompt": "【单问】请根据 **课件 02 Knowledge representation** Part A（Slide 1–3），讲解：\n\n1. 知识表示 KR 的定义：表示、获取、使用\n2. 专家系统公式：Programs=Algorithms+Data vs Expert Systems=Knowledge+Inference\n3. KR 在符号主义 AI 中的基石地位\n\n要求：中文；类比；标注来源。"
+    },
+    {
+      "id": "ppt02-partB-semantic",
+      "layer": "L1+L2",
+      "priority": "critical",
+      "title": "Part B 语义网络",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请根据 **课件 02** Part B（语义网络 Semantic Network，金丝雀分层图），讲解：\n\n1. 节点与有向边的含义；is-a / has-property 等关系\n2. 继承（Inheritance）如何推理\n3. 用金丝雀→鸟→动物层级举一个推理链例子\n\n要求：中文；补充课件图的文字描述；标注来源（课件02/Week12）。"
+    },
+    {
+      "id": "ppt02-partC-frames",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "Part C 框架 Frames",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请根据 **课件 02** Part C（Frames，旅馆房间/椅子/JOHN与消防车），讲解：\n\n1. 框架结构：槽 slot、侧面 facet、默认值\n2. 框架推理：如何由部分信息补全（John 类比推理）\n3. 与语义网络的区别\n\n要求：中文；标注来源；补充属性继承逻辑。"
+    },
+    {
+      "id": "ppt02-partD-conceptual-graph",
+      "layer": "L2+L3",
+      "priority": "critical",
+      "title": "Part D 概念图",
+      "clear_conversation": true,
+      "prompt": "【单问·重难点】请根据 **课件 02** Part D（Conceptual Graphs，Slide 8–14），讲解：\n\n1. 概念图 vs 语义网络：多元关系表示优势\n2. Join / Restriction / Simplify 三种操作各做什么（各一小例）\n3. Generic maker 与个体标记\n\n要求：中文；分步说明；课件图简略处 Agent 补充算法直觉；标注来源。"
+    },
+    {
+      "id": "ppt02-partE-overview",
+      "layer": "L1",
+      "priority": "optional",
+      "title": "Part E 其他KR方法索引",
+      "clear_conversation": true,
+      "prompt": "【单问】请根据 **课件 02** Part E（其他 KR 方法清单），用表格说明：逻辑、产生式、神经网络、贝叶斯网络等在本课程中对应哪份课件/哪几周讲授。\n\n要求：中文；标注来源。"
+    },
+    {
+      "id": "ppt02-mistakes",
+      "layer": "L3",
+      "priority": "important",
+      "title": "KR 易混淆概念",
+      "clear_conversation": true,
+      "prompt": "【单问】列出 **课件 02** 最易混淆的 4 组概念（语义网络 vs 框架 vs 概念图；继承 vs 默认；KR vs 数据库等），对比表说明。\n\n要求：中文；标注来源。"
+    }
+  ]
+}

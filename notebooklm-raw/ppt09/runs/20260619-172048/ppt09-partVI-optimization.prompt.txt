@@ -1,0 +1,7 @@
+【单问·核心】请根据 **课件 09** Part VI 及 Week 10 记录，讲解：
+
+1. SGD→Momentum→Adam 演进
+2. Xavier/He 初始化；Batch Norm vs Layer Norm
+3. L2、Dropout、早停
+
+要求：中文；对比表；标注来源。

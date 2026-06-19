@@ -1,0 +1,75 @@
+{
+  "module": "ppt08",
+  "notebook_id": "505bdb1c-0034-4e14-89df-0b14bf3fc723",
+  "manifest": "notebooklm-raw/manifests/ppt08-deep.json",
+  "run_dir": "notebooklm-raw/ppt08/runs/20260619-171324",
+  "started_at": "2026-06-19T09:13:24.258010+00:00",
+  "finished_at": "2026-06-19T09:20:48.114202+00:00",
+  "batches_total": 7,
+  "batches_completed": 7,
+  "batches_ok": 7,
+  "batches_skipped": 0,
+  "batches_failed": 0,
+  "batches_pending": 0,
+  "batches": [
+    {
+      "id": "ppt08-part1-intro",
+      "layer": "L1",
+      "status": "ok",
+      "elapsed_seconds": 58.16,
+      "retry_count": 0,
+      "conversation_id": "4a122dbd-38ca-4d3d-b1dd-c59b3c29b6f5"
+    },
+    {
+      "id": "ppt08-part2-activation-gd",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 59.09,
+      "retry_count": 0,
+      "conversation_id": "e2ca64c9-800a-46b9-be4f-f75983157665"
+    },
+    {
+      "id": "ppt08-part3-bp",
+      "layer": "L2+L3",
+      "status": "ok",
+      "elapsed_seconds": 56.5,
+      "retry_count": 0,
+      "conversation_id": "2b66608e-c5aa-4e3c-9193-86031e903bbe"
+    },
+    {
+      "id": "ppt08-part4-xor",
+      "layer": "L3",
+      "status": "ok",
+      "elapsed_seconds": 46.86,
+      "retry_count": 0,
+      "conversation_id": "dfc6be41-e45f-4d9d-9fca-79b58c2110d1"
+    },
+    {
+      "id": "ppt08-part5-competitive",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 98.81,
+      "retry_count": 2,
+      "conversation_id": "9c1af3ba-bffa-4011-b491-726a2af5dae1"
+    },
+    {
+      "id": "ppt08-part6-summary",
+      "layer": "L1",
+      "status": "ok",
+      "elapsed_seconds": 39.19,
+      "retry_count": 0,
+      "conversation_id": "5fbb6eb1-a800-4faf-8058-8bb170473ae1"
+    },
+    {
+      "id": "ppt08-mistakes",
+      "layer": "L3",
+      "status": "ok",
+      "elapsed_seconds": 44.54,
+      "retry_count": 0,
+      "conversation_id": "493cafd2-3848-4184-9734-fac1ae081406"
+    }
+  ],
+  "status": "completed",
+  "total_elapsed_seconds": 443.86,
+  "total_retry_count": 2
+}

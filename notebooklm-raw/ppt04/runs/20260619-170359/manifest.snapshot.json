@@ -1,0 +1,60 @@
+{
+  "module": "ppt04",
+  "notebook_id": "505bdb1c-0034-4e14-89df-0b14bf3fc723",
+  "description": "课件04 Decision Tree 知识点讲解（开卷自学）",
+  "workflow": "v3-one-question-per-chat",
+  "sources_hint": [
+    "课件04-Decision-tree",
+    "参考书-AIMA 4th Ed (Russell & Norvig)"
+  ],
+  "batches": [
+    {
+      "id": "ppt04-partA-representation",
+      "layer": "L1+L2",
+      "priority": "important",
+      "title": "Part A 决策树表示",
+      "clear_conversation": true,
+      "prompt": "【单问】请根据 **课件 04 Decision tree** Part A，讲解决策树：内部节点、分支、叶节点与分类规则的对应；用课件动物/信用等级例子说明。\n\n要求：中文；标注来源；说明本课 FiCS 未单独授课，属开卷自学。"
+    },
+    {
+      "id": "ppt04-partB-entropy",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "Part B 信息熵",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请根据 **课件 04** Part B（信息熵 Information entropy），讲解：\n\n1. 自信息 $h(x)$ 与熵 $H(X)$ 公式及 $\\log_2$ 含义\n2. 用课件 6 样本信用数据计算类别熵 $I(Credit)$ 的思路\n\n要求：中文；公式+符号表；标注来源。"
+    },
+    {
+      "id": "ppt04-partC-gain",
+      "layer": "L2+L3",
+      "priority": "critical",
+      "title": "Part C 信息增益与ID3手算",
+      "clear_conversation": true,
+      "prompt": "【单问·重难点·手算】请根据 **课件 04** Part C，**完整复现**课件对 Gender、Age 属性信息增益的计算（Gender=0, Age≈0.4592），逐步展示：\n\n1. $Gain(A)=H(S)-\\sum \\frac{|S_v|}{|S|}H(S_v)$\n2. 为何选 Age 作为根分裂属性\n\n要求：完整数值步骤；中文；标注来源。"
+    },
+    {
+      "id": "ppt04-partD-induction",
+      "layer": "L2",
+      "priority": "important",
+      "title": "Part D 贪心归纳算法",
+      "clear_conversation": true,
+      "prompt": "【单问】请根据 **课件 04** Part D（Top-down induction），讲解贪心递归构建决策树的伪代码逻辑与停止条件。\n\n要求：中文；标注来源；补充课件未讲的剪枝概念（一句话）。"
+    },
+    {
+      "id": "ppt04-partE-application",
+      "layer": "L1",
+      "priority": "optional",
+      "title": "Part E 适用场景",
+      "clear_conversation": true,
+      "prompt": "【单问】请根据 **课件 04** Part E，总结决策树适用条件（离散值、噪声数据等）及典型应用。\n\n要求：中文；标注来源。"
+    },
+    {
+      "id": "ppt04-mistakes",
+      "layer": "L3",
+      "priority": "important",
+      "title": "决策树易错点",
+      "clear_conversation": true,
+      "prompt": "【单问】列出决策树学习最易错的 4 点（熵为0时、多值属性偏好、与 CLIPS 决策树区别、无剪枝过拟合），对比说明。\n\n要求：中文；标注来源。"
+    }
+  ]
+}

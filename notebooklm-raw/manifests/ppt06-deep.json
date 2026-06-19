@@ -1,0 +1,49 @@
+{
+  "module": "ppt06",
+  "notebook_id": "505bdb1c-0034-4e14-89df-0b14bf3fc723",
+  "description": "课件06 Rough Set 知识点讲解（开卷自学）",
+  "workflow": "v3-one-question-per-chat",
+  "sources_hint": ["课件06-Rough-set"],
+  "batches": [
+    {
+      "id": "ppt06-partA-approximation",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "Part A 上下近似",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请根据 **课件 06 Rough set** Part A，讲解：\n\n1. 论域 $U$、等价关系 $R$、划分 $U/R$\n2. 下近似 $R_*(X)$ 与上近似 $R^*(X)$ 定义及直觉（文氏图文字版）\n3. 隶属函数 $\\mu_X^R$ 与近似的关系\n\n要求：中文；公式+符号表；补充课件缺图；标注来源；说明 FiCS 未授课。"
+    },
+    {
+      "id": "ppt06-partB-indiscernibility",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "Part B 不可分辨与正域",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请根据 **课件 06** Part B，讲解不可分辨关系 $IND$、决策属性、正域 $POS$ 的定义及在分类中的作用。\n\n要求：中文；小例子；标注来源。"
+    },
+    {
+      "id": "ppt06-partC-reduct",
+      "layer": "L2+L3",
+      "priority": "critical",
+      "title": "Part C 属性约简手算",
+      "clear_conversation": true,
+      "prompt": "【单问·重难点·手算】请根据 **课件 06** Part C（Reduct/Core），用课件房产价格或类似决策表演示：\n\n1. 尝试删除属性的约简判定思路\n2. Core（核）是什么\n\n要求：分步；中文；标注来源。"
+    },
+    {
+      "id": "ppt06-partD-application",
+      "layer": "L2",
+      "priority": "important",
+      "title": "Part D 决策表全流程",
+      "clear_conversation": true,
+      "prompt": "【单问】请根据 **课件 06** Part D 综合案例，梳理：离散化 → 属性约简 → 属性值约简 → 规则提取 全流程。\n\n要求：中文；标注来源；补充离散化标准课件未讲处。"
+    },
+    {
+      "id": "ppt06-mistakes",
+      "layer": "L3",
+      "priority": "important",
+      "title": "粗糙集易错点",
+      "clear_conversation": true,
+      "prompt": "【单问】对比粗糙集与模糊集、概率论处理不确定性的区别；列出上下近似易混点。\n\n要求：中文；对比表；标注来源。"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "module": "ppt01",
+  "notebook_id": "505bdb1c-0034-4e14-89df-0b14bf3fc723",
+  "description": "课件01 Introduction 知识点讲解",
+  "workflow": "v3-one-question-per-chat",
+  "sources_hint": ["课件01-Introduction", "笔记-week01-周五-AI", "笔记-week14-周五-AI", "笔记-week15-周五-AI"],
+  "batches": [
+    {
+      "id": "ppt01-partA-logic",
+      "layer": "L1+L2",
+      "priority": "important",
+      "title": "Part A 逻辑与AI哲学根源",
+      "clear_conversation": true,
+      "prompt": "【单问】请根据 **课件 01 Introduction** Part A（三段论、一阶谓词演算、公理系统）及 Week 1/14 记录，用中文讲解：\n\n1. 三段论（Syllogism）示例及其与符号主义的关系\n2. 一阶谓词演算（First-order predicate calculus）在 AI 中为何重要\n3. 逻辑系统如何为后续 Prolog/消解（课件07）铺垫\n\n要求：大白话+形式化各一句；术语 **中文（English）**；补充课件图示不足处；标注来源。"
+    },
+    {
+      "id": "ppt01-partB-production",
+      "layer": "L1+L2",
+      "priority": "critical",
+      "title": "Part B 产生式系统与专家系统架构",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请根据 **课件 01 Introduction** Part B 及 Week 1/15 记录，讲解产生式系统：\n\n1. 产生式规则 IF-THEN：前件 LHS / 后件 RHS\n2. 专家系统架构图各模块（推理引擎、知识库、工作内存、知识获取接口）职责\n3. 与课件 03 CLIPS 的衔接：架构如何在 CLIPS 中落地\n\n要求：中文；架构用文字+ASCII 描述；标注来源；补充专家系统结构图的文字版。"
+    },
+    {
+      "id": "ppt01-supplement-overview",
+      "layer": "L1",
+      "priority": "important",
+      "title": "课件01缺失内容与Week1补充",
+      "clear_conversation": true,
+      "prompt": "【单问】课件 01 在 NotebookLM 中内容极少（约3页），请结合 **Week 1 课程记录** 补充课件01未覆盖但课纲/期末相关的概述：\n\n1. AI 定义、达特茅斯会议\n2. 三大流派（符号/连接/进化）一句话定位\n3. 图灵测试及局限\n\n要求：中文；标明「课件01未详述，课堂补充」；标注来源。"
+    }
+  ]
+}

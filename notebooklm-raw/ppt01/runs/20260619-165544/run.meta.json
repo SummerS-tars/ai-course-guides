@@ -1,0 +1,16 @@
+{
+  "module": "ppt01",
+  "notebook_id": "505bdb1c-0034-4e14-89df-0b14bf3fc723",
+  "manifest": "notebooklm-raw/manifests/ppt01-deep.json",
+  "run_dir": "notebooklm-raw/ppt01/runs/20260619-165544",
+  "started_at": "2026-06-19T08:55:44.593274+00:00",
+  "finished_at": null,
+  "batches_total": 3,
+  "batches_completed": 0,
+  "batches_ok": 0,
+  "batches_skipped": 0,
+  "batches_failed": 0,
+  "batches_pending": 3,
+  "batches": [],
+  "status": "running"
+}

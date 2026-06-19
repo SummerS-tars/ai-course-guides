@@ -1,0 +1,82 @@
+{
+  "module": "ppt09",
+  "notebook_id": "505bdb1c-0034-4e14-89df-0b14bf3fc723",
+  "description": "课件09 Deep Learning 知识点讲解（按Part）",
+  "workflow": "v3-one-question-per-chat",
+  "sources_hint": [
+    "课件09-Deep-Learning",
+    "笔记-week04-周五-AI",
+    "笔记-week05-周五-AI",
+    "笔记-week06-周五-AI",
+    "笔记-week07-周五-AI",
+    "笔记-week10-周五-AI",
+    "笔记-week12-周五-AI",
+    "参考书-Deep Learning (Goodfellow)"
+  ],
+  "batches": [
+    {
+      "id": "ppt09-partI-representation",
+      "layer": "L1+L2",
+      "priority": "important",
+      "title": "Part I 表示学习RBM/DBN",
+      "clear_conversation": true,
+      "prompt": "【单问】请根据 **课件 09** Part I（表示学习、Autoencoder、RBM、DBN），讲解：\n\n1. 为何需要表示学习\n2. RBM 无监督预训练在深度学习史中的地位（已过时但考试可能提及）\n\n要求：中文；标注来源（Week4）。"
+    },
+    {
+      "id": "ppt09-partII-cnn",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "Part II CNN与LeNet",
+      "clear_conversation": true,
+      "prompt": "【单问·核心·PJ1】请根据 **课件 09** Part II（CNN），讲解：\n\n1. 局部连接、权重共享、平移不变性\n2. 卷积核、步长、填充、通道；输出尺寸公式\n3. 池化；LeNet-5 结构\n\n要求：中文；公式；补充课件图；标注来源（Week4/7）；对应 Project1 Part2。"
+    },
+    {
+      "id": "ppt09-partIII-sequence",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "Part III HMM/CRF/Word2Vec",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请根据 **课件 09** Part III，讲解：\n\n1. HMM 五元组与三问题；前向算法直觉\n2. CRF vs HMM（生成 vs 判别、局部 vs 全局归一化）\n3. Word2Vec CBOW/Skip-gram 直觉\n\n要求：中文；对比表；标注来源（Week5-6）。"
+    },
+    {
+      "id": "ppt09-partIV-rnn",
+      "layer": "L2",
+      "priority": "important",
+      "title": "Part IV RNN/LSTM/GRU",
+      "clear_conversation": true,
+      "prompt": "【单问】请根据 **课件 09** Part IV，讲解 RNN、LSTM 三门机制、梯度消失与 BPTT；GRU 简化直觉。\n\n要求：中文；补充 LSTM 拓扑图文字版；标注来源。"
+    },
+    {
+      "id": "ppt09-partV-gan",
+      "layer": "L1",
+      "priority": "optional",
+      "title": "Part V GAN（了解）",
+      "clear_conversation": true,
+      "prompt": "【单问】请根据 **课件 09** Part V（GAN），简述生成器/判别器对抗；标明**本课程不考核**（Week8/13 记录）。\n\n要求：中文；标注来源。"
+    },
+    {
+      "id": "ppt09-partVI-optimization",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "Part VI 优化与正则",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请根据 **课件 09** Part VI 及 Week 10 记录，讲解：\n\n1. SGD→Momentum→Adam 演进\n2. Xavier/He 初始化；Batch Norm vs Layer Norm\n3. L2、Dropout、早停\n\n要求：中文；对比表；标注来源。"
+    },
+    {
+      "id": "ppt09-supplement-transformer",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "课件缺口：Transformer补充",
+      "clear_conversation": true,
+      "prompt": "【单问·补充】课件 09 **缺少 Transformer 详页**，请根据 **Week 12 记录** 补充：Self-Attention Q/K/V、Encoder-Decoder、BERT vs GPT 三种范式。\n\n要求：中文；标明「课件09无详页，课堂补充」；标注来源。"
+    },
+    {
+      "id": "ppt09-mistakes",
+      "layer": "L3",
+      "priority": "important",
+      "title": "深度学习课件易错点",
+      "clear_conversation": true,
+      "prompt": "【单问】列出 **课件 09** 范围最易混淆 5 组（CNN 卷积 vs 互相关、HMM vs CRF、BN vs LN、RBM 预训练 vs 端到端等），对比表。\n\n要求：中文；标注来源。"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+【单问·重难点·PJ1】请根据 **课件 08** Part 3（BP），讲解：
+
+1. 链式法则；输出层 $\delta$、隐层 $\delta_j=f'(z_j)\sum_k \delta_k w_{kj}$
+2. 回归 MSE 与分类 Softmax+CE 的统一梯度形式
+3. 权重更新 $\Delta w_{kj}=\eta \delta_k h_j$
+
+要求：中文；符号表；补充 Slide 链式推导缺口；标注来源；对应 Project1 Part1。

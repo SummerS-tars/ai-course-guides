@@ -1,0 +1,7 @@
+【单问】请根据 **课件 01 Introduction** Part A（三段论、一阶谓词演算、公理系统）及 Week 1/14 记录，用中文讲解：
+
+1. 三段论（Syllogism）示例及其与符号主义的关系
+2. 一阶谓词演算（First-order predicate calculus）在 AI 中为何重要
+3. 逻辑系统如何为后续 Prolog/消解（课件07）铺垫
+
+要求：大白话+形式化各一句；术语 **中文（English）**；补充课件图示不足处；标注来源。

@@ -1,0 +1,59 @@
+{
+  "module": "ppt06",
+  "notebook_id": "505bdb1c-0034-4e14-89df-0b14bf3fc723",
+  "manifest": "notebooklm-raw/manifests/ppt06-deep.json",
+  "run_dir": "notebooklm-raw/ppt06/runs/20260619-170905",
+  "started_at": "2026-06-19T09:09:05.227097+00:00",
+  "finished_at": "2026-06-19T09:13:24.150970+00:00",
+  "batches_total": 5,
+  "batches_completed": 5,
+  "batches_ok": 5,
+  "batches_skipped": 0,
+  "batches_failed": 0,
+  "batches_pending": 0,
+  "batches": [
+    {
+      "id": "ppt06-partA-approximation",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 44.57,
+      "retry_count": 0,
+      "conversation_id": "068ffe4d-25ce-47eb-ab36-b7d3486ccc39"
+    },
+    {
+      "id": "ppt06-partB-indiscernibility",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 43.67,
+      "retry_count": 0,
+      "conversation_id": "847543ea-5856-4651-ac40-a79c517bdc80"
+    },
+    {
+      "id": "ppt06-partC-reduct",
+      "layer": "L2+L3",
+      "status": "ok",
+      "elapsed_seconds": 50.77,
+      "retry_count": 0,
+      "conversation_id": "422bc220-1cf8-4a02-99ae-4631164597a0"
+    },
+    {
+      "id": "ppt06-partD-application",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 45.43,
+      "retry_count": 0,
+      "conversation_id": "818ec9eb-d36d-46ad-9f69-105670492a5f"
+    },
+    {
+      "id": "ppt06-mistakes",
+      "layer": "L3",
+      "status": "ok",
+      "elapsed_seconds": 46.25,
+      "retry_count": 0,
+      "conversation_id": "99eef00d-ef58-43a9-80ce-adc8484f0f52"
+    }
+  ],
+  "status": "completed",
+  "total_elapsed_seconds": 258.92,
+  "total_retry_count": 0
+}

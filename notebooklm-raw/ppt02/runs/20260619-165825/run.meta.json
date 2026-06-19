@@ -1,0 +1,67 @@
+{
+  "module": "ppt02",
+  "notebook_id": "505bdb1c-0034-4e14-89df-0b14bf3fc723",
+  "manifest": "notebooklm-raw/manifests/ppt02-deep.json",
+  "run_dir": "notebooklm-raw/ppt02/runs/20260619-165825",
+  "started_at": "2026-06-19T08:58:25.009981+00:00",
+  "finished_at": "2026-06-19T09:03:59.390934+00:00",
+  "batches_total": 6,
+  "batches_completed": 6,
+  "batches_ok": 6,
+  "batches_skipped": 0,
+  "batches_failed": 0,
+  "batches_pending": 0,
+  "batches": [
+    {
+      "id": "ppt02-partA-kr-basics",
+      "layer": "L1+L2",
+      "status": "ok",
+      "elapsed_seconds": 60.97,
+      "retry_count": 0,
+      "conversation_id": "a1fe7f91-e1d5-47bf-abc8-128de66aae92"
+    },
+    {
+      "id": "ppt02-partB-semantic",
+      "layer": "L1+L2",
+      "status": "ok",
+      "elapsed_seconds": 46.2,
+      "retry_count": 0,
+      "conversation_id": "c03e82d6-e5e7-4826-b0b9-673d3ff2d4b5"
+    },
+    {
+      "id": "ppt02-partC-frames",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 46.16,
+      "retry_count": 0,
+      "conversation_id": "9dc7db88-5782-402a-9209-33fe75fa80d5"
+    },
+    {
+      "id": "ppt02-partD-conceptual-graph",
+      "layer": "L2+L3",
+      "status": "ok",
+      "elapsed_seconds": 46.6,
+      "retry_count": 0,
+      "conversation_id": "9fb5f4e6-d159-4916-a3cf-f7a5e0ea8a1f"
+    },
+    {
+      "id": "ppt02-partE-overview",
+      "layer": "L1",
+      "status": "ok",
+      "elapsed_seconds": 42.52,
+      "retry_count": 0,
+      "conversation_id": "3c08c53f-ecee-46a7-98db-b4f3c6a315ce"
+    },
+    {
+      "id": "ppt02-mistakes",
+      "layer": "L3",
+      "status": "ok",
+      "elapsed_seconds": 55.46,
+      "retry_count": 0,
+      "conversation_id": "df09b39a-0b0c-433d-ab18-f87d570733fc"
+    }
+  ],
+  "status": "completed",
+  "total_elapsed_seconds": 334.38,
+  "total_retry_count": 0
+}

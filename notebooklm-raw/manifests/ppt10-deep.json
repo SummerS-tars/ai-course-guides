@@ -1,0 +1,57 @@
+{
+  "module": "ppt10",
+  "notebook_id": "505bdb1c-0034-4e14-89df-0b14bf3fc723",
+  "description": "课件10 Genetic Algorithm 知识点讲解",
+  "workflow": "v3-one-question-per-chat",
+  "sources_hint": ["课件10-Genetic-algorithm", "笔记-week01-周五-AI"],
+  "batches": [
+    {
+      "id": "ppt10-part1-encoding",
+      "layer": "L1+L2",
+      "priority": "important",
+      "title": "Part1 编码与初始化",
+      "clear_conversation": true,
+      "prompt": "【单问】请根据 **课件 10 Genetic algorithm** Part 1，讲解个体编码（二进制、TSP 序列、格雷码 Gray coding）及初始种群。\n\n要求：中文；格雷码为何优于普通二进制（补充课件图）；标注来源。"
+    },
+    {
+      "id": "ppt10-part2-fitness",
+      "layer": "L2",
+      "priority": "important",
+      "title": "Part2 适应度",
+      "clear_conversation": true,
+      "prompt": "【单问】请根据 **课件 10** Part 2，用 $f(x)=x^2$ 在 $[2,3]$ 求最大值例子说明适应度函数设计。\n\n要求：中文；标注来源。"
+    },
+    {
+      "id": "ppt10-part3-operators",
+      "layer": "L2+L3",
+      "priority": "critical",
+      "title": "Part3 选择交叉变异",
+      "clear_conversation": true,
+      "prompt": "【单问·重难点】请根据 **课件 10** Part 3，讲解：\n\n1. 轮盘赌选择（Russian roulette）概率计算\n2. 单点交叉；TSP 顺序交叉 Order crossover\n3. 位翻转变异；TSP 逆转变异 Inversion\n\n要求：中文；分步图解文字版；标注来源。"
+    },
+    {
+      "id": "ppt10-part4-applications",
+      "layer": "L2",
+      "priority": "important",
+      "title": "Part4 TSP与背包",
+      "clear_conversation": true,
+      "prompt": "【单问】请根据 **课件 10** Part 4，讲解背包问题与 TSP 在 GA 中的编码与算子差异。\n\n要求：中文；标注来源。"
+    },
+    {
+      "id": "ppt10-part5-schema",
+      "layer": "L2+L3",
+      "priority": "critical",
+      "title": "Part5 模式定理",
+      "clear_conversation": true,
+      "prompt": "【单问·重难点】请根据 **课件 10** Part 5（Schema Theory），讲解：\n\n1. 模式 Schema、通配符 *、阶 Order、定义长度 Defining length\n2. 模式定理 $E[m(s,t+1)]$ 直觉：短、低阶、高适应度模式指数增长\n3. 局限性（欺骗性问题）\n\n要求：中文；公式+直觉；补充超平面图文字版；标注来源；说明课堂仅 W1 概述。"
+    },
+    {
+      "id": "ppt10-mistakes",
+      "layer": "L3",
+      "priority": "important",
+      "title": "遗传算法易错点",
+      "clear_conversation": true,
+      "prompt": "【单问】对比遗传算法与梯度下降；列出 GA 易错点（精英保留、代际 vs 稳态替换、交叉率变异率）。\n\n要求：中文；对比表；标注来源。"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+[16:55:44] 模块: ppt01 | 批次数: 3 | 输出: /home/thesumst/development/ai/notebooklm-raw/ppt01/runs/20260619-165544
+[16:55:44] 同步认证…
+[16:55:45] 认证 OK
+[16:55:45] 选定 Notebook: 505bdb1c-0034-4e14-89df-0b14bf3fc723
+[16:55:48] --- batch 1/3: [L1+L2] ppt01-partA-logic ---
+[16:55:48] 清空会话上下文 (notebooklm clear)
+[16:55:48] 提问 (239 字, nlm_timeout=120s)…

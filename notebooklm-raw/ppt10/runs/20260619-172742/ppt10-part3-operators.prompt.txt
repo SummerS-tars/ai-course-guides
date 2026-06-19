@@ -1,0 +1,7 @@
+【单问·重难点】请根据 **课件 10** Part 3，讲解：
+
+1. 轮盘赌选择（Russian roulette）概率计算
+2. 单点交叉；TSP 顺序交叉 Order crossover
+3. 位翻转变异；TSP 逆转变异 Inversion
+
+要求：中文；分步图解文字版；标注来源。

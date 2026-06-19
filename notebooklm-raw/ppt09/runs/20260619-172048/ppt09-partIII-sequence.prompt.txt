@@ -1,0 +1,7 @@
+【单问·核心】请根据 **课件 09** Part III，讲解：
+
+1. HMM 五元组与三问题；前向算法直觉
+2. CRF vs HMM（生成 vs 判别、局部 vs 全局归一化）
+3. Word2Vec CBOW/Skip-gram 直觉
+
+要求：中文；对比表；标注来源（Week5-6）。

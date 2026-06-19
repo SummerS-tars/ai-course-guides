@@ -1,0 +1,7 @@
+【单问·重难点】请根据 **课件 02** Part D（Conceptual Graphs，Slide 8–14），讲解：
+
+1. 概念图 vs 语义网络：多元关系表示优势
+2. Join / Restriction / Simplify 三种操作各做什么（各一小例）
+3. Generic maker 与个体标记
+
+要求：中文；分步说明；课件图简略处 Agent 补充算法直觉；标注来源。
