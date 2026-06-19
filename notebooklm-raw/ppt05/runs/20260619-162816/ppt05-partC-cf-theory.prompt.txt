@@ -1,0 +1,8 @@
+【单问·核心·必考】请仅根据 **课件 05 Uncertainty** Part C（Certainty Factors，Slide 12–18），讲解：
+
+1. CF 动机：为何不用精确概率
+2. MB（Measure of Belief）与 MD（Measure of Disbelief）定义
+3. 证据不确定性、规则不确定性、结论合成的三层计算框架
+4. 合成公式（含多条证据、多条规则情形若课件有）
+
+要求：中文；公式+符号表；标注来源（课件05 slide）；对齐 Week 13「必考」说明。

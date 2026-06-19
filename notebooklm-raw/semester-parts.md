@@ -82,9 +82,12 @@ P1 三大流派/MLP → P2 BP+CNN+PJ1 → P3 序列 HMM/CRF
 
 **下一步（认证恢复后）**：
 
+用户先在 Windows 登录（`notebooklm-login.ps1` 或 `fix_login_edge.py`），见 `~/service/openclaw/workspace/skills/notebooklm-integration/docs/auth-sop.md`。
+
 ```bash
 export HTTPS_PROXY=http://127.0.0.1:7897 HTTP_PROXY=http://127.0.0.1:7897
-python3 ~/service/openclaw/workspace/skills/notebooklm-integration/scripts/sync-auth.py
+python3 ~/service/openclaw/workspace/skills/notebooklm-integration/scripts/sync-auth.py --force
+python3 ~/service/openclaw/workspace/skills/notebooklm-integration/scripts/sync-auth.py --check
 notebooklm source list   # 核对上表
 
 # 对新 Part 先跑 L0 discovery，再跑完整 manifest

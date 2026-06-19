@@ -1,0 +1,7 @@
+【单问·核心】请仅根据 **课件 03 CLIPS**（按 slide 顺序 Part A：产生式系统架构，约 Slide 7–8 及推理引擎部分），讲解：
+
+1. 产生式系统三组件（事实库 Working Memory、知识库 Rules、推理引擎）各自职责
+2. 识别-动作周期（Recognize-act cycle）逐步流程
+3. Agenda（议程）如何排序与触发规则执行
+
+要求：中文；流程可用条目或 ASCII；术语 **中文（English）**；每点标注来源（课件03 slide 号 / Week 15 记录）；补充课件图示不足的文字说明。

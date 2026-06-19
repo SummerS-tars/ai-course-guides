@@ -146,7 +146,11 @@ notebooklm-raw/<module>/runs/latest → 最近 completed run
 
 ## 环境与排错
 
-见 `docs/troubleshooting.md`：认证（Windows→WSL sync-auth）、代理 `127.0.0.1:7897`、超时重试。
+**认证 SOP（权威）**：`~/service/openclaw/workspace/skills/notebooklm-integration/docs/auth-sop.md`
+
+见 `docs/troubleshooting.md`：认证、代理 `127.0.0.1:7897`、超时重试。
+
+**Agent 禁止**：`notebooklm login`、WSL 浏览器、从 WSL 调 Windows 登录、`sync-auth --refresh`。
 
 ## 本 Skill 目录
 
@@ -169,4 +173,5 @@ notebooklm-raw/<module>/runs/latest → 最近 completed run
 - 大模块无全景节直接推导
 - 只粘贴 NotebookLM 输出不做叙事串联
 - 一次 prompt 问整周内容
+- Agent 在 WSL 尝试 `notebooklm login` 或浏览器登录（见 auth-sop.md）
 - Agent 编造公式不标注来源

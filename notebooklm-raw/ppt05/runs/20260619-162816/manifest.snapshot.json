@@ -1,0 +1,69 @@
+{
+  "module": "ppt05",
+  "notebook_id": "505bdb1c-0034-4e14-89df-0b14bf3fc723",
+  "description": "课件05 Uncertainty 按 Part 深入（CF 必考）",
+  "workflow": "v3-one-question-per-chat",
+  "sources_hint": [
+    "课件05-Uncertainty",
+    "笔记-week13-周五-AI",
+    "笔记-week05-周五-AI"
+  ],
+  "batches": [
+    {
+      "id": "ppt05-partA-background",
+      "layer": "L1",
+      "priority": "important",
+      "title": "Part A 不确定性与误差",
+      "clear_conversation": true,
+      "prompt": "【单问】请仅根据 **课件 05 Uncertainty** Part A（Slide 1–3：不确定性定义、随机/系统误差、归纳 vs 演绎），用中文讲解核心概念。\n\n要求：大白话+形式化各一句；术语 **中文（English）**；标注来源；不要讲贝叶斯公式。"
+    },
+    {
+      "id": "ppt05-partB-bayes",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "Part B 贝叶斯决策",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请仅根据 **课件 05 Uncertainty** Part B（贝叶斯定理与贝叶斯决策，约 Slide 6–11），讲解：\n\n1. 贝叶斯公式：先验、似然、后验\n2. 损失函数（Loss function）与 Bayes 风险最小化决策\n3. 课件决策流程图（Decision making flow）的文字版解读\n4. 课堂补充：经典概率在不考虑先验、未关联行动时的缺陷\n\n要求：中文；关键公式+符号表；标注来源；补充图多处的文字。"
+    },
+    {
+      "id": "ppt05-partC-cf-theory",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "Part C 确定性因子理论",
+      "clear_conversation": true,
+      "prompt": "【单问·核心·必考】请仅根据 **课件 05 Uncertainty** Part C（Certainty Factors，Slide 12–18），讲解：\n\n1. CF 动机：为何不用精确概率\n2. MB（Measure of Belief）与 MD（Measure of Disbelief）定义\n3. 证据不确定性、规则不确定性、结论合成的三层计算框架\n4. 合成公式（含多条证据、多条规则情形若课件有）\n\n要求：中文；公式+符号表；标注来源（课件05 slide）；对齐 Week 13「必考」说明。"
+    },
+    {
+      "id": "ppt05-partC-cf-numeric",
+      "layer": "L3",
+      "priority": "critical",
+      "title": "Part C 确定性因子数值手算",
+      "clear_conversation": true,
+      "prompt": "【单问·必考·数值】请仅根据 **课件 05 Uncertainty** 与 Week 13 记录，给出 **确定性因子（CF）合成的完整数值手算例题**（至少 3–4 步，含两条规则或两条证据的合成），逐步展示计算过程。\n\n要求：完整数字；中文；每步说明用的公式；标注来源。"
+    },
+    {
+      "id": "ppt05-partD-fuzzy",
+      "layer": "L2",
+      "priority": "important",
+      "title": "Part D 模糊逻辑",
+      "clear_conversation": true,
+      "prompt": "【单问·重要】请仅根据 **课件 05 Uncertainty** Part D（Fuzzy Set & Fuzzy Logic，Slide 19–23），讲解：\n\n1. 模糊集与隶属度函数（Membership function）；TALL 示例\n2. 语言算子 Hedges：集中（Concentration）与扩散（Dilation）\n3. 与概率方法处理不确定性的区别\n\n要求：中文；补充隶属度曲线图的文字描述；标注来源。"
+    },
+    {
+      "id": "ppt05-partE-markov",
+      "layer": "L2",
+      "priority": "important",
+      "title": "Part E 马尔可夫链与 PageRank",
+      "clear_conversation": true,
+      "prompt": "【单问·重要】请根据 **课件 05 Uncertainty** 与 **Week 13 课堂记录**，讲解马尔可夫链与 PageRank：\n\n1. 转移矩阵、稳态分布直觉\n2. PageRank：迭代 $v_{t+1} = M v_t$ 收敛至稳态的含义\n3. 课件 05 不足处由课堂记录补充\n\n要求：中文；一个小数值例子（2–3 状态即可）；标注来源。"
+    },
+    {
+      "id": "ppt05-mistakes",
+      "layer": "L3",
+      "priority": "important",
+      "title": "Uncertainty 易混淆概念",
+      "clear_conversation": true,
+      "prompt": "【单问】请列出 **课件 05 Uncertainty** 最易混淆的 4–5 组概念（贝叶斯后验 vs CF、MB vs MD、模糊 vs 概率、归纳 vs 演绎等），用对比表说明。\n\n要求：中文；标注来源。"
+    }
+  ]
+}

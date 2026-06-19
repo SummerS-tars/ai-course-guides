@@ -1,0 +1,57 @@
+{
+  "module": "ppt07",
+  "notebook_id": "505bdb1c-0034-4e14-89df-0b14bf3fc723",
+  "description": "课件07 Logics and Prolog 按 Part 深入（消解大题）",
+  "workflow": "v3-one-question-per-chat",
+  "sources_hint": ["课件07-Logics-and-Prolog", "笔记-week14-周五-AI"],
+  "batches": [
+    {
+      "id": "ppt07-part1-logic",
+      "layer": "L1+L2",
+      "priority": "important",
+      "title": "Part 1 命题与一阶逻辑",
+      "clear_conversation": true,
+      "prompt": "【单问】请仅根据 **课件 07 Logics and Prolog** Part 1（命题逻辑、一阶谓词逻辑），讲解：\n\n1. 连接词与真值表；善意推定原则（minimal translation）\n2. 项、谓词、量词 $\\forall/\\exists$；原子公式\n3. 表达能力局限：为何需要一阶逻辑\n\n要求：中文；术语 **中文（English）**；标注来源；不要讲消解。"
+    },
+    {
+      "id": "ppt07-part2-clause-form",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "Part 2 子句集转换步骤",
+      "clear_conversation": true,
+      "prompt": "【单问·核心·期末大题】请仅根据 **课件 07** Part 2（Resolution，Slide 5–14），按课件顺序讲解 **子句集（Clause Form）转换的 8–9 个步骤**：\n\n消去蕴含 → 否定内移 → 标准化变量 → Skolem 化 → 化为 CNF 子句集等（以课件实际步骤为准）。\n\n要求：中文；每步一句话+一个小例子；标注 slide 号；**说明课堂所称 DNF 与课件 Clause Form/CNF 的术语对齐**。"
+    },
+    {
+      "id": "ppt07-part2-resolution",
+      "layer": "L2+L3",
+      "priority": "critical",
+      "title": "Part 2 消解证明手算",
+      "clear_conversation": true,
+      "prompt": "【单问·核心·必考】请仅根据 **课件 07** 与 Week 14 记录，演示 **消解反驳证明**完整流程：\n\n1. 给定简单前提集合（可用课件或课堂类似例题）\n2. 化为子句集\n3. 通过合一（Unification）寻找互补文字并消解\n4. 得到空子句 □ 证明不可满足\n\n要求：中文；逐步推导；标注来源；补充消解树图的文字版。"
+    },
+    {
+      "id": "ppt07-part2-nl-to-logic",
+      "layer": "L3",
+      "priority": "critical",
+      "title": "自然语言转逻辑表达式",
+      "clear_conversation": true,
+      "prompt": "【单问·期末大题第一问】请根据 **课件 07** 与 Week 14 记录，讲解 **自然语言 → 一阶逻辑表达式** 的翻译技巧：\n\n1. 给出 2 个中等难度例题（可类比课堂红楼梦/家族关系类）\n2. 说明量词作用域、变量命名、谓词选择要点\n\n要求：中文；每题给出逻辑式；标注来源；不要展开消解。"
+    },
+    {
+      "id": "ppt07-part3-prolog",
+      "layer": "L2",
+      "priority": "important",
+      "title": "Part 3 Prolog 与霍恩子句",
+      "clear_conversation": true,
+      "prompt": "【单问·重要】请仅根据 **课件 07** Part 3（Horn Clauses、Prolog，Slide 16–23），讲解：\n\n1. 霍恩子句三种形式与 Prolog 规则对应\n2. 合一（Unification）在 Prolog 查询中的角色\n3. 深度优先搜索、回溯（Backtracking）\n4. 剪枝 `!` 的作用\n5. 递归规则示例（如 predecessor）\n\n要求：中文；极简 Prolog 代码片段；标注来源。"
+    },
+    {
+      "id": "ppt07-mistakes",
+      "layer": "L3",
+      "priority": "important",
+      "title": "逻辑与消解易错点",
+      "clear_conversation": true,
+      "prompt": "【单问】请列出 **课件 07** 期末最易出错的 4–5 点（Skolem 化、变量标准化、CNF vs DNF 术语、消解策略完备性、Prolog 规则顺序等），用对比表或条目说明。\n\n要求：中文；标注来源。"
+    }
+  ]
+}

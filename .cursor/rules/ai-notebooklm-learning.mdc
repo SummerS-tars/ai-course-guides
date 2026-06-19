@@ -32,3 +32,9 @@ globs: guides/**,notebooklm-raw/**,.cursor/skills/ai-course-notebooklm/**
 ## 禁止
 
 - 一次问整周内容；只粘贴 raw 不整合；未读 raw 就写指南
+- WSL 内 `notebooklm login` 或浏览器登录（见 `~/service/openclaw/workspace/skills/notebooklm-integration/docs/auth-sop.md`）
+
+## NotebookLM 认证
+
+权威：`~/service/openclaw/workspace/skills/notebooklm-integration/docs/auth-sop.md`  
+失效时：用户 Windows 登录 → WSL `sync-auth.py --force`

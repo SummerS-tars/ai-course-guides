@@ -1,0 +1,101 @@
+{
+  "module": "ppt",
+  "notebook_id": "505bdb1c-0034-4e14-89df-0b14bf3fc723",
+  "description": "10 份课件内部结构发现（L0，按课件顺序，单问单答）",
+  "workflow": "v3-one-question-per-chat",
+  "sources_hint": [
+    "课件01-Introduction",
+    "课件02-Knowledge-representation",
+    "课件03-CLIPS",
+    "课件04-Decision-tree",
+    "课件05-Uncertainty",
+    "课件06-Rough-set",
+    "课件07-Logics-and-Prolog",
+    "课件08-Connectionist",
+    "课件09-Deep-Learning",
+    "课件10-Genetic-algorithm",
+    "笔记-week01-周五-AI … 笔记-week15-周五-AI"
+  ],
+  "batches": [
+    {
+      "id": "ppt01-structure",
+      "layer": "L0",
+      "priority": "critical",
+      "title": "课件01 Introduction 内部结构",
+      "clear_conversation": true,
+      "prompt": "请仅根据 **课件 01 Introduction**（英文 PPT，图较多），完成课件内部结构梳理。**不要展开讲解知识点本身**。\n\n1. **按课件原始顺序**列出主要章节/板块（若能识别 slide 页码或英文标题请注明）\n2. 将上述内容按**知识点维度**合并为若干 Part（Part A/B/C…），说明每个 Part 涵盖哪些 slide/章节\n3. 标注每个 Part：重要程度（期末核心/重要/了解）、是否以图为主需文字补充\n4. **课堂授课对照**：对照 Week 1–15 课程记录，哪些 Part 在课堂上深入讲过、哪些仅提及或未讲（注明 Week 编号）\n5. 列出课件关键**英文术语**及建议中文对照\n6. 指出课件中**讲解不足**、复习时需额外补充解释的部分\n\n要求：中文；条目式；每点标注来源（课件01 / Week N 记录）；信息不足处说明。"
+    },
+    {
+      "id": "ppt02-structure",
+      "layer": "L0",
+      "priority": "critical",
+      "title": "课件02 Knowledge representation 内部结构",
+      "clear_conversation": true,
+      "prompt": "请仅根据 **课件 02 Knowledge representation**（英文 PPT），完成课件内部结构梳理。**不要展开讲解知识点本身**。\n\n1. 按课件原始顺序列出主要章节/板块（slide 页码或英文标题）\n2. 按知识点维度合并为 Part A/B/C…，说明各 Part 涵盖范围\n3. 每个 Part：重要程度、是否图多需补充\n4. 课堂对照：哪些 Part 在 Week 12–15 等记录中深入讲过、哪些未讲\n5. 关键英文术语及中文对照\n6. 讲解不足需补充处\n\n要求：中文；条目式；标注来源（课件02 / Week N 记录）。"
+    },
+    {
+      "id": "ppt03-structure",
+      "layer": "L0",
+      "priority": "critical",
+      "title": "课件03 CLIPS 内部结构",
+      "clear_conversation": true,
+      "prompt": "请仅根据 **课件 03 CLIPS**（英文 PPT），完成课件内部结构梳理。**不要展开讲解知识点本身**。\n\n1. 按课件原始顺序列出章节/板块（slide 页码或标题）\n2. 按知识点维度分 Part（产生式系统、deftemplate、defrule、猜动物示例等）\n3. 各 Part 重要程度（期末核心/重要/了解）、图多需补充处\n4. 课堂对照：Week 15 及前后周哪些内容课堂深入、哪些仅课件备查\n5. 关键英文术语及中文对照（含 CLIPS 语法关键字）\n6. 讲解不足需补充处（尤其猜动物程序考核相关）\n\n要求：中文；条目式；标注来源（课件03 / Week 15 记录等）。"
+    },
+    {
+      "id": "ppt04-structure",
+      "layer": "L0",
+      "priority": "important",
+      "title": "课件04 Decision tree 内部结构",
+      "clear_conversation": true,
+      "prompt": "请仅根据 **课件 04 Decision tree**（英文 PPT），完成课件内部结构梳理。**不要展开讲解知识点本身**。\n\n1. 按课件原始顺序列出章节/板块\n2. 按知识点维度分 Part（信息增益、ID3/C4.5、剪枝等）\n3. 各 Part 重要程度、图多需补充处\n4. **课堂对照**：FiCS 记录显示本课可能**未单独授课**——请核实课件内容是否在任意 Week 记录中被讲过；若未讲请标明「开卷自学」\n5. 关键英文术语及中文对照\n6. 讲解不足需补充处\n\n要求：中文；条目式；标注来源。"
+    },
+    {
+      "id": "ppt05-structure",
+      "layer": "L0",
+      "priority": "critical",
+      "title": "课件05 Uncertainty 内部结构",
+      "clear_conversation": true,
+      "prompt": "请仅根据 **课件 05 Uncertainty**（英文 PPT），完成课件内部结构梳理。**不要展开讲解知识点本身**。\n\n1. 按课件原始顺序列出章节/板块\n2. 按知识点维度分 Part（贝叶斯、确定性因子 CF、模糊逻辑、马尔可夫链/PageRank 等）\n3. 各 Part 重要程度（CF 计算标注是否期末必考）、图多需补充处\n4. 课堂对照：Week 5/13 等哪些 Part 深入讲过\n5. 关键英文术语及中文对照\n6. 讲解不足需补充处\n\n要求：中文；条目式；标注来源（课件05 / Week N 记录）。"
+    },
+    {
+      "id": "ppt06-structure",
+      "layer": "L0",
+      "priority": "important",
+      "title": "课件06 Rough set 内部结构",
+      "clear_conversation": true,
+      "prompt": "请仅根据 **课件 06 Rough set**（英文 PPT），完成课件内部结构梳理。**不要展开讲解知识点本身**。\n\n1. 按课件原始顺序列出章节/板块\n2. 按知识点维度分 Part（上下近似、约简、决策表等）\n3. 各 Part 重要程度、图多需补充处\n4. 课堂对照：是否在 FiCS 记录中讲过；若未讲标明「开卷自学」\n5. 关键英文术语及中文对照\n6. 讲解不足需补充处\n\n要求：中文；条目式；标注来源。"
+    },
+    {
+      "id": "ppt07-structure",
+      "layer": "L0",
+      "priority": "critical",
+      "title": "课件07 Logics and Prolog 内部结构",
+      "clear_conversation": true,
+      "prompt": "请仅根据 **课件 07 Logics and Prolog**（英文 PPT），完成课件内部结构梳理。**不要展开讲解知识点本身**。\n\n1. 按课件原始顺序列出章节/板块\n2. 按知识点维度分 Part（命题逻辑、谓词逻辑、消解 Resolution、Prolog 等）\n3. 各 Part 重要程度（期末大题：自然语言→逻辑→DNF→消解）、图多需补充处\n4. 课堂对照：Week 14 哪些 Part 深入讲过\n5. 关键英文术语及中文对照\n6. 讲解不足需补充处\n\n要求：中文；条目式；标注来源（课件07 / Week 14 记录）。"
+    },
+    {
+      "id": "ppt08-structure",
+      "layer": "L0",
+      "priority": "critical",
+      "title": "课件08 Connectionist 内部结构",
+      "clear_conversation": true,
+      "prompt": "请仅根据 **课件 08 Connectionist**（英文 PPT，内容较长），完成课件内部结构梳理。**不要展开讲解知识点本身**。\n\n1. 按课件原始顺序列出主要章节/板块（从感知机到有监督学习、BP、无监督/竞争学习等）\n2. 按知识点维度分 Part，说明各 Part 涵盖 slide 范围\n3. 各 Part 重要程度、图多需补充处\n4. 课堂对照：Week 1–4、Week 7 哪些 Part 深入讲过；末尾无监督/竞争学习是否在课堂展开\n5. 关键英文术语及中文对照\n6. 讲解不足需补充处\n\n要求：中文；条目式；标注来源（课件08 / Week N 记录）。"
+    },
+    {
+      "id": "ppt09-structure",
+      "layer": "L0",
+      "priority": "critical",
+      "title": "课件09 Deep Learning 内部结构",
+      "clear_conversation": true,
+      "prompt": "请仅根据 **课件 09 Deep Learning**（英文 PPT，内容最长），完成课件内部结构梳理。**不要展开讲解知识点本身**。\n\n1. 按课件原始顺序列出主要章节/板块（CNN、序列/HMM、生成模型、优化、Transformer 等若存在请按出现顺序列出）\n2. 按知识点维度分 Part，说明各 Part 大致 slide 范围\n3. 各 Part 重要程度、图多需补充处\n4. 课堂对照：Week 4–12 各 Part 与哪几周对应、哪些可能课件有但课堂未讲\n5. 关键英文术语及中文对照\n6. 讲解不足需补充处\n\n要求：中文；条目式；标注来源（课件09 / Week N 记录）。"
+    },
+    {
+      "id": "ppt10-structure",
+      "layer": "L0",
+      "priority": "important",
+      "title": "课件10 Genetic algorithm 内部结构",
+      "clear_conversation": true,
+      "prompt": "请仅根据 **课件 10 Genetic algorithm**（英文 PPT），完成课件内部结构梳理。**不要展开讲解知识点本身**。\n\n1. 按课件原始顺序列出章节/板块\n2. 按知识点维度分 Part（编码、选择、交叉、变异、适应度等）\n3. 各 Part 重要程度、图多需补充处\n4. 课堂对照：Week 1 是否仅概述；是否有其他周深入讲过\n5. 关键英文术语及中文对照\n6. 讲解不足需补充处\n\n要求：中文；条目式；标注来源。"
+    }
+  ]
+}

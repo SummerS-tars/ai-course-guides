@@ -1,0 +1,67 @@
+{
+  "module": "ppt07",
+  "notebook_id": "505bdb1c-0034-4e14-89df-0b14bf3fc723",
+  "manifest": "notebooklm-raw/manifests/ppt07-deep.json",
+  "run_dir": "notebooklm-raw/ppt07/runs/20260619-163536",
+  "started_at": "2026-06-19T08:35:36.986639+00:00",
+  "finished_at": "2026-06-19T08:41:41.294505+00:00",
+  "batches_total": 6,
+  "batches_completed": 6,
+  "batches_ok": 6,
+  "batches_skipped": 0,
+  "batches_failed": 0,
+  "batches_pending": 0,
+  "batches": [
+    {
+      "id": "ppt07-part1-logic",
+      "layer": "L1+L2",
+      "status": "ok",
+      "elapsed_seconds": 47.21,
+      "retry_count": 0,
+      "conversation_id": "270e13f3-2040-47cb-b10b-34f919bf3b0c"
+    },
+    {
+      "id": "ppt07-part2-clause-form",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 56.6,
+      "retry_count": 0,
+      "conversation_id": "addff58b-1862-42f2-b45a-9df21510717f"
+    },
+    {
+      "id": "ppt07-part2-resolution",
+      "layer": "L2+L3",
+      "status": "ok",
+      "elapsed_seconds": 69.35,
+      "retry_count": 0,
+      "conversation_id": "7af266be-69c8-4bd3-a6c5-f162711e3c8f"
+    },
+    {
+      "id": "ppt07-part2-nl-to-logic",
+      "layer": "L3",
+      "status": "ok",
+      "elapsed_seconds": 49.27,
+      "retry_count": 0,
+      "conversation_id": "c107231b-3fa9-4802-aa3d-82bba1a4a0ad"
+    },
+    {
+      "id": "ppt07-part3-prolog",
+      "layer": "L2",
+      "status": "ok",
+      "elapsed_seconds": 47.4,
+      "retry_count": 0,
+      "conversation_id": "9ca27484-1981-48ec-b183-ee89aa4d12c7"
+    },
+    {
+      "id": "ppt07-mistakes",
+      "layer": "L3",
+      "status": "ok",
+      "elapsed_seconds": 48.24,
+      "retry_count": 0,
+      "conversation_id": "daa6d0c2-5559-4ae1-87e2-11d366f62a97"
+    }
+  ],
+  "status": "completed",
+  "total_elapsed_seconds": 364.31,
+  "total_retry_count": 0
+}

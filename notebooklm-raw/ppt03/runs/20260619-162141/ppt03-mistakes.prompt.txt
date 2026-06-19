@@ -1,0 +1,5 @@
+【单问】请列出 **课件 03 CLIPS** 复习中最易混淆的 4–5 组概念，用对比表说明：为什么易混、正确理解、记忆技巧。
+
+涵盖例如：前向 CLIPS vs 反向 Prolog、assert vs modify、exists vs forall、单字段 `?` vs 多字段 `$?`、Agenda vs 事实库等。
+
+要求：中文；标注来源（课件03 / Week 14–15）。

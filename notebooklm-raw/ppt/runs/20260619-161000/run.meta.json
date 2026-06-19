@@ -1,0 +1,99 @@
+{
+  "module": "ppt",
+  "notebook_id": "505bdb1c-0034-4e14-89df-0b14bf3fc723",
+  "manifest": "notebooklm-raw/manifests/ppt-discovery.json",
+  "run_dir": "notebooklm-raw/ppt/runs/20260619-161000",
+  "started_at": "2026-06-19T08:10:00.159027+00:00",
+  "finished_at": "2026-06-19T08:19:53.164406+00:00",
+  "batches_total": 10,
+  "batches_completed": 10,
+  "batches_ok": 10,
+  "batches_skipped": 0,
+  "batches_failed": 0,
+  "batches_pending": 0,
+  "batches": [
+    {
+      "id": "ppt01-structure",
+      "layer": "L0",
+      "status": "ok",
+      "elapsed_seconds": 49.17,
+      "retry_count": 0,
+      "conversation_id": "6512fdcb-3790-4ab6-957b-8a9150824704"
+    },
+    {
+      "id": "ppt02-structure",
+      "layer": "L0",
+      "status": "ok",
+      "elapsed_seconds": 47.36,
+      "retry_count": 0,
+      "conversation_id": "58bd8db8-4ed6-4205-a20d-a02f1cb145d7"
+    },
+    {
+      "id": "ppt03-structure",
+      "layer": "L0",
+      "status": "ok",
+      "elapsed_seconds": 54.62,
+      "retry_count": 0,
+      "conversation_id": "de86e9a8-abe4-4451-adbf-b1a6191b9be1"
+    },
+    {
+      "id": "ppt04-structure",
+      "layer": "L0",
+      "status": "ok",
+      "elapsed_seconds": 59.26,
+      "retry_count": 0,
+      "conversation_id": "92b2bf9a-d66e-4f2d-bdb2-3aae6d6f6807"
+    },
+    {
+      "id": "ppt05-structure",
+      "layer": "L0",
+      "status": "ok",
+      "elapsed_seconds": 44.38,
+      "retry_count": 0,
+      "conversation_id": "9e16dde2-5e4a-433b-b51b-e0d02e8aa12a"
+    },
+    {
+      "id": "ppt06-structure",
+      "layer": "L0",
+      "status": "ok",
+      "elapsed_seconds": 45.59,
+      "retry_count": 0,
+      "conversation_id": "c0c35e0e-3fc1-42ba-9a28-57e17a8c35af"
+    },
+    {
+      "id": "ppt07-structure",
+      "layer": "L0",
+      "status": "ok",
+      "elapsed_seconds": 46.18,
+      "retry_count": 0,
+      "conversation_id": "327c8aa4-4b37-4ebb-a7ef-e855a212653c"
+    },
+    {
+      "id": "ppt08-structure",
+      "layer": "L0",
+      "status": "ok",
+      "elapsed_seconds": 59.74,
+      "retry_count": 0,
+      "conversation_id": "b4b7a3a1-b909-4d14-8084-13f38f515757"
+    },
+    {
+      "id": "ppt09-structure",
+      "layer": "L0",
+      "status": "ok",
+      "elapsed_seconds": 61.32,
+      "retry_count": 0,
+      "conversation_id": "7c19f86d-6ebb-4136-afd9-fd69cfa03879"
+    },
+    {
+      "id": "ppt10-structure",
+      "layer": "L0",
+      "status": "ok",
+      "elapsed_seconds": 47.09,
+      "retry_count": 0,
+      "conversation_id": "54746d73-a80e-470f-8331-65edb6694b8d"
+    }
+  ],
+  "status": "completed",
+  "total_elapsed_seconds": 593.01,
+  "total_retry_count": 0
+}

@@ -1,0 +1,7 @@
+【单问·核心·期末】请仅根据 **课件 03 CLIPS** Part B（Facts & deftemplate，约 Slide 8–15），讲解：
+
+1. `deftemplate` 语法：槽 slot、多字段槽 multislot
+2. 五种槽属性约束：**type / allowed-values / range / cardinality / default**——各约束含义与一个极简 CLIPS 示例
+3. 事实操作：assert、retract、modify、deffacts 的区别与使用场景
+
+要求：中文；符号表；标注来源；**重点对齐 Slide 13 属性总结表**；不要讲 defrule。

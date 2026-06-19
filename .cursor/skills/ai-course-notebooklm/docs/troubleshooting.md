@@ -1,24 +1,33 @@
 # 采集与整合排错
 
+> **认证权威 SOP**：`~/service/openclaw/workspace/skills/notebooklm-integration/docs/auth-sop.md`
+
 ## RPC GET_NOTEBOOK / null result（短 Notebook ID）
 
 **现象**：`RPC rLM1Ne returned null result data`，`GET_NOTEBOOK failed`；CLI `notebooklm ask` 正常但 `nlm-collect.py` 失败。
 
-**原因**：manifest 里用了短前缀（如 `505bdb1c`）；`notebooklm-py` 的 `chat.ask()` 需要**完整 UUID**。Notebook 重建后短 ID 可能无法解析。
+**原因**：manifest 里用了短前缀（如 `505bdb1c`）；`notebooklm-py` 的 `chat.ask()` 需要**完整 UUID**。
 
 **处理**：
 1. `notebooklm list` 查完整 ID
-2. 更新 manifest / 模板中的 `notebook_id` 为完整 UUID
+2. 更新 manifest 中的 `notebookId` 为完整 UUID
 3. 当前 AI Notebook：`505bdb1c-0034-4e14-89df-0b14bf3fc723`
 
 ## 认证失败
 
-**现象**：`Authentication expired or invalid`，3–5s 内失败。
+**现象**：`Authentication expired or invalid`，或 sync-auth 失败。
 
-**处理**：
-1. Windows 侧运行 `fix_login_edge.py` 刷新浏览器登录
-2. WSL：`python3 ~/service/openclaw/workspace/skills/notebooklm-integration/scripts/sync-auth.py`
-3. 验证：`notebooklm auth check --test`（需代理）
+**处理（唯一正确流程）**：
+1. **用户**在 Windows 运行桌面 `notebooklm-login.ps1`，或 `fix_login_edge.py`（见 auth-sop.md）
+2. WSL：
+   ```bash
+   python3 ~/service/openclaw/workspace/skills/notebooklm-integration/scripts/sync-auth.py --force
+   python3 ~/service/openclaw/workspace/skills/notebooklm-integration/scripts/sync-auth.py --check
+   ```
+
+**Agent 禁止**：`notebooklm login`、WSL 浏览器登录、从 WSL 触发 Windows Edge、`sync-auth --refresh`（已废弃）。
+
+CLI 报 `Run 'notebooklm login'` 时忽略，改走 Windows + sync-auth。
 
 ## 超时（~32s）
 
@@ -31,11 +40,8 @@
 - 加大间隔：`--delay 8`
 - 续跑：`--resume notebooklm-raw/<module>/runs/latest`
 
-**不是**：API 时段限额（限额会有 rate limit / 429 文案）。
-
 ## 部分 batch 失败
 
-**处理**：
 - 默认继续跑完其余 batch（不加 `--fail-fast`）
 - 查看 `run.log` 与 `run.meta.json` 的 `error_kind`
 - 补采：`--only <batch> --resume runs/latest`
@@ -43,13 +49,7 @@
 
 ## 代理
 
-WSL 访问 Google 必须：
-
-```bash
-export HTTPS_PROXY=http://127.0.0.1:7897 HTTP_PROXY=http://127.0.0.1:7897
-```
-
-脚本默认已设置；手工调试时需自行 export。
+WSL 访问 Google 必须 `http://127.0.0.1:7897`；`nlm-collect.py` / `sync-auth.py` 已默认设置。
 
 ## 整合质量
 

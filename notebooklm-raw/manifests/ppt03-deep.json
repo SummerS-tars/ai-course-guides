@@ -1,0 +1,65 @@
+{
+  "module": "ppt03",
+  "notebook_id": "505bdb1c-0034-4e14-89df-0b14bf3fc723",
+  "description": "课件03 CLIPS 按 Part 深入讲解（期末开卷核心）",
+  "workflow": "v3-one-question-per-chat",
+  "sources_hint": ["课件03-CLIPS", "笔记-week15-周五-AI", "笔记-week01-周五-AI"],
+  "batches": [
+    {
+      "id": "ppt03-partA-architecture",
+      "layer": "L1+L2",
+      "priority": "critical",
+      "title": "Part A 产生式系统架构",
+      "clear_conversation": true,
+      "prompt": "【单问·核心】请仅根据 **课件 03 CLIPS**（按 slide 顺序 Part A：产生式系统架构，约 Slide 7–8 及推理引擎部分），讲解：\n\n1. 产生式系统三组件（事实库 Working Memory、知识库 Rules、推理引擎）各自职责\n2. 识别-动作周期（Recognize-act cycle）逐步流程\n3. Agenda（议程）如何排序与触发规则执行\n\n要求：中文；流程可用条目或 ASCII；术语 **中文（English）**；每点标注来源（课件03 slide 号 / Week 15 记录）；补充课件图示不足的文字说明。"
+    },
+    {
+      "id": "ppt03-partB-deftemplate",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "Part B deftemplate 与事实操作",
+      "clear_conversation": true,
+      "prompt": "【单问·核心·期末】请仅根据 **课件 03 CLIPS** Part B（Facts & deftemplate，约 Slide 8–15），讲解：\n\n1. `deftemplate` 语法：槽 slot、多字段槽 multislot\n2. 五种槽属性约束：**type / allowed-values / range / cardinality / default**——各约束含义与一个极简 CLIPS 示例\n3. 事实操作：assert、retract、modify、deffacts 的区别与使用场景\n\n要求：中文；符号表；标注来源；**重点对齐 Slide 13 属性总结表**；不要讲 defrule。"
+    },
+    {
+      "id": "ppt03-partC-pattern",
+      "layer": "L2",
+      "priority": "critical",
+      "title": "Part C 模式匹配与约束",
+      "clear_conversation": true,
+      "prompt": "【单问·核心·期末】请仅根据 **课件 03 CLIPS** Part C（变量与模式匹配，约 Slide 18–26），讲解：\n\n1. 单值变量 `?x`、多字段通配符 `$?`、事实地址绑定 `<-`\n2. 字段约束符：`&`（与）、`|`（或）、`~`（非）的组合用法\n3. 逻辑条件元素：and / or / not / exists / forall 各一例（可用火灾救援或眼/发色类场景）\n4. `test` 谓词函数何时使用\n\n要求：中文；每类至少一个代码片段；标注来源；补充 Slide 22 复杂匹配逻辑的逐步解读。"
+    },
+    {
+      "id": "ppt03-partD-animal",
+      "layer": "L2+L3",
+      "priority": "critical",
+      "title": "Part D 猜动物程序（考核重点）",
+      "clear_conversation": true,
+      "prompt": "【单问·核心·必考】请仅根据 **课件 03 CLIPS** Part D（猜动物决策树，Slide 27–32）及 Week 15 记录，讲解：\n\n1. 猜动物系统的整体交互流程（问问题 → 匹配规则 → 得出结论）\n2. 节点模板设计：问题节点 vs 答案节点\n3. **学习能力**：用户回答 no 时，`replace-answer-node` 等规则如何用 `gensym*`、`bind`、`assert` 扩展知识库\n4. 期末可能考的：**追踪一条规则执行顺序**（从事实匹配到 Agenda 到 RHS 动作）\n\n要求：中文；分步追踪示例；标注来源；课件代码碎片处需串联成完整叙事。"
+    },
+    {
+      "id": "ppt03-partE-rete",
+      "layer": "L2",
+      "priority": "important",
+      "title": "Part E Rete 与规则效率",
+      "clear_conversation": true,
+      "prompt": "【单问·重要】请仅根据 **课件 03 CLIPS** Part E（Slide 33–48：Salience、defmodule、Pattern Network、模式顺序优化），讲解：\n\n1. Salience（显著性）对规则优先级的误区与正确理解\n2. `defmodule` 导入/导出事实的基本逻辑\n3. Rete 思想：为何「具体模式在前、泛化模式在后」能提高效率（结合 Slide 40–43 例子）\n\n要求：中文；直觉优先；标注来源；期末若只考概念则标明「了解即可」。"
+    },
+    {
+      "id": "ppt03-mistakes",
+      "layer": "L3",
+      "priority": "important",
+      "title": "CLIPS 易混淆概念",
+      "clear_conversation": true,
+      "prompt": "【单问】请列出 **课件 03 CLIPS** 复习中最易混淆的 4–5 组概念，用对比表说明：为什么易混、正确理解、记忆技巧。\n\n涵盖例如：前向 CLIPS vs 反向 Prolog、assert vs modify、exists vs forall、单字段 `?` vs 多字段 `$?`、Agenda vs 事实库等。\n\n要求：中文；标注来源（课件03 / Week 14–15）。"
+    },
+    {
+      "id": "ppt03-study-order",
+      "layer": "L4",
+      "priority": "important",
+      "title": "课件03 复习优先级",
+      "clear_conversation": true,
+      "prompt": "【单问】请仅根据 **课件 03 CLIPS** 全文，给出期末开卷复习的**优先级清单**（极高/高/中/了解），并标明建议书签的 slide 页（如 Slide 13 属性表、Slide 26 高级模式汇总、Slide 31–32 猜动物）。\n\n要求：中文；条目式；标注来源。"
+    }
+  ]
+}

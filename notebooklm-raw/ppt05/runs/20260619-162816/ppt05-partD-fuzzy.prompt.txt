@@ -1,0 +1,7 @@
+【单问·重要】请仅根据 **课件 05 Uncertainty** Part D（Fuzzy Set & Fuzzy Logic，Slide 19–23），讲解：
+
+1. 模糊集与隶属度函数（Membership function）；TALL 示例
+2. 语言算子 Hedges：集中（Concentration）与扩散（Dilation）
+3. 与概率方法处理不确定性的区别
+
+要求：中文；补充隶属度曲线图的文字描述；标注来源。

@@ -1,0 +1,9 @@
+【单问·重要】请仅根据 **课件 07** Part 3（Horn Clauses、Prolog，Slide 16–23），讲解：
+
+1. 霍恩子句三种形式与 Prolog 规则对应
+2. 合一（Unification）在 Prolog 查询中的角色
+3. 深度优先搜索、回溯（Backtracking）
+4. 剪枝 `!` 的作用
+5. 递归规则示例（如 predecessor）
+
+要求：中文；极简 Prolog 代码片段；标注来源。
