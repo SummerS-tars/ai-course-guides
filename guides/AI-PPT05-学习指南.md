@@ -286,7 +286,7 @@ CF_1 + CF_2(1 + CF_1) & \text{两者均为负}
 
 合成满足交换律：$CF_{\text{comb}}(X,Y)=CF_{\text{comb}}(Y,X)$。多于两条规则时，两两合成即可；考试书写时建议先把每条规则的 $CF_i$ 算清楚，再选择同正、同负或异号公式。
 
-（来源：课件05 Slide 19、深采 `ppt05-partC-cf-theory`）
+（来源：课件05 Slide 18–19、深采 `ppt05-partC-cf-theory`）
 
 ### 块 C.6 手算模板与例题 ⭐
 

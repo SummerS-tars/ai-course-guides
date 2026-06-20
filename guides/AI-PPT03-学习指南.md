@@ -87,14 +87,14 @@
 
 ```mermaid
 flowchart TD
-    A[事实库中有事实] --> B[Match: LHS 模式匹配]
-    B --> C[Activation: 满足的规则进入 Agenda]
-    C --> D[Conflict Resolution: 按 Salience 选一条]
-    D --> E[Act: 执行 RHS]
-    E --> F[更新事实库 assert/retract/modify]
-    F --> G{Agenda 空或 Halt?}
-    G -->|否| B
-    G -->|是| H[结束]
+    A["事实库中有事实"] --> B["Match: LHS 模式匹配"]
+    B --> C["Activation: 满足的规则进入 Agenda"]
+    C --> D["Conflict Resolution: 按 Salience 选一条"]
+    D --> E["Act: 执行 RHS"]
+    E --> F["更新事实库 assert/retract/modify"]
+    F --> G{"Agenda 空或 Halt?"}
+    G -->|"否"| B
+    G -->|"是"| H["结束"]
 ```
 
 - **Agenda（议程）**：待执行规则实例（Activation）的排队列表。
@@ -239,6 +239,8 @@ flowchart TD
 | `$?xs` | 多字段通配，零个或多个 |
 | `?f <- (fact ...)` | 事实地址绑定，供 `retract ?f` 使用 |
 
+> **读代码机制**：`?f <-` 绑定的是整条事实的地址，不是某个槽值；只有拿到事实地址，RHS 才能安全地 `retract` 或 `modify` 那条旧事实。
+
 （来源：课件03 Slide 18–20）
 
 ### 块 C.6 字段约束符
@@ -247,10 +249,12 @@ flowchart TD
 |----|------|-----|
 | `~` | 非 | `hair ~black` |
 | `\|` | 或 | `eyes blue \| green` |
-| `&` | 与/组合 | `?e & blue \| green` |
+| `&` | 与/组合 | `?e&blue\|green` |
 | `:` 嵌入谓词 | 模式内直接判断 | `?age&:(> ?age 18)` |
 
 **Slide 22 经典题**：找两个人——第一人蓝/绿眼且非黑发；第二人眼色不同且发色为黑或与第一人相同。
+
+> **格式提醒**：表格中 `|` 写成 `\|` 是 Markdown 转义；CLIPS 代码里看作普通的或约束符 `|`。真实模式通常把变量和约束贴紧写，如 `?eyes&blue|green`。
 
 （来源：课件03 Slide 22、Week 15）
 
@@ -270,7 +274,7 @@ flowchart TD
 
 ### 块 C.8 test 谓词
 
-当需要数值比较或调用函数时在 LHS 插入：
+当需要数值比较或调用函数时在 LHS 插入；`test` 返回非 `FALSE` 才算该条件满足。
 
 ```clips
 (person (age ?a))
@@ -281,7 +285,7 @@ flowchart TD
 
 ### 块 C.9 Slide 26 高级模式汇总
 
-开卷核心页：单字段 `?`、多字段 `$?`、`~|&` 组合、事实地址 `<-`、`test` 与 `:` 谓词约束的对照表。
+开卷核心页：单字段 `?`、多字段 `$?`、`~` / `|` / `&` 组合、事实地址 `<-`、`test` 与 `:` 谓词约束的对照表。
 
 > **期末策略**：复杂模式匹配题多出自本页；建议书签旁留白记录常用组合。
 
@@ -290,9 +294,10 @@ flowchart TD
 ### 块 C.10 复杂双人匹配逐步解读（Slide 22）
 
 1. 用两个不同变量 `?p1`, `?p2` 匹配两条 `person` 事实。  
-2. 第一人：`eyes` 用 `blue|green`，`hair ~black`。  
-3. 第二人：`hair black` 或与第一人 `hair` 相同，且 `eyes` 与第一人不同。  
-4. 可用 `test` 补充 `(<>` 比较两变量）。
+2. 第一人：`eyes` 用 `blue|green`，并绑定到 `?eyes1`；`hair` 用 `~black`，并绑定到 `?hair1`。  
+3. 第二人：`name` 需 `~?name1`，确保不是同一个人；`eyes` 需 `~?eyes1`，确保眼色不同。  
+4. 第二人 `hair` 为 `black|?hair1`：要么黑发，要么与第一人发色相同。  
+5. 若不用字段约束，也可用 `test` 写成 `(test (<> ?eyes1 ?eyes2))` 比较两变量。
 
 （来源：课件03 Slide 22、Week 15）
 
@@ -320,10 +325,10 @@ flowchart TD
 
 ```mermaid
 flowchart LR
-    R[root 决策节点] -->|yes/no| N[子节点]
-    N -->|decision| Q[显示 question 等待回答]
-    N -->|answer| G[输出猜测并询问是否正确]
-    G -->|no| L[replace-answer-node 学习]
+    R["root 决策节点"] -->|"yes/no"| N["子节点"]
+    N -->|"decision"| Q["显示 question 等待回答"]
+    N -->|"answer"| G["输出猜测并询问是否正确"]
+    G -->|"no"| L["replace-answer-node 学习"]
     L --> R
 ```
 
@@ -331,6 +336,8 @@ flowchart LR
 2. 决策节点 → 显示问题，读入 `yes`/`no`  
 3. `proceed-to-yes/no-branch`：`retract` 旧标记，`assert` 新 `current-node`  
 4. 答案节点 → 猜动物；用户说 no → 进入学习  
+
+**这个例子要解释的问题**：CLIPS 并不是直接「调用树遍历函数」，而是每次用户输入都变成事实；事实改变后，下一条规则被匹配、激活并执行。
 
 （来源：课件03 Slide 29–31、Week 15）
 
@@ -345,11 +352,11 @@ flowchart LR
 
 **追踪示例**（用户刚输入 `(answer yes)`，当前 `(current-node node1)`，`node1.yes-node = node3`）：
 
-1. **Match**：三条 LHS 模式均满足  
-2. **Agenda**：规则激活入队  
-3. **Conflict Resolution**：按 salience 选中  
-4. **Act**：`(retract ?node ?answer)` → `(assert (current-node node3))`  
-5. **循环**：围绕 `node3` 重新匹配  
+1. **Match**：`current-node`、当前 `node`、用户回答 `(answer yes)` 三条 LHS 模式均满足。  
+2. **Agenda**：`proceed-to-yes-branch` 规则激活入队；若还有其他激活项，再做冲突消解。  
+3. **Conflict Resolution**：按 salience 等策略选中要 fire 的规则。  
+4. **Act**：`(retract ?node ?answer)` 删除旧当前节点标记和用户回答；`(assert (current-node node3))` 写入新位置。  
+5. **循环**：事实库变化后，围绕 `node3` 重新匹配下一轮规则。  
 
 > **期末追踪题**：给定事实库状态，写出 `proceed-to-yes-branch` 从 Match → Agenda → Act 的步骤。
 
@@ -399,8 +406,8 @@ RHS 中可用过程性控制（非逻辑条件元素）：
 
 ### 块 E.4 识别-动作周期与模式网络（Slide 38–39）
 
-- **Pattern Network**：共享前提，避免重复匹配。  
-- **Join Network**：多模式规则的连接节点。  
+- **Pattern Network（模式网络）**：把单个模式编译成可复用检查节点，共享前提，避免重复匹配。  
+- **Join Network（连接网络）**：把多个模式的部分匹配结果组合起来，形成完整规则匹配。  
 - **Rete 核心思想**：缓存部分匹配结果，事实增量更新时只传播受影响路径。
 
 > **图多需补**：Slide 38–39 仅简图；理解「规则共享 LHS 前缀可减少重复工作」即可应对概念题。
@@ -465,7 +472,7 @@ RHS 中可用过程性控制（非逻辑条件元素）：
 | **极高** | 猜动物与学习规则 | 31–32 |
 | **高** | exists/forall、复杂双人匹配 | 23–25, 22 |
 | **高** | 规则效率准则 | 39–44 |
-| **中** | defmodule、Salience | 28–30 |
+| **中** | defmodule、Salience | 33–37 |
 | **备查** | 数学函数、list- 管理命令 | 17–18 |
 
 ---

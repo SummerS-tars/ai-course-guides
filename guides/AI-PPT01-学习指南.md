@@ -24,9 +24,18 @@
 
 **课件要点**：苏格拉底三段论；形式化从公理导出结论。
 
+- **本块要解决的问题**：AI 如何把「人会推理」改写成机器能执行的符号步骤。
 - **经典例**：所有人都会死；苏格拉底是人；故苏格拉底会死。
-- **符号主义关联**：推理 = 对符号做合法改写，**不必理解语义**（霍布斯：Reasoning is but reckoning）。
-- **形式化**：肯定前件 Modus Ponens：$P \to Q,\; P \vdash Q$。
+- **三段论（Syllogism）**：由大前提、小前提推出结论；它展示「只要规则形式正确，结论可机械推出」。
+- **符号主义（Symbolism）关联**：推理 = 对符号做合法改写，**不必理解语义**（霍布斯：Reasoning is but reckoning，推理就是计算）。
+- **肯定前件（Modus Ponens）**：最常用的规则模板，形式为 $P \to Q,\; P \vdash Q$，意思是「若 P 则 Q，且 P 已成立，所以 Q 成立」。
+
+**一步推理链**：
+
+1. 规则：$man(x) \to mortal(x)$（人都会死）
+2. 事实：$man(Socrates)$（苏格拉底是人）
+3. 代入：令 $x = Socrates$
+4. 结论：$mortal(Socrates)$
 
 > **直观理解**：像按菜谱做菜——不懂烹饪也能按步骤得到结论。
 
@@ -36,8 +45,9 @@
 
 **课件要点**：罗素/怀特海德逻辑发展；$\forall x (man(x) \to mortal(x))$ 等。
 
-- **为何重要**：命题逻辑不能表达「所有/存在」；FOL 用 $\forall/\exists$ 描述个体与关系。
-- **与机器推理**：通过**合一（Unification）**把变量 $x$ 绑到常量（如 Socrates），从一般规律得到具体结论。
+- **为何重要**：命题逻辑只能说整句真假，不能表达「所有人」「存在某人」这类泛化知识；**一阶谓词演算（First-order Logic, FOL）**用 $\forall/\exists$ 描述个体、类别和关系。
+- **全称量词（Universal quantifier, $\forall$）**：表示「对所有对象都成立」；**存在量词（Existential quantifier, $\exists$）**：表示「至少有一个对象成立」。
+- **与机器推理**：通过**合一（Unification）**把变量 $x$ 绑到常量（如 Socrates），从一般规律得到具体结论；合一就是「找一个代换，让两个逻辑式能对上」。
 - **后续衔接**：课件 07 消解、Prolog 均建立在 FOL 之上。
 
 > **重难点**：课件图多字少——复习时能手写 $\forall x (dog(x) \to animal(x))$ 并做一步代换。
@@ -50,10 +60,16 @@
 
 ### 块 B.1 产生式规则 IF-THEN
 
+**课件要点**：把专家经验写成「条件满足就执行动作」的规则。
+
 | 部分 | 英文 | 含义 |
 |------|------|------|
 | 前件 | LHS / Antecedent | IF：模式，与事实匹配 |
 | 后件 | RHS / Consequent | THEN：动作（增删事实、输出） |
+
+- **产生式规则（Production rule）**：专家系统中最小的知识单位；一条规则通常形如「IF 症状匹配 THEN 给出诊断/新增事实」。
+- **模式匹配（Pattern matching）**：不是简单字符串相等，而是检查工作内存中的事实是否满足 LHS 的结构和约束。
+- **考试定位**：PPT01 只需会解释 LHS/RHS；可执行语法和复杂匹配放到 PPT03 CLIPS。
 
 （来源：课件01、Week 15）
 
@@ -77,7 +93,14 @@
 | 知识获取 Knowledge Acquisition | 专家录入/维护规则 |
 | 解释 Explanation | 回答 How/Why，可解释性 |
 
-> **课件补充**：Markov 规定控制结构——详见课件 03 Agenda、Salience。
+**识别-动作循环（Recognize-Act cycle）**：
+
+1. **Match**：推理引擎拿工作内存事实匹配规则 LHS。
+2. **Agenda**：所有满足条件的规则实例进入议程，等待执行。
+3. **Act**：选中一条规则，执行 RHS，工作内存被更新。
+4. **循环**：新事实可能触发更多规则，直到 Agenda 为空。
+
+> **课件补充**：Agenda 和 Salience 是控制结构的核心，详见课件 03。
 
 （来源：课件01 Slide 2、Week 15）
 
@@ -89,6 +112,8 @@
 | 知识库 | `defrule` 规则 |
 | 推理引擎 | 内置 Rete + Agenda |
 | LHS/RHS | `(pattern) => (action)` |
+
+> **衔接提醒**：PPT01 考「架构是什么」；PPT03 考「给一段 CLIPS 代码，事实如何进入 Agenda、规则如何 fire」。
 
 （来源：课件01、课件03、Week 15）
 
